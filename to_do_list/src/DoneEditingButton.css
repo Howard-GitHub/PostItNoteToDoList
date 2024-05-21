@@ -1,0 +1,22 @@
+.done-button {
+    position: relative;
+    left: 95px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 150px;
+    background-color: white;
+    border: 1px solid green;
+    color: green;
+    border-radius: 20px;
+    transition: background-color ease 0.2s;
+}
+
+.done-button.cursor-enter {
+    background-color: lightgreen;
+}
+
+.done-button.cursor-leave {
+    background-color: white;
+}
