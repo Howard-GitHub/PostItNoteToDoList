@@ -1,38 +1,32 @@
-import {useState, useEffect} from 'react';
-import './AddNewStackButton.css'
+import {useState} from 'react';
+import {v4 as uuidv4} from 'uuid';
+import './AddNewStackButton.css';
 
 const AddNewStackButton = ({arrayOfStacks, setArrayOfStacks}) => {
-    const [leftSideCoordinate, setLeftSideCoordinate] = useState((window.innerWidth / 2) - 30);
-    const [topSideCoordinate, setTopSideCoordinate] = useState(window.innerHeight - 120);
-
+    const [isHoveringOver, setIsHoveringOver] = useState();
 
     const addNewStack = () => {
-        setArrayOfStacks(...arrayOfStacks)
+        const uniqueIdentifier = {
+            id: uuidv4()
+        }
+        setArrayOfStacks([...arrayOfStacks, uniqueIdentifier])
     }
 
- 
-    useEffect(() => {
-        const handleButtonPlacement = () => {
-            setLeftSideCoordinate((window.innerWidth / 2) - 30);
-            setTopSideCoordinate(window.innerHeight - 120)
-        }
+    const handleMouseEnter = () => {
+        setIsHoveringOver(true);
+    }
 
-        window.addEventListener('resize', handleButtonPlacement);
-
-        return () => {
-            window.removeEventListener('resize', handleButtonPlacement)
-        }
-    }, [])
+    const handleMouseLeave = () => {
+        setIsHoveringOver(false);
+    }
 
     return ( 
         <div className="add-new-stack-container">
             <div 
-                className="add-new-stack-button"
+                className={isHoveringOver ? "add-new-stack-button cursor-enter" : "add-new-stack-button cursor-leave"}
                 onClick={addNewStack}
-                style={{
-                    left: leftSideCoordinate,
-                    top: topSideCoordinate
-                }}>
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}>
                 +
             </div>
     
