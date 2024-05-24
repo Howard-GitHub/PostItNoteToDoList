@@ -3,8 +3,9 @@ import './PostItNoteStack.css'
 import DoneEditingButton from './DoneEditingButton';
 
 
-const PostItNoteStack = () => {
+const PostItNoteStack = ({id, isInDeleteMode, arrayOfStacks, setArrayOfStacks}) => {
     const [title, setTitle] = useState();
+    const [isHoveringOver, setIsHoveringOver] = useState();
     const titleRef = useRef();
 
     const handleChangeTextareaHeight = () => {
@@ -18,11 +19,35 @@ const PostItNoteStack = () => {
         setTitle(event.target.value);
         handleChangeTextareaHeight();
     }
+
+    const handleMouseEnter = () => {
+        if (isInDeleteMode) {
+            setIsHoveringOver(true);
+        }
+    }
+
+    const handleMouseLeave = () => {
+        if (isInDeleteMode) {
+            setIsHoveringOver(false);
+        }
+    }
+
+    const handleOnClickToDelete = () => {
+        if (isInDeleteMode) {
+            const newArray = arrayOfStacks.filter((arrayOfStacks) => arrayOfStacks.id !== id)
+            setArrayOfStacks(newArray);
+        }
+    }
+ 
     
 
     return (             
     <div className="post-it-note-stack-container">
-        <div className="front-post-it-note">
+        <div 
+            className={isHoveringOver ? "front-post-it-note cursor-enter" : "front-post-it-note cursor-leave"}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            onClick={handleOnClickToDelete}>
             <textarea
                 className="title"
                 ref={titleRef}

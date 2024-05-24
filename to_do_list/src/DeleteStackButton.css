@@ -15,3 +15,11 @@
     top: 10px;
     left: 20px;
 }
+
+.delete-stack-button.cursor-enter {
+    background-color: rgb(255, 210, 152);
+}
+
+.delete-stack-button.cursor-leave {
+    background-color: antiquewhite;
+}

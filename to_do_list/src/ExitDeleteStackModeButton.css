@@ -1,25 +1,18 @@
-.add-new-stack-button {
-    position: relative;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+.exit-delete-stack-mode-button {
+    position: absolute;
     background-color: antiquewhite;
     cursor: pointer;
     transition: background-color ease 0.2s;
     border: 1px solid black;
-    font-size: 50px;
     border-radius: 100px;
     height: 45px;
     width: 45px;
-    top: 10px;
-    left: 10px;
 }
 
-.add-new-stack-button.cursor-enter {
+.exit-delete-stack-mode-button.cursor-enter {
     background-color: antiquewhite;
 }
 
-.add-new-stack-button.cursor-enter {
+.exit-delete-stack-mode-button.cursor-leavev {
     background-color: rgb(255, 210, 152);
 }
