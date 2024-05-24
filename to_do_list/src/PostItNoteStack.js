@@ -18,6 +18,7 @@ const PostItNoteStack = () => {
         setTitle(event.target.value);
         handleChangeTextareaHeight();
     }
+    
 
     return (             
     <div className="post-it-note-stack-container">
