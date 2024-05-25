@@ -1,4 +1,4 @@
-.delete-stack-button {
+.delete-section-button {
     position: relative;
     display: flex;
     text-align: center;
@@ -16,10 +16,10 @@
     left: 20px;
 }
 
-.delete-stack-button.cursor-enter {
+.delete-section-button.cursor-enter {
     background-color: rgb(255, 210, 152);
 }
 
-.delete-stack-button.cursor-leave {
+.delete-section-button.cursor-leave {
     background-color: antiquewhite;
 }

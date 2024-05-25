@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
-import './ExitDeleteStackModeButton.css'
+import './ExitDeleteSectionModeButton.css'
 
-const ExitDeleteStackModeButton = ({setIsInDeleteMode}) => {
+const ExitDeleteSectionModeButton = ({setIsInDeleteMode}) => {
     const [leftSideCoordinate, setLeftSideCoordinate] = useState(window.innerWidth / 2);
     const [topSideCoordinate, setTopSideCoordinate] = useState(window.innerHeight - 120);
 
@@ -23,9 +23,9 @@ const ExitDeleteStackModeButton = ({setIsInDeleteMode}) => {
     }
 
     return ( 
-        <div className="exit-delete-stack-mode-button-container">
+        <div className="exit-delete-section-mode-button-container">
             <div 
-                className="exit-delete-stack-mode-button"
+                className="exit-delete-section-mode-button"
                 onClick={handleOnClickExitDeleteMode}
                 style={{
                     top: topSideCoordinate,
@@ -37,4 +37,4 @@ const ExitDeleteStackModeButton = ({setIsInDeleteMode}) => {
     );
 }
  
-export default ExitDeleteStackModeButton;
+export default ExitDeleteSectionModeButton;

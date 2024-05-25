@@ -1,7 +1,7 @@
 import {useState} from 'react';
-import './DeleteStackButton.css';
+import './DeleteSectionButton.css';
 
-const DeleteStackButton = ({isInDeleteMode, setIsInDeleteMode}) => {
+const DeleteSectionButton = ({isInDeleteMode, setIsInDeleteMode}) => {
     const [isHoveringOver, setIsHoveringOver] = useState(); 
 
     const handleMouseEnter = () => {
@@ -22,9 +22,9 @@ const DeleteStackButton = ({isInDeleteMode, setIsInDeleteMode}) => {
     }
 
     return ( 
-        <div className="delete-stack-button-container">
+        <div className="delete-section-button-container">
             <div 
-                className={isHoveringOver ? "delete-stack-button cursor-enter" : "delete-stack-button cursor-leave"}
+                className={isHoveringOver ? "delete-section-button cursor-enter" : "delete-section-button cursor-leave"}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
                 onClick={handleOnClickDeleteMode}>
@@ -34,4 +34,4 @@ const DeleteStackButton = ({isInDeleteMode, setIsInDeleteMode}) => {
     );
 }
  
-export default DeleteStackButton;
+export default DeleteSectionButton;

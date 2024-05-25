@@ -1,9 +1,9 @@
 import {useEffect, useState} from "react";
 import './ButtonBar.css';
-import AddNewStackButton from "./AddNewStackButton";
-import DeleteStackButton from "./DeleteStackButton";
+import AddNewSectionButton from "./AddNewSectionButton";
+import DeleteSectionButton from "./DeleteSectionButton";
 
-const ButtonBar = ({arrayOfStacks, setArrayOfStacks, isInDeleteMode, setIsInDeleteMode}) => {
+const ButtonBar = ({arrayOfSections, setArrayOfSections, isInDeleteMode, setIsInDeleteMode}) => {
     const [leftSideCoordinate, setLeftSideCoordinate] = useState((window.innerWidth / 2) - 75)
     const [topSideCoordinate, setTopSideCoordinate] = useState((window.innerHeight) - 120);
 
@@ -30,10 +30,10 @@ const ButtonBar = ({arrayOfStacks, setArrayOfStacks, isInDeleteMode, setIsInDele
                     left: leftSideCoordinate,
                     top: topSideCoordinate
                 }}>
-                <AddNewStackButton 
-                    arrayOfStacks={arrayOfStacks} 
-                    setArrayOfStacks={setArrayOfStacks}/>
-                <DeleteStackButton 
+                <AddNewSectionButton 
+                    arrayOfSections={arrayOfSections} 
+                    setArrayOfSections={setArrayOfSections}/>
+                <DeleteSectionButton 
                     isInDeleteMode={isInDeleteMode}
                     setIsInDeleteMode={setIsInDeleteMode}/>
                 </div>

@@ -1,11 +1,14 @@
 import {useState, useRef} from 'react';
-import './PostItNoteStack.css'
+import {useSelected} from './ToDoList';
+import './PostItNoteSection.css'
 import DoneEditingButton from './DoneEditingButton';
 
 
-const PostItNoteStack = ({id, isInDeleteMode, arrayOfStacks, setArrayOfStacks}) => {
+const PostItNoteSection = ({id, isInDeleteMode, arrayOfSections, setArrayOfSections}) => {
     const [title, setTitle] = useState();
     const [isHoveringOver, setIsHoveringOver] = useState();
+    const {identifySelectedSection, setIdentifySelectedSection} = useSelected();
+    const [textAreaIsSelected, setTextAreaIsSelected] = useState(false);
     const titleRef = useRef();
 
     const handleChangeTextareaHeight = () => {
@@ -34,30 +37,50 @@ const PostItNoteStack = ({id, isInDeleteMode, arrayOfStacks, setArrayOfStacks}) 
 
     const handleOnClickToDelete = () => {
         if (isInDeleteMode) {
-            const newArray = arrayOfStacks.filter((arrayOfStacks) => arrayOfStacks.id !== id)
-            setArrayOfStacks(newArray);
+            const newArray = arrayOfSections.filter((arrayOfSections) => arrayOfSections.id !== id)
+            setArrayOfSections(newArray);
         }
+    }
+
+    const handleSelectTextarea = () => {
+        if (identifySelectedSection === null) {
+            setTextAreaIsSelected(true);
+            setIdentifySelectedSection(id);
+        }
+    }
+
+    const handleTextareaOnBlur = () => {
+        titleRef.current.focus();
     }
  
     
 
     return (             
-    <div className="post-it-note-stack-container">
+    <div className="post-it-note-section-container">
         <div 
             className={isHoveringOver ? "front-post-it-note cursor-enter" : "front-post-it-note cursor-leave"}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onClick={handleOnClickToDelete}>
+
+            {((identifySelectedSection !== id) && identifySelectedSection !== null) && 
+                <div className="block-from-selecting"/>}
+
             <textarea
                 className="title"
                 ref={titleRef}
                 value={title}
                 onChange={handleKeyboardInput}
                 placeholder="Enter Title"
+                onFocus={handleSelectTextarea}
+                onBlur={handleTextareaOnBlur}
             />
         </div>
-        <DoneEditingButton />
-    </div> );
+        {textAreaIsSelected &&
+            <DoneEditingButton />
+        }
+    </div> 
+    );
 }
  
-export default PostItNoteStack;
+export default PostItNoteSection;

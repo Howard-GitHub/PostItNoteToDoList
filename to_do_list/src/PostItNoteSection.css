@@ -1,4 +1,4 @@
-.post-it-note-stack-container {
+.post-it-note-section-container {
     position: relative;
     padding: 50px;
 }
@@ -42,4 +42,12 @@
 
 .title::placeholder {
     color: black;
+}
+
+.block-from-selecting {
+    position: absolute;
+    height: 350px;
+    width: 350px;
+    background-color: transparent;
+    border: 3px solid black;
 }
