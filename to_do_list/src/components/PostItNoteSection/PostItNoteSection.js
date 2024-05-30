@@ -4,17 +4,19 @@ import {handleOnClickToDeleteSection} from '../../utils/ModifyArrayUtils';
 import './PostItNoteSection.css'
 import DoneEditingButton from './Buttons/DoneEditingButton';
 import useCursorHover from '../../hooks/useCursorHover';
+import {handleOnChangeKeyboardInput, handleOnFocusTextarea, handleOnBlurTextarea} from '../../utils/SectionTitleUtils';
+
 
 
 const PostItNoteSection = ({id, isInDeleteMode, arrayOfSections, setArrayOfSections}) => {
     const [title, setTitle] = useState();
-    const [textAreaIsSelected, setTextAreaIsSelected] = useState(false);
+    const [textareaIsSelected, setTextareaIsSelected] = useState(false);
     const titleRef = useRef();
 
     const {identifySelectedSection, setIdentifySelectedSection} = useSelected();
     const {isHoveringOver, handleCursorHoveringOver, handleCursorNotHoveringOver} = useCursorHover();
 
-
+/*
     const handleChangeTextareaHeight = () => {
         if (titleRef.current) {
             titleRef.current.style.height = 'auto';
@@ -37,7 +39,7 @@ const PostItNoteSection = ({id, isInDeleteMode, arrayOfSections, setArrayOfSecti
 
     const handleTextareaOnBlur = () => {
         titleRef.current.focus();
-    }
+    }*/
  
     
 
@@ -56,13 +58,13 @@ const PostItNoteSection = ({id, isInDeleteMode, arrayOfSections, setArrayOfSecti
                 className="title"
                 ref={titleRef}
                 value={title}
-                onChange={handleKeyboardInput}
+                onChange={(event) => handleOnChangeKeyboardInput(event, titleRef, setTitle)}
                 placeholder="Enter Title"
-                onFocus={handleSelectTextarea}
-                onBlur={handleTextareaOnBlur}
+                onFocus={() => handleOnFocusTextarea(id, identifySelectedSection, setTextareaIsSelected, setIdentifySelectedSection)}
+                onBlur={() => handleOnBlurTextarea(titleRef)}
             />
         </div>
-        {textAreaIsSelected &&
+        {textareaIsSelected &&
             <DoneEditingButton />
         }
     </div> 
