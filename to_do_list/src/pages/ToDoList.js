@@ -3,19 +3,16 @@ import PostItNoteSection from '../components/PostItNoteSection/PostItNoteSection
 import ButtonBar from '../components/ButtonBar/ButtonBar';
 import {v4 as uuidv4} from 'uuid';
 import ExitDeleteSectionModeButton from '../components/ExitDeleteSectionModeButton/ExitDeleteSectionModeButton';
-import './ToDoList.css'
+import {initialPostItNoteSection} from '../utils/ModifyArrayUtils';
+import './ToDoList.css';
 
 const SelectedContext = createContext();
 
 const ToDoList = () => {
-    
-    const initialSection = () => {
-        id: uuidv4()
-    }
 
     // Contains the post it note section. A post it note section contains multiple post it notes or "a section of post it notes" and is supposed to
     // contain one or more individual post it notes
-    const [arrayOfSections, setArrayOfSections] = useState([initialSection]);
+    const [arrayOfSections, setArrayOfSections] = useState([initialPostItNoteSection]);
     const [isInDeleteMode, setIsInDeleteMode] = useState(false);
     const [identifySelectedSection, setIdentifySelectedSection] = useState(null);
     

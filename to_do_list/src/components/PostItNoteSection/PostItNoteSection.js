@@ -1,5 +1,6 @@
 import {useState, useRef} from 'react';
 import {useSelected} from '../../pages/ToDoList';
+import {handleOnClickToDeleteSection} from '../../utils/ModifyArrayUtils';
 import './PostItNoteSection.css'
 import DoneEditingButton from './Buttons/DoneEditingButton';
 
@@ -37,13 +38,6 @@ const PostItNoteSection = ({id, isInDeleteMode, arrayOfSections, setArrayOfSecti
         }
     }
 
-    const handleOnClickToDelete = () => {
-        if (isInDeleteMode) {
-            const newArray = arrayOfSections.filter((arrayOfSections) => arrayOfSections.id !== id)
-            setArrayOfSections(newArray);
-        }
-    }
-
     const handleSelectTextarea = () => {
         if (identifySelectedSection === null) {
             setTextAreaIsSelected(true);
@@ -63,7 +57,7 @@ const PostItNoteSection = ({id, isInDeleteMode, arrayOfSections, setArrayOfSecti
             className={isHoveringOver ? "front-post-it-note cursor-enter" : "front-post-it-note cursor-leave"}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            onClick={handleOnClickToDelete}>
+            onClick={() => handleOnClickToDeleteSection(id, isInDeleteMode, arrayOfSections, setArrayOfSections)}>
 
             {((identifySelectedSection !== id) && identifySelectedSection !== null) && 
                 <div className="block-from-selecting"/>}
