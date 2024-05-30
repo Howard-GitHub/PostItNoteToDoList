@@ -1,7 +1,6 @@
 import {useState, useContext, createContext} from 'react';
 import PostItNoteSection from '../components/PostItNoteSection/PostItNoteSection';
 import ButtonBar from '../components/ButtonBar/ButtonBar';
-import {v4 as uuidv4} from 'uuid';
 import ExitDeleteSectionModeButton from '../components/ExitDeleteSectionModeButton/ExitDeleteSectionModeButton';
 import {initialPostItNoteSection} from '../utils/ModifyArrayUtils';
 import './ToDoList.css';
