@@ -15,38 +15,12 @@ const PostItNoteSection = ({id, isInDeleteMode, arrayOfSections, setArrayOfSecti
 
     const {identifySelectedSection, setIdentifySelectedSection} = useSelected();
     const {isHoveringOver, handleCursorHoveringOver, handleCursorNotHoveringOver} = useCursorHover();
-
-/*
-    const handleChangeTextareaHeight = () => {
-        if (titleRef.current) {
-            titleRef.current.style.height = 'auto';
-            titleRef.current.style.height = `${titleRef.current.scrollHeight}px`;
-        }
-    }
-
-    const handleKeyboardInput = (event) => {
-        setTitle(event.target.value);
-        handleChangeTextareaHeight();
-    }
-
-
-    const handleSelectTextarea = () => {
-        if (identifySelectedSection === null) {
-            setTextAreaIsSelected(true);
-            setIdentifySelectedSection(id);
-        }
-    }
-
-    const handleTextareaOnBlur = () => {
-        titleRef.current.focus();
-    }*/
  
-    
 
     return (             
     <div className="post-it-note-section-container">
         <div 
-            className={isHoveringOver ? "front-post-it-note cursor-enter" : "front-post-it-note cursor-leave"}
+            className={(isHoveringOver && isInDeleteMode) ? "front-post-it-note cursor-enter" : "front-post-it-note cursor-leave"}
             onMouseEnter={handleCursorHoveringOver}
             onMouseLeave={handleCursorNotHoveringOver}
             onClick={() => handleOnClickToDeleteSection(id, isInDeleteMode, arrayOfSections, setArrayOfSections)}>
