@@ -3,15 +3,16 @@ import {useSelected} from '../../pages/ToDoList';
 import {handleOnClickToDeleteSection} from '../../utils/ModifyArrayUtils';
 import './PostItNoteSection.css'
 import DoneEditingButton from './Buttons/DoneEditingButton';
+import useCursorHover from '../../hooks/useCursorHover';
 
 
 const PostItNoteSection = ({id, isInDeleteMode, arrayOfSections, setArrayOfSections}) => {
     const [title, setTitle] = useState();
-    const [isHoveringOver, setIsHoveringOver] = useState();
     const [textAreaIsSelected, setTextAreaIsSelected] = useState(false);
     const titleRef = useRef();
 
     const {identifySelectedSection, setIdentifySelectedSection} = useSelected();
+    const {isHoveringOver, handleCursorHoveringOver, handleCursorNotHoveringOver} = useCursorHover();
 
 
     const handleChangeTextareaHeight = () => {
@@ -26,17 +27,6 @@ const PostItNoteSection = ({id, isInDeleteMode, arrayOfSections, setArrayOfSecti
         handleChangeTextareaHeight();
     }
 
-    const handleMouseEnter = () => {
-        if (isInDeleteMode) {
-            setIsHoveringOver(true);
-        }
-    }
-
-    const handleMouseLeave = () => {
-        if (isInDeleteMode) {
-            setIsHoveringOver(false);
-        }
-    }
 
     const handleSelectTextarea = () => {
         if (identifySelectedSection === null) {
@@ -55,8 +45,8 @@ const PostItNoteSection = ({id, isInDeleteMode, arrayOfSections, setArrayOfSecti
     <div className="post-it-note-section-container">
         <div 
             className={isHoveringOver ? "front-post-it-note cursor-enter" : "front-post-it-note cursor-leave"}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
+            onMouseEnter={handleCursorHoveringOver}
+            onMouseLeave={handleCursorNotHoveringOver}
             onClick={() => handleOnClickToDeleteSection(id, isInDeleteMode, arrayOfSections, setArrayOfSections)}>
 
             {((identifySelectedSection !== id) && identifySelectedSection !== null) && 
