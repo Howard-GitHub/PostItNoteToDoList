@@ -1,5 +1,5 @@
 .exit-delete-section-mode-button {
-    position: absolute;
+    position: fixed;
     background-color: antiquewhite;
     cursor: pointer;
     transition: background-color ease 0.2s;
@@ -7,6 +7,9 @@
     border-radius: 100px;
     height: 45px;
     width: 45px;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, 0%);
 }
 
 .exit-delete-section-mode-button.cursor-enter {

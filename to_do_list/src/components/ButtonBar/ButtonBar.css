@@ -6,4 +6,7 @@
     width: 200px;
     height: 70px;
     border-radius: 40px;
+    left: 50%;
+    top: 90%;
+    transform: translate(-50%, 0%);
 }

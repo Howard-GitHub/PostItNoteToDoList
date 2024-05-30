@@ -1,16 +1,8 @@
-import {useState} from 'react';
+import useCursorHover from '../../../hooks/useCursorHover';
 import './DeleteSectionButton.css';
 
 const DeleteSectionButton = ({isInDeleteMode, setIsInDeleteMode}) => {
-    const [isHoveringOver, setIsHoveringOver] = useState(); 
-
-    const handleMouseEnter = () => {
-        setIsHoveringOver(true);
-    }
-
-    const handleMouseLeave = () => {
-        setIsHoveringOver(false);
-    }
+    const {isHoveringOver, handleCursorHoveringOver, handleCursorNotHoveringOver} = useCursorHover();
 
     const handleOnClickDeleteMode = () => {
         if (isInDeleteMode) {
@@ -25,8 +17,8 @@ const DeleteSectionButton = ({isInDeleteMode, setIsInDeleteMode}) => {
         <div className="delete-section-button-container">
             <div 
                 className={isHoveringOver ? "delete-section-button cursor-enter" : "delete-section-button cursor-leave"}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
+                onMouseEnter={handleCursorHoveringOver}
+                onMouseLeave={handleCursorNotHoveringOver}
                 onClick={handleOnClickDeleteMode}>
             </div>
 

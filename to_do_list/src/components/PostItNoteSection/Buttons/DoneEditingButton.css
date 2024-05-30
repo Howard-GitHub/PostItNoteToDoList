@@ -21,3 +21,8 @@
 .done-button.cursor-leave {
     background-color: white;
 }
+
+.done-editing-label {
+    cursor: pointer;
+    font-size: 15px;
+}

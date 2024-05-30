@@ -1,15 +1,17 @@
 import {useState, useRef} from 'react';
-import {useSelected} from './ToDoList';
+import {useSelected} from '../../pages/ToDoList';
 import './PostItNoteSection.css'
-import DoneEditingButton from './DoneEditingButton';
+import DoneEditingButton from './Buttons/DoneEditingButton';
 
 
 const PostItNoteSection = ({id, isInDeleteMode, arrayOfSections, setArrayOfSections}) => {
     const [title, setTitle] = useState();
     const [isHoveringOver, setIsHoveringOver] = useState();
-    const {identifySelectedSection, setIdentifySelectedSection} = useSelected();
     const [textAreaIsSelected, setTextAreaIsSelected] = useState(false);
     const titleRef = useRef();
+
+    const {identifySelectedSection, setIdentifySelectedSection} = useSelected();
+
 
     const handleChangeTextareaHeight = () => {
         if (titleRef.current) {

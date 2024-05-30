@@ -1,8 +1,8 @@
 import {useState, useContext, createContext} from 'react';
-import PostItNoteSection from './PostItNoteSection';
-import ButtonBar from './ButtonBar';
+import PostItNoteSection from '../components/PostItNoteSection/PostItNoteSection';
+import ButtonBar from '../components/ButtonBar/ButtonBar';
 import {v4 as uuidv4} from 'uuid';
-import ExitDeleteSectionModeButton from './ExitDeleteSectionModeButton';
+import ExitDeleteSectionModeButton from '../components/ExitDeleteSectionModeButton/ExitDeleteSectionModeButton';
 import './ToDoList.css'
 
 const SelectedContext = createContext();
@@ -46,7 +46,6 @@ const ToDoList = () => {
                     isInDeleteMode={isInDeleteMode}
                     setIsInDeleteMode={setIsInDeleteMode}/>
             }
-            
         </div>
         </SelectedContext.Provider>
     );
