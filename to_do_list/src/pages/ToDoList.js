@@ -1,11 +1,10 @@
-import {useState, useContext, createContext} from 'react';
+import {useState} from 'react';
 import PostItNoteSection from '../components/PostItNoteSection/PostItNoteSection';
 import ButtonBar from '../components/ButtonBar/ButtonBar';
 import ExitDeleteSectionModeButton from '../components/ExitDeleteSectionModeButton/ExitDeleteSectionModeButton';
 import {initialPostItNoteSection} from '../utils/ModifyArrayUtils';
+import {SelectedProvider} from '../providers/SelectedProvider';
 import './ToDoList.css';
-
-const SelectedContext = createContext();
 
 const ToDoList = () => {
 
@@ -13,39 +12,38 @@ const ToDoList = () => {
     // contain one or more individual post it notes
     const [arrayOfSections, setArrayOfSections] = useState([initialPostItNoteSection]);
     const [isInDeleteMode, setIsInDeleteMode] = useState(false);
-    const [identifySelectedSection, setIdentifySelectedSection] = useState(null);
     
 
     return ( 
-        <SelectedContext.Provider value={{identifySelectedSection, setIdentifySelectedSection}}>
+        <SelectedProvider>
+
             <div className="dashboard-container">
-            {isInDeleteMode && 
-                <ExitDeleteSectionModeButton 
-                    setIsInDeleteMode={setIsInDeleteMode}
-                    arrayOfSections={arrayOfSections}
-                    setArrayOfSections={setArrayOfSections}/>
-            }
+                {isInDeleteMode && 
+                    <ExitDeleteSectionModeButton 
+                        setIsInDeleteMode={setIsInDeleteMode}
+                        arrayOfSections={arrayOfSections}
+                        setArrayOfSections={setArrayOfSections}/>
+                }
 
-            {arrayOfSections.map((singlePostItNoteSection) => (
-                <PostItNoteSection 
-                    key={singlePostItNoteSection.id}
-                    id={singlePostItNoteSection.id}
-                    isInDeleteMode={isInDeleteMode}
-                    arrayOfSections={arrayOfSections}
-                    setArrayOfSections={setArrayOfSections}/>
-            ))}
+                {arrayOfSections.map((singlePostItNoteSection) => (
+                    <PostItNoteSection 
+                        key={singlePostItNoteSection.id}
+                        id={singlePostItNoteSection.id}
+                        isInDeleteMode={isInDeleteMode}
+                        arrayOfSections={arrayOfSections}
+                        setArrayOfSections={setArrayOfSections}/>
+                ))}
 
-            {!isInDeleteMode &&
-                <ButtonBar 
-                    arrayOfSections={arrayOfSections} 
-                    setArrayOfSections={setArrayOfSections}
-                    isInDeleteMode={isInDeleteMode}
-                    setIsInDeleteMode={setIsInDeleteMode}/>
-            }
-        </div>
-        </SelectedContext.Provider>
+                {!isInDeleteMode &&
+                    <ButtonBar 
+                        arrayOfSections={arrayOfSections} 
+                        setArrayOfSections={setArrayOfSections}
+                        isInDeleteMode={isInDeleteMode}
+                        setIsInDeleteMode={setIsInDeleteMode}/>
+                }
+            </div>
+        </SelectedProvider>
     );
 }
  
 export default ToDoList;
-export const useSelected = () => useContext(SelectedContext);

@@ -1,9 +1,7 @@
 import {useState} from 'react';
-import {useSelected} from '../../../pages/ToDoList';
 import useCursorHover from '../../../hooks/useCursorHover';
 import './DoneEditingButton.css';
-
-
+import { useSelected } from '../../../providers/SelectedProvider';
 
 const DoneEditingButton = () => {
     const {identifySelectedSection, setIdentifySelectedSection} = useSelected();

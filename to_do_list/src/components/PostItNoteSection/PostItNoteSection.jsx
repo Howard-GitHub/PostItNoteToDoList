@@ -1,10 +1,10 @@
 import {useState, useRef} from 'react';
-import {useSelected} from '../../pages/ToDoList';
 import {handleOnClickToDeleteSection} from '../../utils/ModifyArrayUtils';
 import './PostItNoteSection.css'
 import DoneEditingButton from './Buttons/DoneEditingButton';
 import useCursorHover from '../../hooks/useCursorHover';
 import {handleOnChangeKeyboardInput, handleOnFocusTextarea, handleOnBlurTextarea} from '../../utils/SectionTitleUtils';
+import {useSelected} from '../../providers/SelectedProvider';
 
 
 
