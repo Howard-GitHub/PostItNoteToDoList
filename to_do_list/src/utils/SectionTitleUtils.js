@@ -15,16 +15,13 @@ export const handleOnChangeKeyboardInput = (event, titleRef, setTitle) => {
 // Identifies which post it note section textarea has been selected to be edited and prevents other post it note section textareas from becoming selected
 export const handleOnFocusTextarea = (id, currentlySelectedSection, setCurrentlySelectedSection, setTextareaIsSelected) => {
     if (currentlySelectedSection === null) {
-        setTextareaIsSelected(true);
         setCurrentlySelectedSection(id);
+        setTextareaIsSelected(true);
     }
 }
 
-// Re-focuses onto the post it note section textarea
-export const handleOnBlurTextarea = (titleRef) => {
-    titleRef.current.focus();
-}
-
-export const handleOnClickDoneButton = (setCurrentlySelectedSection) => {
-    setCurrentlySelectedSection(null)
+// Exits edit mode for the selected post it note title section
+export const handleOnClickDoneButton = (setCurrentlySelectedSection, setTextareaIsSelected) => {
+    setCurrentlySelectedSection(null);
+    setTextareaIsSelected(false);
 }

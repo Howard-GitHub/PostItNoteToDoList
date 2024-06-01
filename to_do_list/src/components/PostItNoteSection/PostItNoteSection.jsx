@@ -35,11 +35,11 @@ const PostItNoteSection = ({id, isInDeleteMode, arrayOfSections, setArrayOfSecti
                 onChange={(event) => handleOnChangeKeyboardInput(event, titleRef, setTitle)}
                 placeholder="Enter Title"
                 onFocus={() => handleOnFocusTextarea(id, currentlySelectedSection, setCurrentlySelectedSection, setTextareaIsSelected)}
-                onBlur={() => handleOnBlurTextarea(titleRef)}
             />
         </div>
         {textareaIsSelected &&
-            <DoneEditingButton />
+            <DoneEditingButton 
+                setTextareaIsSelected={setTextareaIsSelected}/>
         }
     </div> 
     );
