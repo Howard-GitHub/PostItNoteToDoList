@@ -1,10 +1,10 @@
 import './App.css';
-import ToDoList from './pages/ToDoList';
+import Dashboard from './pages/Dashboard';
 
 function App() {
   return (
     <div className="App">
-      <ToDoList />
+      <Dashboard />
     </div>
   );
 }

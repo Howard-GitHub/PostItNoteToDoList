@@ -4,9 +4,9 @@ import ButtonBar from '../components/ButtonBar/ButtonBar';
 import ExitDeleteSectionModeButton from '../components/ExitDeleteSectionModeButton/ExitDeleteSectionModeButton';
 import {initialPostItNoteSection} from '../utils/ModifyArrayUtils';
 import {SelectedProvider} from '../providers/SelectedProvider';
-import './ToDoList.css';
+import './Dashboard.css';
 
-const ToDoList = () => {
+const Dashboard = () => {
 
     // Contains the post it note section. A post it note section contains multiple post it notes or "a section of post it notes" and is supposed to
     // contain one or more individual post it notes
@@ -46,4 +46,4 @@ const ToDoList = () => {
     );
 }
  
-export default ToDoList;
+export default Dashboard;
