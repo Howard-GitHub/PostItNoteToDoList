@@ -25,3 +25,7 @@ export const handleOnClickToDeleteSection = (id, isInDeleteMode, arrayOfSections
         setArrayOfSections(newArray);
     }
 }
+
+export const handleOnClickExitDeleteMode = (setIsInDeleteMode) => {
+    setIsInDeleteMode(false);
+}

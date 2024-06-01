@@ -1,15 +1,12 @@
+import {handleOnClickExitDeleteMode} from '../../utils/ModifyArrayUtils';
 import './ExitDeleteSectionModeButton.css'
 
 const ExitDeleteSectionModeButton = ({setIsInDeleteMode}) => {
-    const handleOnClickExitDeleteMode = () => {
-        setIsInDeleteMode(false);
-    }
-
     return ( 
         <div className="exit-delete-section-mode-button-container">
             <div 
                 className="exit-delete-section-mode-button"
-                onClick={handleOnClickExitDeleteMode}>
+                onClick={() => handleOnClickExitDeleteMode(setIsInDeleteMode)}>
 
             </div>
         </div>
