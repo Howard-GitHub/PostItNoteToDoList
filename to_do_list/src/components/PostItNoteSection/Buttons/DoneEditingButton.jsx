@@ -2,14 +2,11 @@ import {useContext} from 'react';
 import useCursorHover from '../../../hooks/useCursorHover';
 import './DoneEditingButton.css';
 import {SelectedContext} from '../../../providers/SelectedProvider';
+import {handleOnClickDoneButton} from '../../../utils/SectionTitleUtils';
 
 const DoneEditingButton = () => {
-    const {identifySelectedSection, setIdentifySelectedSection} = useContext(SelectedContext);
+    const {currentlySelectedSection, setCurrentlySelectedSection} = useContext(SelectedContext);
     const {isHoveringOver, handleCursorHoveringOver, handleCursorNotHoveringOver} = useCursorHover();
-
-    const handleOnClick = () => {
-        setIdentifySelectedSection(null);
-    }
 
     return ( 
         <div className="done-button-container">
@@ -17,7 +14,7 @@ const DoneEditingButton = () => {
                 className={isHoveringOver ? "done-button cursor-enter" : "done-button cursor-leave"}
                 onMouseEnter={handleCursorHoveringOver}
                 onMouseLeave={handleCursorNotHoveringOver}
-                onClick={handleOnClick}>
+                onClick={() => handleOnClickDoneButton(setCurrentlySelectedSection)}>
                 <label className="done-editing-label">
                     Done Editing
                 </label>

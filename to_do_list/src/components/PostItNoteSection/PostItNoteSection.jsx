@@ -13,7 +13,7 @@ const PostItNoteSection = ({id, isInDeleteMode, arrayOfSections, setArrayOfSecti
     const [textareaIsSelected, setTextareaIsSelected] = useState(false);
     const titleRef = useRef();
 
-    const {identifySelectedSection, setIdentifySelectedSection} = useContext(SelectedContext);
+    const {currentlySelectedSection, setCurrentlySelectedSection} = useContext(SelectedContext);
     const {isHoveringOver, handleCursorHoveringOver, handleCursorNotHoveringOver} = useCursorHover();
  
 
@@ -25,7 +25,7 @@ const PostItNoteSection = ({id, isInDeleteMode, arrayOfSections, setArrayOfSecti
             onMouseLeave={handleCursorNotHoveringOver}
             onClick={() => handleOnClickToDeleteSection(id, isInDeleteMode, arrayOfSections, setArrayOfSections)}>
 
-            {((identifySelectedSection !== id) && identifySelectedSection !== null) && 
+            {((currentlySelectedSection !== id) && currentlySelectedSection !== null) && 
                 <div className="block-from-selecting"/>}
 
             <textarea
@@ -34,7 +34,7 @@ const PostItNoteSection = ({id, isInDeleteMode, arrayOfSections, setArrayOfSecti
                 value={title}
                 onChange={(event) => handleOnChangeKeyboardInput(event, titleRef, setTitle)}
                 placeholder="Enter Title"
-                onFocus={() => handleOnFocusTextarea(id, identifySelectedSection, setTextareaIsSelected, setIdentifySelectedSection)}
+                onFocus={() => handleOnFocusTextarea(id, currentlySelectedSection, setCurrentlySelectedSection, setTextareaIsSelected)}
                 onBlur={() => handleOnBlurTextarea(titleRef)}
             />
         </div>
