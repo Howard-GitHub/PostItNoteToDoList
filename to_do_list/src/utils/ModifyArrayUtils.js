@@ -14,13 +14,8 @@ export const handleOnClickAddNewSection = (arrayOfSections, setArrayOfSections) 
 }
 
 // Enters a mode that allows user to delete post it note sections on the dashboard
-export const handleOnClickDeleteMode = (isInDeleteMode, setIsInDeleteMode) => {
-    if (isInDeleteMode) {
-        setIsInDeleteMode(false);
-    }
-    else {
-        setIsInDeleteMode(true);
-    }
+export const handleOnClickToEnterDeleteMode = (setIsInDeleteMode) => {
+    setIsInDeleteMode(true);
 }
 
 // Deletes the post it note section the user clicks on

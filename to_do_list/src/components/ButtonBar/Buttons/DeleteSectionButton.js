@@ -1,4 +1,4 @@
-import {handleOnClickDeleteMode} from '../../../utils/ModifyArrayUtils';
+import {handleOnClickToEnterDeleteMode} from '../../../utils/ModifyArrayUtils';
 import useCursorHover from '../../../hooks/useCursorHover';
 import './DeleteSectionButton.css';
 
@@ -11,7 +11,7 @@ const DeleteSectionButton = ({isInDeleteMode, setIsInDeleteMode}) => {
                 className={isHoveringOver ? "delete-section-button cursor-enter" : "delete-section-button cursor-leave"}
                 onMouseEnter={handleCursorHoveringOver}
                 onMouseLeave={handleCursorNotHoveringOver}
-                onClick={() => handleOnClickDeleteMode(isInDeleteMode, setIsInDeleteMode)}>
+                onClick={() => handleOnClickToEnterDeleteMode(setIsInDeleteMode)}>
             </div>
 
         </div>
