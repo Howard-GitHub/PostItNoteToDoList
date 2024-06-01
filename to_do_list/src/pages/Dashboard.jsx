@@ -16,7 +16,6 @@ const Dashboard = () => {
 
     return ( 
         <SelectedProvider>
-
             <div className="dashboard-container">
                 {isInDeleteMode && 
                     <ExitDeleteSectionModeButton 

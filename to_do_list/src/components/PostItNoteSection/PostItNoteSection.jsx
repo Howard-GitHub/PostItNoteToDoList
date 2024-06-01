@@ -10,11 +10,9 @@ import {SelectedContext} from '../../providers/SelectedProvider';
 
 const PostItNoteSection = ({id, isInDeleteMode, arrayOfSections, setArrayOfSections}) => {
     const [title, setTitle] = useState();
-    const [textareaIsSelected, setTextareaIsSelected] = useState(false);
     const titleRef = useRef();
-
-    const {currentlySelectedSection, setCurrentlySelectedSection} = useContext(SelectedContext);
     const {isHoveringOver, handleCursorHoveringOver, handleCursorNotHoveringOver} = useCursorHover();
+    const {currentlySelectedSection, setCurrentlySelectedSection, textareaIsSelected, setTextareaIsSelected} = useContext(SelectedContext);
  
 
     return (             
@@ -25,7 +23,7 @@ const PostItNoteSection = ({id, isInDeleteMode, arrayOfSections, setArrayOfSecti
             onMouseLeave={handleCursorNotHoveringOver}
             onClick={() => handleOnClickToDeleteSection(id, isInDeleteMode, arrayOfSections, setArrayOfSections)}>
 
-            {((currentlySelectedSection !== id) && currentlySelectedSection !== null) && 
+            {((currentlySelectedSection !== id) && (currentlySelectedSection !== null)) && 
                 <div className="block-from-selecting"/>}
 
             <textarea
@@ -37,7 +35,7 @@ const PostItNoteSection = ({id, isInDeleteMode, arrayOfSections, setArrayOfSecti
                 onFocus={() => handleOnFocusTextarea(id, currentlySelectedSection, setCurrentlySelectedSection, setTextareaIsSelected)}
             />
         </div>
-        {textareaIsSelected &&
+        {(textareaIsSelected && (currentlySelectedSection == id)) &&
             <DoneEditingButton 
                 setTextareaIsSelected={setTextareaIsSelected}/>
         }
