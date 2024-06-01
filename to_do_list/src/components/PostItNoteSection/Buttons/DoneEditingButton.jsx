@@ -1,10 +1,10 @@
-import {useState} from 'react';
+import {useContext} from 'react';
 import useCursorHover from '../../../hooks/useCursorHover';
 import './DoneEditingButton.css';
-import { useSelected } from '../../../providers/SelectedProvider';
+import {SelectedContext} from '../../../providers/SelectedProvider';
 
 const DoneEditingButton = () => {
-    const {identifySelectedSection, setIdentifySelectedSection} = useSelected();
+    const {identifySelectedSection, setIdentifySelectedSection} = useContext(SelectedContext);
     const {isHoveringOver, handleCursorHoveringOver, handleCursorNotHoveringOver} = useCursorHover();
 
     const handleOnClick = () => {

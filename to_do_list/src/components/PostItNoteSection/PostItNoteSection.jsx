@@ -1,10 +1,10 @@
-import {useState, useRef} from 'react';
+import {useState, useContext, useRef} from 'react';
 import {handleOnClickToDeleteSection} from '../../utils/ModifyArrayUtils';
 import './PostItNoteSection.css'
 import DoneEditingButton from './Buttons/DoneEditingButton';
 import useCursorHover from '../../hooks/useCursorHover';
 import {handleOnChangeKeyboardInput, handleOnFocusTextarea, handleOnBlurTextarea} from '../../utils/SectionTitleUtils';
-import {useSelected} from '../../providers/SelectedProvider';
+import {SelectedContext} from '../../providers/SelectedProvider';
 
 
 
@@ -13,7 +13,7 @@ const PostItNoteSection = ({id, isInDeleteMode, arrayOfSections, setArrayOfSecti
     const [textareaIsSelected, setTextareaIsSelected] = useState(false);
     const titleRef = useRef();
 
-    const {identifySelectedSection, setIdentifySelectedSection} = useSelected();
+    const {identifySelectedSection, setIdentifySelectedSection} = useContext(SelectedContext);
     const {isHoveringOver, handleCursorHoveringOver, handleCursorNotHoveringOver} = useCursorHover();
  
 
