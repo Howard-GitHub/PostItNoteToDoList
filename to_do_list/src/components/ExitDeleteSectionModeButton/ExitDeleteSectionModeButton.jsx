@@ -7,7 +7,6 @@ const ExitDeleteSectionModeButton = ({setIsInDeleteMode}) => {
             <div 
                 className="exit-delete-section-mode-button"
                 onClick={() => handleOnClickExitDeleteMode(setIsInDeleteMode)}>
-
             </div>
         </div>
     );
