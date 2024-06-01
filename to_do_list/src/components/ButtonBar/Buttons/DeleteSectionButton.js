@@ -2,7 +2,7 @@ import {handleOnClickToEnterDeleteMode} from '../../../utils/ModifyArrayUtils';
 import useCursorHover from '../../../hooks/useCursorHover';
 import './DeleteSectionButton.css';
 
-const DeleteSectionButton = ({isInDeleteMode, setIsInDeleteMode}) => {
+const DeleteSectionButton = ({setIsInDeleteMode}) => {
     const {isHoveringOver, handleCursorHoveringOver, handleCursorNotHoveringOver} = useCursorHover();
 
     return ( 
