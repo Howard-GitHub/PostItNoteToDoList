@@ -44,6 +44,13 @@
     color: black;
 }
 
+.select-to-delete {
+    position: absolute;
+    height: 350px;
+    width: 350px;
+    background-color: transparent;
+}
+
 .block-from-selecting {
     position: absolute;
     height: 350px;
