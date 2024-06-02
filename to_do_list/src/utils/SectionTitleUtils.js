@@ -26,7 +26,7 @@ export const handleOnClickDoneButton = (setSelectedItem, setTextareaIsSelected) 
     setTextareaIsSelected(false);
 }
 
-
+// Enters selected post it note section
 export const handleOnClickToEnterSection = (id, setOneSectionIsEntered, setSelectedSection) => {
     setOneSectionIsEntered(true);
     setSelectedSection(id);
