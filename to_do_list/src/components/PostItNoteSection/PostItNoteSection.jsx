@@ -5,6 +5,8 @@ import DoneEditingButton from './Buttons/DoneEditingButton';
 import useCursorHover from '../../hooks/useCursorHover';
 import {handleOnChangeKeyboardInput, handleOnFocusTextarea, handleOnClickToEnterSection} from '../../utils/SectionTitleUtils';
 import {SelectedContext} from '../../providers/SelectedProvider';
+import SectionButtonBar from './SectionButtonBar/SectionButtonBar';
+import DashBoardButton from './Buttons/DashboardButton';
 
 
 
@@ -37,8 +39,7 @@ const PostItNoteSection = ({id, isInDeleteMode, arrayOfSections, setArrayOfSecti
             {((!oneSectionIsEntered && !isInDeleteMode) && 
                 <div 
                     className="select-to-enter-section"
-                    onClick={() => handleOnClickToEnterSection(id, setOneSectionIsEntered, setSelectedSection)}
-                />)}
+                    onClick={() => handleOnClickToEnterSection(id, setOneSectionIsEntered, setSelectedSection)}/>)}
 
             <textarea
                 className="title"
@@ -46,15 +47,17 @@ const PostItNoteSection = ({id, isInDeleteMode, arrayOfSections, setArrayOfSecti
                 value={title}
                 onChange={(event) => handleOnChangeKeyboardInput(event, titleRef, setTitle)}
                 placeholder="Untitled"
-                onFocus={() => handleOnFocusTextarea(id, selectedItem, setSelectedItem, setTextareaIsSelected)}
-            />
-
-
+                onFocus={() => handleOnFocusTextarea(id, selectedItem, setSelectedItem, setTextareaIsSelected)}/>
         </div>
         {(textareaIsSelected && (selectedItem == id)) &&
             <DoneEditingButton 
-                setTextareaIsSelected={setTextareaIsSelected}/>
-        }
+                setTextareaIsSelected={setTextareaIsSelected}/>}
+
+        {(selectedSection === id) &&
+            <div>
+                <SectionButtonBar />
+                <DashBoardButton />
+            </div>}
     </div> )
     );
 }

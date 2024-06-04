@@ -6,11 +6,11 @@ import DeleteSectionButton from "./Buttons/DeleteSectionButton";
 
 const ButtonBar = ({arrayOfSections, setArrayOfSections, isInDeleteMode, setIsInDeleteMode}) => {
 
-    const {textareaIsSelected} = useContext(SelectedContext);
+    const {textareaIsSelected, oneSectionIsEntered} = useContext(SelectedContext);
 
     return ( 
         <div className="button-bar-container">
-            {!textareaIsSelected &&
+            {(!textareaIsSelected && !oneSectionIsEntered) && 
             <div 
                 className="button-bar">
                 <AddNewSectionButton 
