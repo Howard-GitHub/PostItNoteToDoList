@@ -2,7 +2,7 @@ import {useContext} from 'react';
 import useCursorHover from '../../../hooks/useCursorHover';
 import './DoneEditingButton.css';
 import {SelectedContext} from '../../../providers/SelectedProvider';
-import {handleOnClickDoneButton} from '../../../utils/SectionTitleUtils';
+import {handleOnClickDoneButton} from '../../../utils/SectionUtils';
 
 const DoneEditingButton = ({setTextareaIsSelected}) => {
     const {selectedItem, setSelectedItem} = useContext(SelectedContext);

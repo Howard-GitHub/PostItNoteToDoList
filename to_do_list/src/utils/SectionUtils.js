@@ -31,3 +31,9 @@ export const handleOnClickToEnterSection = (id, setOneSectionIsEntered, setSelec
     setOneSectionIsEntered(true);
     setSelectedSection(id);
 }
+
+// Returns to dashboard
+export const handleOnClickToDashboard = (setOneSectionIsentered, setSelectedSection) => {
+    setOneSectionIsentered(false);
+    setSelectedSection(null);
+}

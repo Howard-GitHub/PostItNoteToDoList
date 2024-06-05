@@ -1,11 +1,11 @@
-.dasbboard-button {
-    position: absolute;
-    top: 5px;
+.dashboard-button {
+    position: fixed;
+    top: 7px;
     left: 5px;
 }
 
 .dashboard-label {
-    position: relative;
-    top: 0px;
-    left: 0px;
+    color: blue;
+    cursor: pointer;
+    font-size: 20px;
 }
