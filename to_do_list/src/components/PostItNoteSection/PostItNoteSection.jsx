@@ -1,5 +1,5 @@
 import {useState, useContext, useRef} from 'react';
-import {handleOnClickToDeleteSection} from '../../utils/ModifyArrayUtils';
+import {handleOnClickToDeleteItem} from '../../utils/ModifyArrayUtils';
 import './PostItNoteSection.css'
 import DoneEditingButton from './Buttons/DoneEditingButton';
 import useCursorHover from '../../hooks/useCursorHover';
@@ -33,7 +33,7 @@ const PostItNoteSection = ({id, isInDeleteMode, arrayOfSections, setArrayOfSecti
                 {isInDeleteMode &&
                     <div 
                         className="select-to-delete"
-                        onClick={() => handleOnClickToDeleteSection(id, isInDeleteMode, arrayOfSections, setArrayOfSections)}/>}
+                        onClick={() => handleOnClickToDeleteItem(id, isInDeleteMode, arrayOfSections, setArrayOfSections)}/>}
 
                 {((selectedItem !== id) && (selectedItem !== null)) && 
                     <div className="block-from-selecting"/>}

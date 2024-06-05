@@ -6,23 +6,23 @@ export const initialPostItNoteSection = () => {
 }
 
 // Adds a new post it note section
-export const handleOnClickAddNewSection = (arrayOfSections, setArrayOfSections) => {
+export const handleOnClickAddNewItem = (arrayOfItems, setArrayOfItems) => {
     const uniqueIdentifier = {
         id: uuidv4()
     }
-    setArrayOfSections([...arrayOfSections, uniqueIdentifier]);
+    setArrayOfItems([...arrayOfItems, uniqueIdentifier]);
 }
 
-// Enters a mode that allows user to delete post it note sections on the dashboard
+// Enters a mode that allows user to delete post it note items on the dashboard
 export const handleOnClickToEnterDeleteMode = (setIsInDeleteMode) => {
     setIsInDeleteMode(true);
 }
 
 // Deletes the post it note section the user clicks on
-export const handleOnClickToDeleteSection = (id, isInDeleteMode, arrayOfSections, setArrayOfSections) => {
+export const handleOnClickToDeleteItem = (id, isInDeleteMode, arrayOfItems, setArrayOfItems) => {
     if (isInDeleteMode) {
-        const newArray = arrayOfSections.filter((arrayOfSections) => arrayOfSections.id !== id)
-        setArrayOfSections(newArray);
+        const newArray = arrayOfItems.filter((arrayOfItems) => arrayOfItems.id !== id)
+        setArrayOfItems(newArray);
     }
 }
 
