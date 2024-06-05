@@ -59,7 +59,9 @@ const PostItNoteSection = ({id, isInDeleteMode, arrayOfSections, setArrayOfSecti
 
         {(selectedSection === id) &&
             <div className="section-dashboard">
-                <DashBoardButton />
+                {!textareaIsSelected &&
+                    <DashBoardButton />
+                }
                 <SectionButtonBar />
                 <IndividualPostItNote />
             </div>}
