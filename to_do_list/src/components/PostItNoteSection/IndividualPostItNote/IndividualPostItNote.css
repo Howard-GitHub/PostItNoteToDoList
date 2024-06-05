@@ -1,0 +1,12 @@
+.individual-post-it-note-container {
+    position: relative;
+    padding: 30px;
+}
+
+.individual-post-it-note {
+    height: 350px;
+    width: 350px;
+    background-color: lightpink;
+    box-shadow: 0px 15px 10px lightgray;
+    box-sizing: border-box;
+}

@@ -7,6 +7,7 @@ import {handleOnChangeKeyboardInput, handleOnFocusTextarea, handleOnClickToEnter
 import {SelectedContext} from '../../providers/SelectedProvider';
 import SectionButtonBar from './SectionButtonBar/SectionButtonBar';
 import DashBoardButton from './Buttons/DashboardButton';
+import IndividualPostItNote from './IndividualPostItNote/IndividualPostItNote';
 
 
 
@@ -23,40 +24,44 @@ const PostItNoteSection = ({id, isInDeleteMode, arrayOfSections, setArrayOfSecti
     return (             
     (!oneSectionIsEntered || (selectedSection === id)) && 
     (<div className="post-it-note-section-container">
-        <div 
-            className={(isHoveringOver && isInDeleteMode) ? "front-post-it-note cursor-enter" : "front-post-it-note cursor-leave"}
-            onMouseEnter={handleCursorHoveringOver}
-            onMouseLeave={handleCursorNotHoveringOver}>
+        <div className="front-post-it-note-container">
+            <div 
+                className={(isHoveringOver && isInDeleteMode) ? "front-post-it-note cursor-enter" : "front-post-it-note cursor-leave"}
+                onMouseEnter={handleCursorHoveringOver}
+                onMouseLeave={handleCursorNotHoveringOver}>
 
-            {isInDeleteMode &&
-                <div 
-                    className="select-to-delete"
-                    onClick={() => handleOnClickToDeleteSection(id, isInDeleteMode, arrayOfSections, setArrayOfSections)}/>}
+                {isInDeleteMode &&
+                    <div 
+                        className="select-to-delete"
+                        onClick={() => handleOnClickToDeleteSection(id, isInDeleteMode, arrayOfSections, setArrayOfSections)}/>}
 
-            {((selectedItem !== id) && (selectedItem !== null)) && 
-                <div className="block-from-selecting"/>}
+                {((selectedItem !== id) && (selectedItem !== null)) && 
+                    <div className="block-from-selecting"/>}
 
-            {((!oneSectionIsEntered && !isInDeleteMode) && 
-                <div 
-                    className="select-to-enter-section"
-                    onClick={() => handleOnClickToEnterSection(id, setOneSectionIsEntered, setSelectedSection)}/>)}
+                {((!oneSectionIsEntered && !isInDeleteMode) && 
+                    <div 
+                        className="select-to-enter-section"
+                        onClick={() => handleOnClickToEnterSection(id, setOneSectionIsEntered, setSelectedSection)}/>)}
 
-            <textarea
-                className="title"
-                ref={titleRef}
-                value={title}
-                onChange={(event) => handleOnChangeKeyboardInput(event, titleRef, setTitle)}
-                placeholder="Untitled"
-                onFocus={() => handleOnFocusTextarea(id, selectedItem, setSelectedItem, setTextareaIsSelected)}/>
+                <textarea
+                    className="title"
+                    ref={titleRef}
+                    value={title}
+                    onChange={(event) => handleOnChangeKeyboardInput(event, titleRef, setTitle)}
+                    placeholder="Untitled"
+                    onFocus={() => handleOnFocusTextarea(id, selectedItem, setSelectedItem, setTextareaIsSelected)}/>
+            </div>
+
+            {(textareaIsSelected && (selectedItem == id)) &&
+                <DoneEditingButton 
+                    setTextareaIsSelected={setTextareaIsSelected}/>}
         </div>
-        {(textareaIsSelected && (selectedItem == id)) &&
-            <DoneEditingButton 
-                setTextareaIsSelected={setTextareaIsSelected}/>}
 
         {(selectedSection === id) &&
-            <div>
-                <SectionButtonBar />
+            <div className="section-dashboard">
                 <DashBoardButton />
+                <SectionButtonBar />
+                <IndividualPostItNote />
             </div>}
     </div> )
     );
