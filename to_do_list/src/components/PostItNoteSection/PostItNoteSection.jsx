@@ -7,10 +7,11 @@ import {handleOnChangeKeyboardInput, handleOnFocusTextarea, handleOnClickToEnter
 import {SelectedContext} from '../../providers/SelectedProvider';
 import DashBoardButton from './Buttons/DashboardButton';
 import IndividualPostItNote from './IndividualPostItNote/IndividualPostItNote';
+import ItemsButtonBar from '../ItemsButtonBar/ItemsButtonBar';
 
 
 
-const PostItNoteSection = ({id, isInDeleteMode, arrayOfSections, setArrayOfSections, oneSectionIsEntered, setOneSectionIsEntered, selectedSection, setSelectedSection}) => {
+const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSections, setArrayOfSections, oneSectionIsEntered, setOneSectionIsEntered, selectedSection, setSelectedSection}) => {
     const [title, setTitle] = useState();
     const titleRef = useRef();
     const {isHoveringOver, handleCursorHoveringOver, handleCursorNotHoveringOver} = useCursorHover();
@@ -58,15 +59,23 @@ const PostItNoteSection = ({id, isInDeleteMode, arrayOfSections, setArrayOfSecti
         {(selectedSection === id) &&
             <div className="section-dashboard">
                 {!textareaIsSelected &&
-                    <DashBoardButton 
-                        setOneSectionIsEntered={setOneSectionIsEntered}
-                        setSelectedSection={setSelectedSection}/>
-                    
+                    <div>
+                        <DashBoardButton 
+                            setOneSectionIsEntered={setOneSectionIsEntered}
+                            setSelectedSection={setSelectedSection}/>
+                            
+                        <ItemsButtonBar 
+                            arrayOfItems={arrayOfIndividualPostItNotes}
+                            setArrayOfItems={setArrayOfIndividualPostItNotes}
+                            isInDeleteMode={isInDeleteMode}
+                            setIsInDeleteMode={setIsInDeleteMode}/>
+                    </div>
                 }
-                {arrayOfIndividualPostItNotes.map((singlePostItNote) => {
+
+                {arrayOfIndividualPostItNotes.map((singlePostItNote) => (
                     <IndividualPostItNote 
                         key={singlePostItNote.id}/>
-                })}
+                ))}
             </div>}
     </div> )
     );

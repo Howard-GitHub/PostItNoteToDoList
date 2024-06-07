@@ -30,6 +30,7 @@ const Dashboard = () => {
                         key={singlePostItNoteSection.id}
                         id={singlePostItNoteSection.id}
                         isInDeleteMode={isInDeleteMode}
+                        setIsInDeleteMode={setIsInDeleteMode}
                         arrayOfSections={arrayOfSections}
                         setArrayOfSections={setArrayOfSections}
                         oneSectionIsEntered={oneSectionIsEntered}
@@ -43,8 +44,7 @@ const Dashboard = () => {
                         arrayOfItems={arrayOfSections} 
                         setArrayOfItems={setArrayOfSections}
                         isInDeleteMode={isInDeleteMode}
-                        setIsInDeleteMode={setIsInDeleteMode}
-                        isNotOnScreen={oneSectionIsEntered}/>
+                        setIsInDeleteMode={setIsInDeleteMode}/>
                 }
             </div>
         </SelectedProvider>
