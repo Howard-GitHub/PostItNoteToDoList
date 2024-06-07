@@ -4,13 +4,13 @@ import './ItemsButtonBar.css';
 import AddNewItemButton from "./Buttons/AddNewItemButton";
 import DeleteItemButton from "./Buttons/DeleteItemButton";
 
-const ItemsButtonBar = ({arrayOfItems, setArrayOfItems, isInDeleteMode, setIsInDeleteMode, isNotOnScreen}) => {
+const ItemsButtonBar = ({arrayOfItems, setArrayOfItems, isInDeleteMode, setIsInDeleteMode}) => {
 
-    const {textareaIsSelected, oneSectionIsEntered} = useContext(SelectedContext);
+    const {textareaIsSelected} = useContext(SelectedContext);
 
     return ( 
         <div className="button-bar-container">
-            {(!textareaIsSelected && !oneSectionIsEntered) && 
+            {!textareaIsSelected && 
             <div 
                 className="button-bar">
                 <AddNewItemButton 

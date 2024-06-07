@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useContext, useState} from 'react';
 import PostItNoteSection from '../components/PostItNoteSection/PostItNoteSection';
 import ItemsButtonBar from '../components/ItemsButtonBar/ItemsButtonBar';
 import ExitDeleteItemModeButton from '../components/ExitDeleteItemModeButton/ExitDeleteItemModeButton';
@@ -38,7 +38,7 @@ const Dashboard = () => {
                         setSelectedSection={setSelectedSection}/>
                 ))}
 
-                {!isInDeleteMode &&
+                {(!isInDeleteMode && !oneSectionIsEntered) && 
                     <ItemsButtonBar
                         arrayOfItems={arrayOfSections} 
                         setArrayOfItems={setArrayOfSections}
