@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import PostItNoteSection from '../components/PostItNoteSection/PostItNoteSection';
-import ButtonBar from '../components/ButtonBar/ButtonBar';
-import ExitDeleteSectionModeButton from '../components/ExitDeleteSectionModeButton/ExitDeleteSectionModeButton';
+import ItemsButtonBar from '../components/ItemsButtonBar/ItemsButtonBar';
+import ExitDeleteItemModeButton from '../components/ExitDeleteItemModeButton/ExitDeleteItemModeButton';
 import {initialPostItNoteSection} from '../utils/ModifyArrayUtils';
 import {SelectedProvider} from '../providers/SelectedProvider';
 import './Dashboard.css';
@@ -12,13 +12,14 @@ const Dashboard = () => {
     // contain one or more individual post it notes
     const [arrayOfSections, setArrayOfSections] = useState([initialPostItNoteSection]);
     const [isInDeleteMode, setIsInDeleteMode] = useState(false);
-    
+    const [oneSectionIsEntered, setOneSectionIsEntered] = useState(false);
+    const [selectedSection, setSelectedSection] = useState(null);
 
     return ( 
         <SelectedProvider>
             <div className="dashboard-container">
                 {isInDeleteMode && 
-                    <ExitDeleteSectionModeButton 
+                    <ExitDeleteItemModeButton 
                         setIsInDeleteMode={setIsInDeleteMode}
                         arrayOfSections={arrayOfSections}
                         setArrayOfSections={setArrayOfSections}/>
@@ -30,15 +31,20 @@ const Dashboard = () => {
                         id={singlePostItNoteSection.id}
                         isInDeleteMode={isInDeleteMode}
                         arrayOfSections={arrayOfSections}
-                        setArrayOfSections={setArrayOfSections}/>
+                        setArrayOfSections={setArrayOfSections}
+                        oneSectionIsEntered={oneSectionIsEntered}
+                        setOneSectionIsEntered={setOneSectionIsEntered}
+                        selectedSection={selectedSection}
+                        setSelectedSection={setSelectedSection}/>
                 ))}
 
                 {!isInDeleteMode &&
-                    <ButtonBar 
-                        arrayOfSections={arrayOfSections} 
-                        setArrayOfSections={setArrayOfSections}
+                    <ItemsButtonBar
+                        arrayOfItems={arrayOfSections} 
+                        setArrayOfItems={setArrayOfSections}
                         isInDeleteMode={isInDeleteMode}
-                        setIsInDeleteMode={setIsInDeleteMode}/>
+                        setIsInDeleteMode={setIsInDeleteMode}
+                        isNotOnScreen={oneSectionIsEntered}/>
                 }
             </div>
         </SelectedProvider>

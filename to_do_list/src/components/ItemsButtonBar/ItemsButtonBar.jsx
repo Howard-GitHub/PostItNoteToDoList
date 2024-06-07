@@ -1,10 +1,10 @@
 import {useContext} from 'react';
 import {SelectedContext} from '../../providers/SelectedProvider';
-import './ButtonBar.css';
-import AddNewSectionButton from "./Buttons/AddNewSectionButton";
-import DeleteSectionButton from "./Buttons/DeleteSectionButton";
+import './ItemsButtonBar.css';
+import AddNewItemButton from "./Buttons/AddNewItemButton";
+import DeleteItemButton from "./Buttons/DeleteItemButton";
 
-const ButtonBar = ({arrayOfSections, setArrayOfSections, isInDeleteMode, setIsInDeleteMode}) => {
+const ItemsButtonBar = ({arrayOfItems, setArrayOfItems, isInDeleteMode, setIsInDeleteMode, isNotOnScreen}) => {
 
     const {textareaIsSelected, oneSectionIsEntered} = useContext(SelectedContext);
 
@@ -13,10 +13,10 @@ const ButtonBar = ({arrayOfSections, setArrayOfSections, isInDeleteMode, setIsIn
             {(!textareaIsSelected && !oneSectionIsEntered) && 
             <div 
                 className="button-bar">
-                <AddNewSectionButton 
-                    arrayOfSections={arrayOfSections} 
-                    setArrayOfSections={setArrayOfSections}/>
-                <DeleteSectionButton 
+                <AddNewItemButton 
+                    arrayOfItems={arrayOfItems} 
+                    setArrayOfItems={setArrayOfItems}/>
+                <DeleteItemButton 
                     isInDeleteMode={isInDeleteMode}
                     setIsInDeleteMode={setIsInDeleteMode}/>
             </div>
@@ -25,4 +25,4 @@ const ButtonBar = ({arrayOfSections, setArrayOfSections, isInDeleteMode, setIsIn
      );
 }
  
-export default ButtonBar;
+export default ItemsButtonBar;

@@ -1,15 +1,15 @@
 import useCursorHover from '../../../hooks/useCursorHover';
 import {handleOnClickAddNewItem} from '../../../utils/ModifyArrayUtils';
-import './AddNewSectionButton.css';
+import './AddNewItemButton.css';
 
-const AddNewSectionButton = ({arrayOfSections, setArrayOfSections}) => {
+const AddNewItemButton = ({arrayOfItems, setArrayOfItems}) => {
     const {isHoveringOver, handleCursorHoveringOver, handleCursorNotHoveringOver} = useCursorHover();
 
     return ( 
-        <div className="add-new-section-container">
+        <div className="add-new-item-container">
             <div 
-                className={isHoveringOver ? "add-new-section-button cursor-enter" : "add-new-section-button cursor-leave"}
-                onClick={() => handleOnClickAddNewItem(arrayOfSections, setArrayOfSections)}
+                className={isHoveringOver ? "add-new-item-button cursor-enter" : "add-new-item-button cursor-leave"}
+                onClick={() => handleOnClickAddNewItem(arrayOfItems, setArrayOfItems)}
                 onMouseEnter={handleCursorHoveringOver}
                 onMouseLeave={handleCursorNotHoveringOver}>
                 +
@@ -18,4 +18,4 @@ const AddNewSectionButton = ({arrayOfSections, setArrayOfSections}) => {
     );
 }
  
-export default AddNewSectionButton;
+export default AddNewItemButton;

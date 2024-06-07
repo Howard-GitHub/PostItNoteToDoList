@@ -11,13 +11,11 @@ import IndividualPostItNote from './IndividualPostItNote/IndividualPostItNote';
 
 
 
-const PostItNoteSection = ({id, isInDeleteMode, arrayOfSections, setArrayOfSections}) => {
+const PostItNoteSection = ({id, isInDeleteMode, arrayOfSections, setArrayOfSections, oneSectionIsEntered, setOneSectionIsEntered, selectedSection, setSelectedSection}) => {
     const [title, setTitle] = useState();
     const titleRef = useRef();
     const {isHoveringOver, handleCursorHoveringOver, handleCursorNotHoveringOver} = useCursorHover();
-    const {selectedItem, setSelectedItem, 
-           oneSectionIsEntered, setOneSectionIsEntered,
-           selectedSection, setSelectedSection,
+    const {selectedItem, setSelectedItem,
            textareaIsSelected, setTextareaIsSelected} = useContext(SelectedContext);
  
 
@@ -60,7 +58,9 @@ const PostItNoteSection = ({id, isInDeleteMode, arrayOfSections, setArrayOfSecti
         {(selectedSection === id) &&
             <div className="section-dashboard">
                 {!textareaIsSelected &&
-                    <DashBoardButton />
+                    <DashBoardButton 
+                        setOneSectionIsEntered={setOneSectionIsEntered}
+                        setSelectedSection={setSelectedSection}/>
                 }
                 <SectionButtonBar />
                 <IndividualPostItNote />

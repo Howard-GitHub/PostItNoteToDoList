@@ -33,7 +33,7 @@ export const handleOnClickToEnterSection = (id, setOneSectionIsEntered, setSelec
 }
 
 // Returns to dashboard
-export const handleOnClickToDashboard = (setOneSectionIsentered, setSelectedSection) => {
-    setOneSectionIsentered(false);
+export const handleOnClickToDashboard = (setOneSectionIsEntered, setSelectedSection) => {
+    setOneSectionIsEntered(false);
     setSelectedSection(null);
 }

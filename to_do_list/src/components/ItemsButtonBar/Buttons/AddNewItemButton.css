@@ -1,4 +1,4 @@
-.add-new-section-button {
+.add-new-item-button {
     position: relative;
     display: flex;
     text-align: center;
@@ -16,10 +16,10 @@
     left: 10px;
 }
 
-.add-new-section-button.cursor-enter {
+.add-new-item-button.cursor-enter {
     background-color: antiquewhite;
 }
 
-.add-new-section-button.cursor-enter {
+.add-new-item-button.cursor-enter {
     background-color: rgb(255, 210, 152);
 }

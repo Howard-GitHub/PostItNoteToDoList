@@ -1,4 +1,4 @@
-.delete-section-button {
+.delete-item-button {
     position: relative;
     display: flex;
     text-align: center;
@@ -16,10 +16,10 @@
     left: 20px;
 }
 
-.delete-section-button.cursor-enter {
+.delete-item-button.cursor-enter {
     background-color: rgb(255, 210, 152);
 }
 
-.delete-section-button.cursor-leave {
+.delete-item-button.cursor-leave {
     background-color: antiquewhite;
 }
