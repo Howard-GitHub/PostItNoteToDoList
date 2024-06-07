@@ -5,7 +5,6 @@ import DoneEditingButton from './Buttons/DoneEditingButton';
 import useCursorHover from '../../hooks/useCursorHover';
 import {handleOnChangeKeyboardInput, handleOnFocusTextarea, handleOnClickToEnterSection} from '../../utils/SectionUtils';
 import {SelectedContext} from '../../providers/SelectedProvider';
-import SectionButtonBar from './SectionButtonBar/SectionButtonBar';
 import DashBoardButton from './Buttons/DashboardButton';
 import IndividualPostItNote from './IndividualPostItNote/IndividualPostItNote';
 
@@ -62,7 +61,6 @@ const PostItNoteSection = ({id, isInDeleteMode, arrayOfSections, setArrayOfSecti
                         setOneSectionIsEntered={setOneSectionIsEntered}
                         setSelectedSection={setSelectedSection}/>
                 }
-                <SectionButtonBar />
                 <IndividualPostItNote />
             </div>}
     </div> )
