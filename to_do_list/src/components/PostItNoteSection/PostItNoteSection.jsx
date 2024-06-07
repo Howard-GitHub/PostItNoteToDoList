@@ -14,6 +14,7 @@ const PostItNoteSection = ({id, isInDeleteMode, arrayOfSections, setArrayOfSecti
     const [title, setTitle] = useState();
     const titleRef = useRef();
     const {isHoveringOver, handleCursorHoveringOver, handleCursorNotHoveringOver} = useCursorHover();
+    const [arrayOfIndividualPostItNotes, setArrayOfIndividualPostItNotes] = useState([]);
     const {selectedItem, setSelectedItem,
            textareaIsSelected, setTextareaIsSelected} = useContext(SelectedContext);
  
@@ -60,8 +61,12 @@ const PostItNoteSection = ({id, isInDeleteMode, arrayOfSections, setArrayOfSecti
                     <DashBoardButton 
                         setOneSectionIsEntered={setOneSectionIsEntered}
                         setSelectedSection={setSelectedSection}/>
+                    
                 }
-                <IndividualPostItNote />
+                {arrayOfIndividualPostItNotes.map((singlePostItNote) => {
+                    <IndividualPostItNote 
+                        key={singlePostItNote.id}/>
+                })}
             </div>}
     </div> )
     );
