@@ -32,7 +32,7 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
                         className={isHoveringOver ? "select-to-delete cursor-enter" : "select-to-delete cursor-leave"}
                         onMouseEnter={handleCursorHoveringOver}
                         onMouseLeave={handleCursorNotHoveringOver}
-                        onClick={() => handleOnClickToDeleteItem(id, isInDeleteMode, arrayOfSections, setArrayOfSections)}/>}
+                        onClick={() => handleOnClickToDeleteItem(id, arrayOfSections, setArrayOfSections)}/>}
 
                 {((selectedItem !== id) && (selectedItem !== null)) && 
                     <div className="block-from-selecting"/>}

@@ -14,7 +14,7 @@ const IndividualPostItNote = ({id, isInDeleteMode, arrayOfIndividualPostItNotes,
                         className={isHoveringOver ? "select-to-delete cursor-enter" : "select-to-delete cursor-leave"}
                         onMouseEnter={handleCursorHoveringOver}
                         onMouseLeave={handleCursorNotHoveringOver}
-                        onClick={() => handleOnClickToDeleteItem(id, isInDeleteMode, arrayOfIndividualPostItNotes, setArrayOfIndividualPostItNotes)}/>}
+                        onClick={() => handleOnClickToDeleteItem(id, arrayOfIndividualPostItNotes, setArrayOfIndividualPostItNotes)}/>}
             </div>
         </div>
     );

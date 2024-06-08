@@ -19,11 +19,9 @@ export const handleOnClickToEnterDeleteMode = (setIsInDeleteMode) => {
 }
 
 // Deletes the post it note section the user clicks on
-export const handleOnClickToDeleteItem = (id, isInDeleteMode, arrayOfItems, setArrayOfItems) => {
-    if (isInDeleteMode) {
-        const newArray = arrayOfItems.filter((arrayOfItems) => arrayOfItems.id !== id)
-        setArrayOfItems(newArray);
-    }
+export const handleOnClickToDeleteItem = (id, arrayOfItems, setArrayOfItems) => {
+    const newArray = arrayOfItems.filter((arrayOfItems) => arrayOfItems.id !== id)
+    setArrayOfItems(newArray);
 }
 
 // Exits delete mode
