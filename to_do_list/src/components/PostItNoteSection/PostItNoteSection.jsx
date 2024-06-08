@@ -60,9 +60,6 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
             <div className="section-dashboard">
                 {!textareaIsSelected &&
                     <div>
-                        <DashBoardButton 
-                            setOneSectionIsEntered={setOneSectionIsEntered}
-                            setSelectedSection={setSelectedSection}/>
 
                         {isInDeleteMode &&
                             <ExitDeleteItemModeButton 
@@ -70,11 +67,17 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
                         }
                             
                         {!isInDeleteMode && 
+                            <div>
+                            <DashBoardButton 
+                                setOneSectionIsEntered={setOneSectionIsEntered}
+                                setSelectedSection={setSelectedSection}/>
+                                
                             <ItemsButtonBar 
                                 arrayOfItems={arrayOfIndividualPostItNotes}
                                 setArrayOfItems={setArrayOfIndividualPostItNotes}
                                 isInDeleteMode={isInDeleteMode}
                                 setIsInDeleteMode={setIsInDeleteMode}/>
+                            </div>
                         }
                     </div>
                 }
