@@ -25,14 +25,13 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
     (!oneSectionIsEntered || (selectedSection === id)) && 
     (<div className="post-it-note-section-container">
         <div className="front-post-it-note-container">
-            <div 
-                className={(isHoveringOver && isInDeleteMode) ? "front-post-it-note cursor-enter" : "front-post-it-note cursor-leave"}
-                onMouseEnter={handleCursorHoveringOver}
-                onMouseLeave={handleCursorNotHoveringOver}>
+            <div className="front-post-it-note">
 
                 {(isInDeleteMode && !oneSectionIsEntered) &&
                     <div 
-                        className="select-to-delete"
+                        className={isHoveringOver ? "select-to-delete cursor-enter" : "select-to-delete cursor-leave"}
+                        onMouseEnter={handleCursorHoveringOver}
+                        onMouseLeave={handleCursorNotHoveringOver}
                         onClick={() => handleOnClickToDeleteItem(id, isInDeleteMode, arrayOfSections, setArrayOfSections)}/>}
 
                 {((selectedItem !== id) && (selectedItem !== null)) && 
@@ -86,7 +85,8 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
                         id={singlePostItNote.id}
                         isInDeleteMode={isInDeleteMode}
                         arrayOfIndividualPostItNotes={arrayOfIndividualPostItNotes}
-                        setArrayOfIndividualPostItNotes={setArrayOfIndividualPostItNotes}/>
+                        setArrayOfIndividualPostItNotes={setArrayOfIndividualPostItNotes}
+                        oneSectionIsEntered={oneSectionIsEntered}/>
                 ))}
             </div>}
     </div> )

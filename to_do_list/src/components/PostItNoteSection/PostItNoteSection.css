@@ -18,17 +18,6 @@
     box-sizing: border-box;
 }
 
-.front-post-it-note.cursor-enter {
-    border: 3px solid red;
-    box-shadow: 0px 0px 10px 2px red,
-                0px 15px 10px lightgray;
-    cursor: pointer;
-}
-
-.front-post-itnote.cursor-leave {
-    border: transparent;
-}
-
 .title {
     height: 35px;
     width: 330px;
@@ -53,6 +42,17 @@
     height: 350px;
     width: 350px;
     background-color: transparent;
+}
+
+.select-to-delete.cursor-enter {
+    border: 3px solid red;
+    box-shadow: 0px 0px 10px 2px red,
+                0px 15px 10px lightgray;
+    cursor: pointer;
+}
+
+.select-to-delete.cursor-leave {
+    border: transparent;
 }
 
 .block-from-selecting {
