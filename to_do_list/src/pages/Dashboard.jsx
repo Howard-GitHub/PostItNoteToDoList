@@ -1,4 +1,4 @@
-import {useContext, useState} from 'react';
+import {useState} from 'react';
 import PostItNoteSection from '../components/PostItNoteSection/PostItNoteSection';
 import ItemsButtonBar from '../components/ItemsButtonBar/ItemsButtonBar';
 import ExitDeleteItemModeButton from '../components/ExitDeleteItemModeButton/ExitDeleteItemModeButton';

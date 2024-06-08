@@ -8,6 +8,7 @@ import {SelectedContext} from '../../providers/SelectedProvider';
 import DashBoardButton from './Buttons/DashboardButton';
 import IndividualPostItNote from './IndividualPostItNote/IndividualPostItNote';
 import ItemsButtonBar from '../ItemsButtonBar/ItemsButtonBar';
+import ExitDeleteItemModeButton from '../ExitDeleteItemModeButton/ExitDeleteItemModeButton';
 
 
 
@@ -29,7 +30,7 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
                 onMouseEnter={handleCursorHoveringOver}
                 onMouseLeave={handleCursorNotHoveringOver}>
 
-                {isInDeleteMode &&
+                {(isInDeleteMode && !oneSectionIsEntered) &&
                     <div 
                         className="select-to-delete"
                         onClick={() => handleOnClickToDeleteItem(id, isInDeleteMode, arrayOfSections, setArrayOfSections)}/>}
@@ -63,18 +64,29 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
                         <DashBoardButton 
                             setOneSectionIsEntered={setOneSectionIsEntered}
                             setSelectedSection={setSelectedSection}/>
+
+                        {isInDeleteMode &&
+                            <ExitDeleteItemModeButton 
+                                setIsInDeleteMode={setIsInDeleteMode}/>
+                        }
                             
-                        <ItemsButtonBar 
-                            arrayOfItems={arrayOfIndividualPostItNotes}
-                            setArrayOfItems={setArrayOfIndividualPostItNotes}
-                            isInDeleteMode={isInDeleteMode}
-                            setIsInDeleteMode={setIsInDeleteMode}/>
+                        {!isInDeleteMode && 
+                            <ItemsButtonBar 
+                                arrayOfItems={arrayOfIndividualPostItNotes}
+                                setArrayOfItems={setArrayOfIndividualPostItNotes}
+                                isInDeleteMode={isInDeleteMode}
+                                setIsInDeleteMode={setIsInDeleteMode}/>
+                        }
                     </div>
                 }
 
                 {arrayOfIndividualPostItNotes.map((singlePostItNote) => (
                     <IndividualPostItNote 
-                        key={singlePostItNote.id}/>
+                        key={singlePostItNote.id}
+                        id={singlePostItNote.id}
+                        isInDeleteMode={isInDeleteMode}
+                        arrayOfIndividualPostItNotes={arrayOfIndividualPostItNotes}
+                        setArrayOfIndividualPostItNotes={setArrayOfIndividualPostItNotes}/>
                 ))}
             </div>}
     </div> )
