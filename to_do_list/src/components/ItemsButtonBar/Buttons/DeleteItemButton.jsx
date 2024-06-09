@@ -1,16 +1,16 @@
 import {handleOnClickToEnterDeleteMode} from '../../../utils/ModifyArrayUtils';
-import useCursorHover from '../../../hooks/useCursorHover';
+import useDetectMouseHoverOver from '../../../hooks/useDetectMouseHoverOver';
 import './DeleteItemButton.css';
 
 const DeleteItemButton = ({setIsInDeleteMode}) => {
-    const {isHoveringOver, handleCursorHoveringOver, handleCursorNotHoveringOver} = useCursorHover();
+    const {isHoveringOver, handleMouseEnterItem, handleMouseLeaveItem} = useDetectMouseHoverOver();
 
     return ( 
         <div className="delete-item-button-container">
             <div 
                 className={isHoveringOver ? "delete-item-button cursor-enter" : "delete-item-button cursor-leave"}
-                onMouseEnter={handleCursorHoveringOver}
-                onMouseLeave={handleCursorNotHoveringOver}
+                onMouseEnter={handleMouseEnterItem}
+                onMouseLeave={handleMouseLeaveItem}
                 onClick={() => handleOnClickToEnterDeleteMode(setIsInDeleteMode)}>
             </div>
 

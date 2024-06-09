@@ -2,7 +2,7 @@ import {useState, useContext, useRef} from 'react';
 import {handleOnClickToDeleteItem} from '../../utils/ModifyArrayUtils';
 import './PostItNoteSection.css'
 import DoneEditingButton from './Buttons/DoneEditingButton';
-import useCursorHover from '../../hooks/useCursorHover';
+import useDetectMouseHoverOver from '../../hooks/useDetectMouseHoverOver';
 import {handleOnChangeKeyboardInput, handleOnFocusTextarea, handleOnClickToEnterSection} from '../../utils/SectionUtils';
 import {SelectedContext} from '../../providers/SelectedProvider';
 import DashBoardButton from './Buttons/DashboardButton';
@@ -15,7 +15,7 @@ import ExitDeleteItemModeButton from '../ExitDeleteItemModeButton/ExitDeleteItem
 const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSections, setArrayOfSections, oneSectionIsEntered, setOneSectionIsEntered, selectedSection, setSelectedSection}) => {
     const [title, setTitle] = useState();
     const titleRef = useRef();
-    const {isHoveringOver, handleCursorHoveringOver, handleCursorNotHoveringOver} = useCursorHover();
+    const {isHoveringOver, handleMouseEnterItem, handleMouseLeaveItem} = useDetectMouseHoverOver();
     const [arrayOfIndividualPostItNotes, setArrayOfIndividualPostItNotes] = useState([]);
     const {selectedItem, setSelectedItem,
            textareaIsSelected, setTextareaIsSelected} = useContext(SelectedContext);
@@ -30,8 +30,8 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
                 {(isInDeleteMode && !oneSectionIsEntered) &&
                     <div 
                         className={isHoveringOver ? "select-to-delete cursor-enter" : "select-to-delete cursor-leave"}
-                        onMouseEnter={handleCursorHoveringOver}
-                        onMouseLeave={handleCursorNotHoveringOver}
+                        onMouseEnter={handleMouseEnterItem}
+                        onMouseLeave={handleMouseLeaveItem}
                         onClick={() => handleOnClickToDeleteItem(id, arrayOfSections, setArrayOfSections)}/>}
 
                 {((selectedItem !== id) && (selectedItem !== null)) && 
@@ -60,7 +60,6 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
             <div className="section-dashboard">
                 {!textareaIsSelected &&
                     <div>
-
                         {isInDeleteMode &&
                             <ExitDeleteItemModeButton 
                                 setIsInDeleteMode={setIsInDeleteMode}/>
@@ -68,15 +67,15 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
                             
                         {!isInDeleteMode && 
                             <div>
-                            <DashBoardButton 
-                                setOneSectionIsEntered={setOneSectionIsEntered}
-                                setSelectedSection={setSelectedSection}/>
-                                
-                            <ItemsButtonBar 
-                                arrayOfItems={arrayOfIndividualPostItNotes}
-                                setArrayOfItems={setArrayOfIndividualPostItNotes}
-                                isInDeleteMode={isInDeleteMode}
-                                setIsInDeleteMode={setIsInDeleteMode}/>
+                                <DashBoardButton 
+                                    setOneSectionIsEntered={setOneSectionIsEntered}
+                                    setSelectedSection={setSelectedSection}/>
+                                    
+                                <ItemsButtonBar 
+                                    arrayOfItems={arrayOfIndividualPostItNotes}
+                                    setArrayOfItems={setArrayOfIndividualPostItNotes}
+                                    isInDeleteMode={isInDeleteMode}
+                                    setIsInDeleteMode={setIsInDeleteMode}/>
                             </div>
                         }
                     </div>

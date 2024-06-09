@@ -1,9 +1,9 @@
 import './IndividualPostItNote.css';
 import {handleOnClickToDeleteItem} from '../../../utils/ModifyArrayUtils';
-import useCursorHover from '../../../hooks/useCursorHover';
+import useDetectMouseHoverOver from '../../../hooks/useDetectMouseHoverOver';
 
 const IndividualPostItNote = ({id, isInDeleteMode, arrayOfIndividualPostItNotes, setArrayOfIndividualPostItNotes, oneSectionIsEntered}) => {
-    const {isHoveringOver, handleCursorHoveringOver, handleCursorNotHoveringOver} = useCursorHover();
+    const {isHoveringOver, handleMouseEnterItem, handleMouseLeaveItem} = useDetectMouseHoverOver();
     
     return ( 
         <div className="individual-post-it-note-container">
@@ -12,8 +12,8 @@ const IndividualPostItNote = ({id, isInDeleteMode, arrayOfIndividualPostItNotes,
                 {(isInDeleteMode && oneSectionIsEntered) &&
                     <div 
                         className={isHoveringOver ? "select-to-delete cursor-enter" : "select-to-delete cursor-leave"}
-                        onMouseEnter={handleCursorHoveringOver}
-                        onMouseLeave={handleCursorNotHoveringOver}
+                        onMouseEnter={handleMouseEnterItem}
+                        onMouseLeave={handleMouseLeaveItem}
                         onClick={() => handleOnClickToDeleteItem(id, arrayOfIndividualPostItNotes, setArrayOfIndividualPostItNotes)}/>}
             </div>
         </div>
