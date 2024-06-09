@@ -1,19 +1,16 @@
 import {useState, useContext, useRef} from 'react';
-import {handleOnClickToDeleteItem} from '../../utils/ModifyArrayUtils';
 import './PostItNoteSection.css'
 import DoneEditingButton from './Buttons/DoneEditingButton';
-import useDetectMouseHoverOver from '../../hooks/useDetectMouseHoverOver';
-import {handleOnChangeKeyboardInput, handleOnFocusTextarea, handleOnClickToEnterSection} from '../../utils/SectionUtils';
 import {SelectedContext} from '../../providers/SelectedProvider';
 import IndividualPostItNote from './IndividualPostItNote/IndividualPostItNote';
 import SectionButtons from './SectionButtons';
+import PostItNoteTitle from './PostItNoteTitle/PostItNoteTitle';
 
 
 
 const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSections, setArrayOfSections, oneSectionIsEntered, setOneSectionIsEntered, selectedSection, setSelectedSection}) => {
     const [title, setTitle] = useState();
     const titleRef = useRef();
-    const {isHoveringOver, handleMouseEnterItem, handleMouseLeaveItem} = useDetectMouseHoverOver();
     const [arrayOfIndividualPostItNotes, setArrayOfIndividualPostItNotes] = useState([]);
     const {selectedItem, setSelectedItem,
            textareaIsSelected, setTextareaIsSelected} = useContext(SelectedContext);
@@ -23,33 +20,24 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
     (!oneSectionIsEntered || (selectedSection === id)) && 
     (<div className="post-it-note-section-container">
         <div className="front-post-it-note-container">
-            <div className="front-post-it-note">
 
-                {(isInDeleteMode && !oneSectionIsEntered) &&
-                    <div 
-                        className={isHoveringOver ? "select-to-delete cursor-enter" : "select-to-delete cursor-leave"}
-                        onMouseEnter={handleMouseEnterItem}
-                        onMouseLeave={handleMouseLeaveItem}
-                        onClick={() => handleOnClickToDeleteItem(id, arrayOfSections, setArrayOfSections)}/>}
-
-                {((selectedItem !== id) && (selectedItem !== null)) && 
-                    <div className="block-from-selecting"/>}
-
-                {((!oneSectionIsEntered && !isInDeleteMode) && 
-                    <div 
-                        className="select-to-enter-section"
-                        onClick={() => handleOnClickToEnterSection(id, setOneSectionIsEntered, setSelectedSection)}/>)}
-
-                <textarea
-                    className="title"
-                    ref={titleRef}
-                    value={title}
-                    onChange={(event) => handleOnChangeKeyboardInput(event, titleRef, setTitle)}
-                    placeholder="Untitled"
-                    onFocus={() => handleOnFocusTextarea(id, selectedItem, setSelectedItem, setTextareaIsSelected)}/>
-            </div>
-
-            {(textareaIsSelected && (selectedItem == id)) &&
+            <PostItNoteTitle
+                id={id}
+                titleRef={titleRef}
+                isInDeleteMode={isInDeleteMode}
+                oneSectionIsEntered={oneSectionIsEntered}
+                arrayOfSections={arrayOfSections}
+                setArrayOfSections={setArrayOfSections}
+                selectedItem={selectedItem}
+                setSelectedItem={setSelectedItem}
+                setOneSectionIsEntered={setOneSectionIsEntered}
+                setSelectedSection={setSelectedSection}
+                setTextareaIsSelected={setTextareaIsSelected}
+                title={title}
+                setTitle={setTitle}
+            />    
+                
+            {(textareaIsSelected && (selectedItem === id)) &&
                 <DoneEditingButton 
                     setTextareaIsSelected={setTextareaIsSelected}/>}
         </div>

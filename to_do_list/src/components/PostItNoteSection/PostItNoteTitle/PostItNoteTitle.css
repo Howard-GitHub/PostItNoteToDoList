@@ -1,0 +1,64 @@
+.title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+    width: 350px;
+    background-color: lightpink;
+    box-shadow: 0px 15px 10px lightgray;
+    box-sizing: border-box;
+}
+
+
+.title {
+    height: 35px;
+    width: 330px;
+    font-size: 30px;
+    max-height: 345px;
+    text-align: center;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    overflow: hidden;
+    resize: none;
+    font-family: 'Comic Sans MS';
+    color: black;
+}
+
+
+.title::placeholder {
+    color: black;
+}
+
+.select-to-delete {
+    position: absolute;
+    height: 350px;
+    width: 350px;
+    background-color: transparent;
+}
+
+.select-to-delete.cursor-enter {
+    border: 3px solid red;
+    box-shadow: 0px 0px 10px 2px red,
+                0px 15px 10px lightgray;
+    cursor: pointer;
+}
+
+.select-to-delete.cursor-leave {
+    border: transparent;
+}
+
+.block-from-selecting {
+    position: absolute;
+    height: 350px;
+    width: 350px;
+    background-color: transparent;
+}
+
+.select-to-enter-section {
+    position: absolute;
+    height: 350px;
+    width: 350px;
+    background-color: transparent;
+    cursor: pointer;
+}
