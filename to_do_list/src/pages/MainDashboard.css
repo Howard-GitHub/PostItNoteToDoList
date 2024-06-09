@@ -2,7 +2,7 @@ body {
     background-color: rgb(252, 242, 228);
 }
 
-.dashboard-container {
+.main-dashboard-container {
     position: absolute;
     display: flex;
     top: 50px;

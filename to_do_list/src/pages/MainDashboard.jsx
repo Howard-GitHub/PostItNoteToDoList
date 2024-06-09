@@ -4,9 +4,9 @@ import ItemsButtonBar from '../components/ItemsButtonBar/ItemsButtonBar';
 import ExitDeleteItemModeButton from '../components/ExitDeleteItemModeButton/ExitDeleteItemModeButton';
 import {initialPostItNoteSection} from '../utils/ModifyArrayUtils';
 import {SelectedProvider} from '../providers/SelectedProvider';
-import './Dashboard.css';
+import './MainDashboard.css';
 
-const Dashboard = () => {
+const MainDashboard = () => {
 
     // Contains the post it note section. A post it note section contains multiple post it notes or "a section of post it notes" and is supposed to
     // contain one or more individual post it notes
@@ -17,7 +17,7 @@ const Dashboard = () => {
 
     return ( 
         <SelectedProvider>
-            <div className="dashboard-container">
+            <div className="main-dashboard-container">
                 {isInDeleteMode && 
                     <ExitDeleteItemModeButton 
                         setIsInDeleteMode={setIsInDeleteMode}
@@ -51,4 +51,4 @@ const Dashboard = () => {
     );
 }
  
-export default Dashboard;
+export default MainDashboard;
