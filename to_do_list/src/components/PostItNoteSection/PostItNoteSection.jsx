@@ -5,10 +5,8 @@ import DoneEditingButton from './Buttons/DoneEditingButton';
 import useDetectMouseHoverOver from '../../hooks/useDetectMouseHoverOver';
 import {handleOnChangeKeyboardInput, handleOnFocusTextarea, handleOnClickToEnterSection} from '../../utils/SectionUtils';
 import {SelectedContext} from '../../providers/SelectedProvider';
-import DashBoardButton from './Buttons/DashboardButton';
 import IndividualPostItNote from './IndividualPostItNote/IndividualPostItNote';
-import ItemsButtonBar from '../ItemsButtonBar/ItemsButtonBar';
-import ExitDeleteItemModeButton from '../ExitDeleteItemModeButton/ExitDeleteItemModeButton';
+import SectionButtons from './SectionButtons';
 
 
 
@@ -56,31 +54,22 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
                     setTextareaIsSelected={setTextareaIsSelected}/>}
         </div>
 
+        <SectionButtons 
+            id={id}
+            textareaIsSelected={textareaIsSelected}
+            setTextareaIsSelected={setTextareaIsSelected}
+            selectedItem={selectedItem}
+            selectedSection={selectedSection}
+            setSelectedSection={setSelectedSection}
+            isInDeleteMode={isInDeleteMode}
+            setIsInDeleteMode={setIsInDeleteMode}
+            setOneSectionIsEntered={setOneSectionIsEntered}
+            arrayOfIndividualPostItNotes={arrayOfIndividualPostItNotes}
+            setArrayOfIndividualPostItNotes={setArrayOfIndividualPostItNotes}
+        />
+
         {(selectedSection === id) &&
             <div className="section-dashboard">
-                {!textareaIsSelected &&
-                    <div>
-                        {isInDeleteMode &&
-                            <ExitDeleteItemModeButton 
-                                setIsInDeleteMode={setIsInDeleteMode}/>
-                        }
-                            
-                        {!isInDeleteMode && 
-                            <div>
-                                <DashBoardButton 
-                                    setOneSectionIsEntered={setOneSectionIsEntered}
-                                    setSelectedSection={setSelectedSection}/>
-                                    
-                                <ItemsButtonBar 
-                                    arrayOfItems={arrayOfIndividualPostItNotes}
-                                    setArrayOfItems={setArrayOfIndividualPostItNotes}
-                                    isInDeleteMode={isInDeleteMode}
-                                    setIsInDeleteMode={setIsInDeleteMode}/>
-                            </div>
-                        }
-                    </div>
-                }
-
                 {arrayOfIndividualPostItNotes.map((singlePostItNote) => (
                     <IndividualPostItNote 
                         key={singlePostItNote.id}

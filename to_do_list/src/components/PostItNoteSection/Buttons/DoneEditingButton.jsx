@@ -5,7 +5,7 @@ import {SelectedContext} from '../../../providers/SelectedProvider';
 import {handleOnClickDoneButton} from '../../../utils/SectionUtils';
 
 const DoneEditingButton = ({setTextareaIsSelected}) => {
-    const {selectedItem, setSelectedItem} = useContext(SelectedContext);
+    const {setSelectedItem} = useContext(SelectedContext);
     const {isHoveringOver, handleMouseEnterItem, handleMouseLeaveItem} = useDetectMouseHoverOver();
 
     return ( 
