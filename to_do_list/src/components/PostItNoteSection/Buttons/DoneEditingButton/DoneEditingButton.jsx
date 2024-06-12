@@ -1,8 +1,8 @@
 import {useContext} from 'react';
-import useDetectMouseHoverOver from '../../../hooks/useDetectMouseHoverOver';
+import useDetectMouseHoverOver from '../../../../hooks/useDetectMouseHoverOver';
 import './DoneEditingButton.css';
-import {SelectedContext} from '../../../providers/SelectedProvider';
-import {handleOnClickDoneButton} from '../../../utils/SectionUtils';
+import {SelectedContext} from '../../../../providers/SelectedProvider';
+import {handleOnClickDoneButton} from '../../../../utils/SectionUtils';
 
 const DoneEditingButton = ({setTextareaIsSelected}) => {
     const {setSelectedItem} = useContext(SelectedContext);

@@ -1,7 +1,7 @@
 import './DashboardButton.css';
-import { handleOnClickToDashboard } from '../../../utils/SectionUtils';
+import {handleOnClickToDashboard} from '../../../../utils/SectionUtils';
 
-const DashBoardButton = ({setOneSectionIsEntered, setSelectedSection}) => {
+const DashboardButton = ({setOneSectionIsEntered, setSelectedSection}) => {
 
     return ( 
         <div className="dashboard-button-container">
@@ -16,4 +16,4 @@ const DashBoardButton = ({setOneSectionIsEntered, setSelectedSection}) => {
     );
 }
  
-export default DashBoardButton;
+export default DashboardButton;

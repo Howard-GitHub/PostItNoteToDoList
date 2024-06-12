@@ -1,5 +1,5 @@
-import useDetectMouseHoverOver from '../../../hooks/useDetectMouseHoverOver';
-import {handleOnClickAddNewItem} from '../../../utils/ModifyArrayUtils';
+import useDetectMouseHoverOver from '../../../../hooks/useDetectMouseHoverOver';
+import {handleOnClickAddNewItem} from '../../../../utils/ModifyArrayUtils';
 import './AddNewItemButton.css';
 
 const AddNewItemButton = ({arrayOfItems, setArrayOfItems}) => {

@@ -2,7 +2,7 @@ import {useState, useContext, useRef} from 'react';
 import './PostItNoteSection.css'
 import {SelectedContext} from '../../providers/SelectedProvider';
 import PostItNoteToDoList from './PostItNoteToDoList/PostItNoteToDoList';
-import SectionButtons from './SectionButtons';
+import SectionButtons from './SectionButtons/SectionButtons';
 import PostItNoteTitle from './PostItNoteTitle/PostItNoteTitle';
 
 

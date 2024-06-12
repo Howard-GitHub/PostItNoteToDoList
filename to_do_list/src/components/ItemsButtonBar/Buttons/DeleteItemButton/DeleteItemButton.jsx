@@ -1,5 +1,5 @@
-import {handleOnClickToEnterDeleteMode} from '../../../utils/ModifyArrayUtils';
-import useDetectMouseHoverOver from '../../../hooks/useDetectMouseHoverOver';
+import {handleOnClickToEnterDeleteMode} from '../../../../utils/ModifyArrayUtils';
+import useDetectMouseHoverOver from '../../../../hooks/useDetectMouseHoverOver';
 import './DeleteItemButton.css';
 
 const DeleteItemButton = ({setIsInDeleteMode}) => {

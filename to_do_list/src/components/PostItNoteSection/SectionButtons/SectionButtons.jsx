@@ -1,6 +1,6 @@
-import ExitDeleteItemModeButton from "../ExitDeleteItemModeButton/ExitDeleteItemModeButton";
-import DashBoardButton from "./Buttons/DashboardButton";
-import ItemsButtonBar from "../ItemsButtonBar/ItemsButtonBar";
+import ExitDeleteItemModeButton from "../../ExitDeleteItemModeButton/ExitDeleteItemModeButton";
+import DashboardButton from "../Buttons/DashboardButton/DashboardButton";
+import ItemsButtonBar from "../../ItemsButtonBar/ItemsButtonBar";
 
 const SectionButtons = ({id, textareaIsSelected, selectedSection, setSelectedSection, isInDeleteMode, setIsInDeleteMode, 
                         setOneSectionIsEntered, arrayOfPostItNoteToDoLists, setArrayOfPostItNoteToDoLists}) => {
@@ -16,7 +16,7 @@ const SectionButtons = ({id, textareaIsSelected, selectedSection, setSelectedSec
                             
                     {!isInDeleteMode && 
                         <div>
-                            <DashBoardButton 
+                            <DashboardButton 
                                 setOneSectionIsEntered={setOneSectionIsEntered}
                                 setSelectedSection={setSelectedSection}
                             />

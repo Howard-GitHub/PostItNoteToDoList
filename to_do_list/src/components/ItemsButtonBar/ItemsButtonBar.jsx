@@ -1,8 +1,8 @@
 import {useContext} from 'react';
 import {SelectedContext} from '../../providers/SelectedProvider';
 import './ItemsButtonBar.css';
-import AddNewItemButton from "./Buttons/AddNewItemButton";
-import DeleteItemButton from "./Buttons/DeleteItemButton";
+import AddNewItemButton from "./Buttons/AddNewItemButton/AddNewItemButton";
+import DeleteItemButton from "./Buttons/DeleteItemButton/DeleteItemButton";
 
 const ItemsButtonBar = ({arrayOfItems, setArrayOfItems, isInDeleteMode, setIsInDeleteMode}) => {
 
