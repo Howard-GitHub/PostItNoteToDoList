@@ -19,28 +19,26 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
     return (             
     (!oneSectionIsEntered || (selectedSection === id)) && 
     (<div className="post-it-note-section-container">
-        <div className="front-post-it-note-container">
 
-            <PostItNoteTitle
-                id={id}
-                titleRef={titleRef}
-                isInDeleteMode={isInDeleteMode}
-                oneSectionIsEntered={oneSectionIsEntered}
-                arrayOfSections={arrayOfSections}
-                setArrayOfSections={setArrayOfSections}
-                selectedItem={selectedItem}
-                setSelectedItem={setSelectedItem}
-                setOneSectionIsEntered={setOneSectionIsEntered}
-                setSelectedSection={setSelectedSection}
-                setTextareaIsSelected={setTextareaIsSelected}
-                title={title}
-                setTitle={setTitle}
-            />    
+        <PostItNoteTitle
+            id={id}
+            titleRef={titleRef}
+            isInDeleteMode={isInDeleteMode}
+            oneSectionIsEntered={oneSectionIsEntered}
+            arrayOfSections={arrayOfSections}
+            setArrayOfSections={setArrayOfSections}
+            selectedItem={selectedItem}
+            setSelectedItem={setSelectedItem}
+            setOneSectionIsEntered={setOneSectionIsEntered}
+            setSelectedSection={setSelectedSection}
+            setTextareaIsSelected={setTextareaIsSelected}
+            title={title}
+            setTitle={setTitle}
+        />    
                 
             {(textareaIsSelected && (selectedItem === id)) &&
                 <DoneEditingButton 
                     setTextareaIsSelected={setTextareaIsSelected}/>}
-        </div>
 
         <SectionButtons 
             id={id}

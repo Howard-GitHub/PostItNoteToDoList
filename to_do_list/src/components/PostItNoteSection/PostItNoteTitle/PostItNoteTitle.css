@@ -1,4 +1,9 @@
-.title-container {
+.outer-title-container {
+    position: relative;
+    padding: 30px;
+}
+
+.inner-title-container {
     display: flex;
     justify-content: center;
     align-items: center;
