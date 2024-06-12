@@ -3,7 +3,7 @@ import DashBoardButton from "./Buttons/DashboardButton";
 import ItemsButtonBar from "../ItemsButtonBar/ItemsButtonBar";
 
 const SectionButtons = ({id, textareaIsSelected, selectedSection, setSelectedSection, isInDeleteMode, setIsInDeleteMode, 
-                        setOneSectionIsEntered, arrayOfIndividualPostItNotes, setArrayOfIndividualPostItNotes}) => {
+                        setOneSectionIsEntered, arrayOfPostItNoteToDoLists, setArrayOfPostItNoteToDoLists}) => {
     return ( 
         <div className="section-buttons-container">
             {((selectedSection === id) && !textareaIsSelected) &&
@@ -22,8 +22,8 @@ const SectionButtons = ({id, textareaIsSelected, selectedSection, setSelectedSec
                             />
                                     
                             <ItemsButtonBar 
-                                arrayOfItems={arrayOfIndividualPostItNotes}
-                                setArrayOfItems={setArrayOfIndividualPostItNotes}
+                                arrayOfItems={arrayOfPostItNoteToDoLists}
+                                setArrayOfItems={setArrayOfPostItNoteToDoLists}
                                 isInDeleteMode={isInDeleteMode}
                                 setIsInDeleteMode={setIsInDeleteMode}
                             />

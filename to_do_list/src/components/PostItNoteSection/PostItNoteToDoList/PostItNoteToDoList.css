@@ -1,9 +1,9 @@
-.individual-post-it-note-container {
+.to-do-list-container {
     position: relative;
     padding: 30px;
 }
 
-.individual-post-it-note {
+.to-do-list {
     display: flex;
     justify-content: center;
     align-items: center;

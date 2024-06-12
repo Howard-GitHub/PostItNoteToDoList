@@ -1,8 +1,7 @@
 import {useState, useContext, useRef} from 'react';
 import './PostItNoteSection.css'
-import DoneEditingButton from './Buttons/DoneEditingButton';
 import {SelectedContext} from '../../providers/SelectedProvider';
-import IndividualPostItNote from './IndividualPostItNote/IndividualPostItNote';
+import PostItNoteToDoList from './PostItNoteToDoList/PostItNoteToDoList';
 import SectionButtons from './SectionButtons';
 import PostItNoteTitle from './PostItNoteTitle/PostItNoteTitle';
 
@@ -11,7 +10,7 @@ import PostItNoteTitle from './PostItNoteTitle/PostItNoteTitle';
 const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSections, setArrayOfSections, oneSectionIsEntered, setOneSectionIsEntered, selectedSection, setSelectedSection}) => {
     const [title, setTitle] = useState();
     const titleRef = useRef();
-    const [arrayOfIndividualPostItNotes, setArrayOfIndividualPostItNotes] = useState([]);
+    const [arrayOfPostItNoteToDoLists, setArrayOfPostItNoteToDoLists] = useState([]);
     const {selectedItem, setSelectedItem,
            textareaIsSelected, setTextareaIsSelected} = useContext(SelectedContext);
  
@@ -31,14 +30,11 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
             setSelectedItem={setSelectedItem}
             setOneSectionIsEntered={setOneSectionIsEntered}
             setSelectedSection={setSelectedSection}
+            textareaIsSelected={textareaIsSelected}
             setTextareaIsSelected={setTextareaIsSelected}
             title={title}
             setTitle={setTitle}
         />    
-                
-            {(textareaIsSelected && (selectedItem === id)) &&
-                <DoneEditingButton 
-                    setTextareaIsSelected={setTextareaIsSelected}/>}
 
         <SectionButtons 
             id={id}
@@ -50,22 +46,24 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
             isInDeleteMode={isInDeleteMode}
             setIsInDeleteMode={setIsInDeleteMode}
             setOneSectionIsEntered={setOneSectionIsEntered}
-            arrayOfIndividualPostItNotes={arrayOfIndividualPostItNotes}
-            setArrayOfIndividualPostItNotes={setArrayOfIndividualPostItNotes}
+            arrayOfPostItNoteToDoLists={arrayOfPostItNoteToDoLists}
+            setArrayOfPostItNoteToDoLists={setArrayOfPostItNoteToDoLists}
         />
 
         {(selectedSection === id) &&
-            <div className="section-dashboard">
-                {arrayOfIndividualPostItNotes.map((singlePostItNote) => (
-                    <IndividualPostItNote 
+            <div className="to-do-list-array-container">
+                {arrayOfPostItNoteToDoLists.map((singlePostItNote) => (
+                    <PostItNoteToDoList 
                         key={singlePostItNote.id}
                         id={singlePostItNote.id}
                         isInDeleteMode={isInDeleteMode}
-                        arrayOfIndividualPostItNotes={arrayOfIndividualPostItNotes}
-                        setArrayOfIndividualPostItNotes={setArrayOfIndividualPostItNotes}
-                        oneSectionIsEntered={oneSectionIsEntered}/>
+                        arrayOfPostItNoteToDoLists={arrayOfPostItNoteToDoLists}
+                        setArrayOfPostItNoteToDoLists={setArrayOfPostItNoteToDoLists}
+                        oneSectionIsEntered={oneSectionIsEntered}
+                    />
                 ))}
-            </div>}
+            </div>
+        }
     </div> )
     );
 }
