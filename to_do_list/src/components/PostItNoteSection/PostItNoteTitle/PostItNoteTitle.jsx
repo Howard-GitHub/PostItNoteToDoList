@@ -26,7 +26,7 @@ const PostItNoteTitle = ({id, titleRef, isInDeleteMode, oneSectionIsEntered, arr
                 }
 
 
-                {((selectedItem !== id) && (selectedItem !== null)) && 
+                {(((selectedItem !== id) && (selectedItem !== null)) || (oneSectionIsEntered && isInDeleteMode)) && 
                     <div className="block-from-selecting"/>
                 }
 
