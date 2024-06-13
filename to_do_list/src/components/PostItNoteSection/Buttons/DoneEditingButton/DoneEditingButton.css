@@ -12,6 +12,7 @@
     height: 30px;
     width: 150px;
     border-radius: 20px;
+    font-size: 15px;
 }
 
 .done-button.cursor-enter {
@@ -20,9 +21,4 @@
 
 .done-button.cursor-leave {
     background-color: white;
-}
-
-.done-editing-label {
-    cursor: pointer;
-    font-size: 15px;
 }

@@ -5,13 +5,11 @@ const DashboardButton = ({setOneSectionIsEntered, setSelectedSection}) => {
 
     return ( 
         <div className="dashboard-button-container">
-            <div 
+            <button 
                 className="dashboard-button"
                 onClick={() => handleOnClickToDashboard(setOneSectionIsEntered, setSelectedSection)}>
-                <label className="dashboard-label">
-                    {"< Dashboard"}
-                </label>
-            </div>
+                {"< Dashboard"}
+            </button>
         </div>
     );
 }

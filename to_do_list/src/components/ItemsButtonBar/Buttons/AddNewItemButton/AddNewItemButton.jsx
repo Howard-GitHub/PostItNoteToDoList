@@ -7,13 +7,13 @@ const AddNewItemButton = ({arrayOfItems, setArrayOfItems}) => {
 
     return ( 
         <div className="add-new-item-container">
-            <div 
+            <button 
                 className={isHoveringOver ? "add-new-item-button cursor-enter" : "add-new-item-button cursor-leave"}
                 onClick={() => handleOnClickAddNewItem(arrayOfItems, setArrayOfItems)}
                 onMouseEnter={handleMouseEnterItem}
                 onMouseLeave={handleMouseLeaveItem}>
                 +
-            </div>
+            </button>
         </div>
     );
 }

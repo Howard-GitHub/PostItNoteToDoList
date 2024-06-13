@@ -15,9 +15,7 @@ const DoneEditingButton = ({setTextareaIsSelected}) => {
                 onMouseEnter={handleMouseEnterItem}
                 onMouseLeave={handleMouseLeaveItem}
                 onClick={() => handleOnClickDoneButton(setSelectedItem, setTextareaIsSelected)}>
-                <label className="done-editing-label">
-                    Done Editing
-                </label>
+                Done Editing
             </button>
         </div>
     );

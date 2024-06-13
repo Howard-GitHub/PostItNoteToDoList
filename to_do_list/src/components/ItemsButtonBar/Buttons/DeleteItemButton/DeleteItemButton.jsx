@@ -7,12 +7,12 @@ const DeleteItemButton = ({setIsInDeleteMode}) => {
 
     return ( 
         <div className="delete-item-button-container">
-            <div 
+            <button 
                 className={isHoveringOver ? "delete-item-button cursor-enter" : "delete-item-button cursor-leave"}
                 onMouseEnter={handleMouseEnterItem}
                 onMouseLeave={handleMouseLeaveItem}
                 onClick={() => handleOnClickToEnterDeleteMode(setIsInDeleteMode)}>
-            </div>
+            </button>
 
         </div>
     );
