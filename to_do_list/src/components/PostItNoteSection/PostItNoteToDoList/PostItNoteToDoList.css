@@ -12,6 +12,8 @@
     background-color: lightpink;
     box-shadow: 0px 15px 10px lightgray;
     box-sizing: border-box;
+    overflow: auto;
+    overflow-x: hidden;
 }
 
 .select-to-delete {
@@ -30,4 +32,9 @@
 
 .select-to-delete.cursor-leave {
     border: transparent;
+}
+
+.checkboxes-container {
+    height: 350px;
+    width: 320px;
 }

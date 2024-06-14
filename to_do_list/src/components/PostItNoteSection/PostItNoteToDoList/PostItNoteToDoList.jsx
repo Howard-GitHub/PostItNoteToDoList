@@ -1,6 +1,7 @@
 import './PostItNoteToDoList.css';
 import {handleOnClickToDeleteItem} from '../../../utils/ModifyArrayUtils';
 import useDetectMouseHoverOver from '../../../hooks/useDetectMouseHoverOver';
+import ToDoTask from './ToDoTask/ToDoTask';
 
 const PostItNoteToDoList = ({id, isInDeleteMode, arrayOfPostItNoteToDoLists, setArrayOfPostItNoteToDoLists, oneSectionIsEntered}) => {
     const {isHoveringOver, handleMouseEnterItem, handleMouseLeaveItem} = useDetectMouseHoverOver();
@@ -14,7 +15,15 @@ const PostItNoteToDoList = ({id, isInDeleteMode, arrayOfPostItNoteToDoLists, set
                         className={isHoveringOver ? "select-to-delete cursor-enter" : "select-to-delete cursor-leave"}
                         onMouseEnter={handleMouseEnterItem}
                         onMouseLeave={handleMouseLeaveItem}
-                        onClick={() => handleOnClickToDeleteItem(id, arrayOfPostItNoteToDoLists, setArrayOfPostItNoteToDoLists)}/>}
+                        onClick={() => handleOnClickToDeleteItem(id, arrayOfPostItNoteToDoLists, setArrayOfPostItNoteToDoLists)}
+                    />
+                }
+                <div className="checkboxes-container">
+                    <ToDoTask/>
+                    <ToDoTask/>
+
+                </div> 
+
             </div>
         </div>
     );

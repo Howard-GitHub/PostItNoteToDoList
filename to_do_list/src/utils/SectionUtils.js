@@ -1,15 +1,15 @@
 // Changes the height of the textarea everytime a new line is added
-export const handleChangeTextareaHeight = (textareaRef) => {
+export const handleChangeTextareaHeight = (textareaRef, height) => {
     if (textareaRef.current) {
-        textareaRef.current.style.height = 'auto';
+        textareaRef.current.style.height = height;
         textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
     }
 }
 
 // Tracks and saves user input for the title of a post it note section
-export const handleOnChangeKeyboardInput = (event, textareaRef, setText) => {
+export const handleOnChangeKeyboardInput = (event, textareaRef, setText, height) => {
     setText(event.target.value);
-    handleChangeTextareaHeight(textareaRef);
+    handleChangeTextareaHeight(textareaRef, height);
 }
 
 // Identifies which post it note section textarea has been selected to be edited and prevents other post it note section textareas from becoming selected

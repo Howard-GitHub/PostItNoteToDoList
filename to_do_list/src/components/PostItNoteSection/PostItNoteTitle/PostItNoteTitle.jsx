@@ -42,7 +42,7 @@ const PostItNoteTitle = ({id, titleRef, isInDeleteMode, oneSectionIsEntered, arr
                     className="title"
                     ref={titleRef}
                     value={title}
-                    onChange={(event) => handleOnChangeKeyboardInput(event, titleRef, setTitle)}
+                    onChange={(event) => handleOnChangeKeyboardInput(event, titleRef, setTitle, '35px')}
                     placeholder="Untitled"
                     onFocus={() => handleOnFocusTextarea(id, selectedItem, setSelectedItem, setTextareaIsSelected)}
                 />
