@@ -37,3 +37,13 @@ export const handleOnClickToDashboard = (setOneSectionIsEntered, setSelectedSect
     setOneSectionIsEntered(false);
     setSelectedSection(null);
 }
+
+// Allows user to edit post it note section
+export const handleOnClickEditButton = (isInEditMode, setIsInEditMode) => {
+    if (isInEditMode) {
+        setIsInEditMode(false);
+    }
+    else {
+        setIsInEditMode(true);
+    }
+}

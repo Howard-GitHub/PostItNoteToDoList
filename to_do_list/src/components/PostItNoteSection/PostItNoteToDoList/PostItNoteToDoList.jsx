@@ -4,7 +4,7 @@ import useDetectMouseHoverOver from '../../../hooks/useDetectMouseHoverOver';
 import ToDoTask from './ToDoTask/ToDoTask';
 import {useState} from 'react';
 
-const PostItNoteToDoList = ({id, isInDeleteMode, arrayOfPostItNoteToDoLists, setArrayOfPostItNoteToDoLists, oneSectionIsEntered}) => {
+const PostItNoteToDoList = ({id, isInDeleteMode, arrayOfPostItNoteToDoLists, setArrayOfPostItNoteToDoLists, oneSectionIsEntered, isInEditMode}) => {
     const {isHoveringOver, handleMouseEnterItem, handleMouseLeaveItem} = useDetectMouseHoverOver();
     const [arrayOfTasks, setArrayOfTasks] = useState([]);
     
@@ -26,12 +26,14 @@ const PostItNoteToDoList = ({id, isInDeleteMode, arrayOfPostItNoteToDoLists, set
                             key={task.id}
                         />
                     ))}
-                    <button
-                        className="add-task-button"
-                        onClick={() => handleOnClickAddNewItem(arrayOfTasks, setArrayOfTasks)}
-                    >
-                        Add Task
-                    </button>
+                    {(isInEditMode && !isInDeleteMode) &&
+                        <button
+                            className="add-task-button"
+                            onClick={() => handleOnClickAddNewItem(arrayOfTasks, setArrayOfTasks)}
+                        >
+                            Add Task
+                        </button>
+                    }
                 </div> 
             </div>
         </div>

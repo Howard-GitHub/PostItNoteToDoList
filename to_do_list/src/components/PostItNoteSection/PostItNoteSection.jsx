@@ -8,7 +8,8 @@ import PostItNoteTitle from './PostItNoteTitle/PostItNoteTitle';
 
 
 const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSections, setArrayOfSections, oneSectionIsEntered, setOneSectionIsEntered, selectedSection, setSelectedSection}) => {
-    const [title, setTitle] = useState();
+    const [title, setTitle] = useState("");
+    const [isInEditMode, setIsInEditMode] = useState(false);
     const titleRef = useRef();
     const [arrayOfPostItNoteToDoLists, setArrayOfPostItNoteToDoLists] = useState([]);
     const {selectedItem, setSelectedItem,
@@ -48,6 +49,8 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
             setOneSectionIsEntered={setOneSectionIsEntered}
             arrayOfPostItNoteToDoLists={arrayOfPostItNoteToDoLists}
             setArrayOfPostItNoteToDoLists={setArrayOfPostItNoteToDoLists}
+            isInEditMode={isInEditMode}
+            setIsInEditMode={setIsInEditMode}
         />
 
         {(selectedSection === id) &&
@@ -60,6 +63,7 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
                         arrayOfPostItNoteToDoLists={arrayOfPostItNoteToDoLists}
                         setArrayOfPostItNoteToDoLists={setArrayOfPostItNoteToDoLists}
                         oneSectionIsEntered={oneSectionIsEntered}
+                        isInEditMode={isInEditMode}
                     />
                 ))}
             </div>

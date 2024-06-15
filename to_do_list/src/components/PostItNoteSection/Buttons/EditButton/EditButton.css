@@ -1,0 +1,10 @@
+.edit-button {
+    position: fixed;
+    color: blue;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    top: 7px;
+    right: 10px;
+    font-size: 20px;
+}
