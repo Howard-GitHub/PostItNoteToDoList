@@ -1,10 +1,12 @@
 import './PostItNoteToDoList.css';
-import {handleOnClickToDeleteItem} from '../../../utils/ModifyArrayUtils';
+import {handleOnClickAddNewItem, handleOnClickToDeleteItem} from '../../../utils/ModifyArrayUtils';
 import useDetectMouseHoverOver from '../../../hooks/useDetectMouseHoverOver';
 import ToDoTask from './ToDoTask/ToDoTask';
+import {useState} from 'react';
 
 const PostItNoteToDoList = ({id, isInDeleteMode, arrayOfPostItNoteToDoLists, setArrayOfPostItNoteToDoLists, oneSectionIsEntered}) => {
     const {isHoveringOver, handleMouseEnterItem, handleMouseLeaveItem} = useDetectMouseHoverOver();
+    const [arrayOfTasks, setArrayOfTasks] = useState([]);
     
     return ( 
         <div className="to-do-list-container">
@@ -19,11 +21,18 @@ const PostItNoteToDoList = ({id, isInDeleteMode, arrayOfPostItNoteToDoLists, set
                     />
                 }
                 <div className="checkboxes-container">
-                    <ToDoTask/>
-                    <ToDoTask/>
-
+                    {arrayOfTasks.map((task) => (
+                        <ToDoTask
+                            key={task.id}
+                        />
+                    ))}
+                    <button
+                        className="add-task-button"
+                        onClick={() => handleOnClickAddNewItem(arrayOfTasks, setArrayOfTasks)}
+                    >
+                        Add Task
+                    </button>
                 </div> 
-
             </div>
         </div>
     );
