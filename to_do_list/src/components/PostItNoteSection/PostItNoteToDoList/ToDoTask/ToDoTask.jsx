@@ -1,25 +1,18 @@
 import useDetectMouseHoverOver from '../../../../hooks/useDetectMouseHoverOver';
+import useDetectOnFocus from '../../../../hooks/useDetectOnFocus';
 import {handleOnChangeKeyboardInput} from '../../../../utils/SectionUtils';
 import './ToDoTask.css';
 import {useRef, useState} from "react";
 
 const ToDoTask = () => {
     const {isHoveringOver, handleMouseEnterItem, handleMouseLeaveItem} = useDetectMouseHoverOver();
+    const {isOnFocus, handleOnFocusTextarea, handleOnBlurTextarea} = useDetectOnFocus();
     const [taskIsChecked, setTaskIsChecked] = useState(false);
     const [task, setTask] = useState("");
-    const [isOnFocus, setIsOnFocus] = useState(false);
     const taskRef = useRef();
 
     const handleOnChangeCheckTask = () => {
         setTaskIsChecked(true);
-    }
-
-    const handleOnFocusTextarea = () => {
-        setIsOnFocus(true);
-    }
-
-    const handleOnBlurTextarea = () => {
-        setIsOnFocus(false);
     }
 
     return ( 

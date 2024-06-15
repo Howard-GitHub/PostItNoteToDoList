@@ -12,8 +12,7 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
     const [isInEditMode, setIsInEditMode] = useState(false);
     const titleRef = useRef();
     const [arrayOfPostItNoteToDoLists, setArrayOfPostItNoteToDoLists] = useState([]);
-    const {selectedItem, setSelectedItem,
-           textareaIsSelected, setTextareaIsSelected} = useContext(SelectedContext);
+    const {selectedItem, setSelectedItem} = useContext(SelectedContext);
  
 
     return (             
@@ -31,16 +30,13 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
             setSelectedItem={setSelectedItem}
             setOneSectionIsEntered={setOneSectionIsEntered}
             setSelectedSection={setSelectedSection}
-            textareaIsSelected={textareaIsSelected}
-            setTextareaIsSelected={setTextareaIsSelected}
             title={title}
             setTitle={setTitle}
+            isInEditMode={isInEditMode}
         />    
 
         <SectionButtons 
             id={id}
-            textareaIsSelected={textareaIsSelected}
-            setTextareaIsSelected={setTextareaIsSelected}
             selectedItem={selectedItem}
             selectedSection={selectedSection}
             setSelectedSection={setSelectedSection}

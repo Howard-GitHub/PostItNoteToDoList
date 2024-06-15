@@ -4,11 +4,9 @@ const SelectedContext = createContext();
 
 const SelectedProvider = ({children}) => {
 const [selectedItem, setSelectedItem] = useState(null);
-const [textareaIsSelected, setTextareaIsSelected] = useState(false);
     return ( 
         <SelectedContext.Provider 
-            value={{selectedItem, setSelectedItem,
-                    textareaIsSelected, setTextareaIsSelected}}>
+            value={{selectedItem, setSelectedItem}}>
             {children}
         </SelectedContext.Provider>
     );

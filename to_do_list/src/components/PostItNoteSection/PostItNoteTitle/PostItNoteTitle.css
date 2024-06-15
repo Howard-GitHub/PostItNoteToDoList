@@ -14,7 +14,6 @@
     box-sizing: border-box;
 }
 
-
 .title {
     height: 35px;
     width: 330px;
@@ -27,9 +26,7 @@
     overflow: hidden;
     resize: none;
     font-family: 'Comic Sans MS';
-    color: black;
 }
-
 
 .title::placeholder {
     color: black;

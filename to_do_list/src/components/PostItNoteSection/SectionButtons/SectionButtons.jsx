@@ -3,11 +3,11 @@ import DashboardButton from "../Buttons/DashboardButton/DashboardButton";
 import ItemsButtonBar from "../../ItemsButtonBar/ItemsButtonBar";
 import EditButton from "../Buttons/EditButton/EditButton";
 
-const SectionButtons = ({id, textareaIsSelected, selectedSection, setSelectedSection, isInDeleteMode, setIsInDeleteMode, 
+const SectionButtons = ({id, selectedSection, setSelectedSection, isInDeleteMode, setIsInDeleteMode, 
                         setOneSectionIsEntered, arrayOfPostItNoteToDoLists, setArrayOfPostItNoteToDoLists, isInEditMode, setIsInEditMode}) => {
     return ( 
         <div className="section-buttons-container">
-            {((selectedSection === id) && !textareaIsSelected) &&
+            {(selectedSection === id) &&
                 <div>
                     {isInDeleteMode &&
                         <ExitDeleteItemModeButton 
