@@ -6,7 +6,7 @@ import useDetectMouseHoverOver from '../../../hooks/useDetectMouseHoverOver';
 
 
 
-const PostItNoteTitle = ({id, titleRef, isInDeleteMode, oneSectionIsEntered, arrayOfSections, setArrayOfSections, selectedItem,
+const PostItNoteTitle = ({id, titleRef, isInDeleteMode, oneSectionIsEntered, arrayOfSections, setArrayOfSections,
                         setOneSectionIsEntered, setSelectedSection, title, setTitle, isInEditMode}) => {
 
     const {isHoveringOver, handleMouseEnterItem, handleMouseLeaveItem} = useDetectMouseHoverOver();
@@ -14,7 +14,7 @@ const PostItNoteTitle = ({id, titleRef, isInDeleteMode, oneSectionIsEntered, arr
     return ( 
         <div className="title-container">
             <div className="manage-section-container">
-                {(((selectedItem !== id) && (selectedItem !== null)) || (oneSectionIsEntered && (isInDeleteMode || !isInEditMode))) && 
+                {((oneSectionIsEntered && (isInDeleteMode || !isInEditMode))) && 
                     <div className="block-from-selecting"/>
                 }
                 {(isInDeleteMode && !oneSectionIsEntered) &&

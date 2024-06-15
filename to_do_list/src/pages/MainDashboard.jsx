@@ -3,7 +3,6 @@ import PostItNoteSection from '../components/PostItNoteSection/PostItNoteSection
 import ItemsButtonBar from '../components/ItemsButtonBar/ItemsButtonBar';
 import ExitDeleteItemModeButton from '../components/ExitDeleteItemModeButton/ExitDeleteItemModeButton';
 import {initialPostItNoteSection} from '../utils/ModifyArrayUtils';
-import {SelectedProvider} from '../providers/SelectedProvider';
 import './MainDashboard.css';
 
 const MainDashboard = () => {
@@ -16,7 +15,6 @@ const MainDashboard = () => {
     const [selectedSection, setSelectedSection] = useState(null);
 
     return ( 
-        <SelectedProvider>
             <div className="main-dashboard-container">
                 {isInDeleteMode && 
                     <ExitDeleteItemModeButton 
@@ -47,7 +45,6 @@ const MainDashboard = () => {
                         setIsInDeleteMode={setIsInDeleteMode}/>
                 }
             </div>
-        </SelectedProvider>
     );
 }
  

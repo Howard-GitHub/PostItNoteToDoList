@@ -1,6 +1,5 @@
-import {useState, useContext, useRef} from 'react';
+import {useState, useRef} from 'react';
 import './PostItNoteSection.css'
-import {SelectedContext} from '../../providers/SelectedProvider';
 import PostItNoteToDoList from './PostItNoteToDoList/PostItNoteToDoList';
 import SectionButtons from './SectionButtons/SectionButtons';
 import PostItNoteTitle from './PostItNoteTitle/PostItNoteTitle';
@@ -12,7 +11,6 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
     const [isInEditMode, setIsInEditMode] = useState(false);
     const titleRef = useRef();
     const [arrayOfPostItNoteToDoLists, setArrayOfPostItNoteToDoLists] = useState([]);
-    const {selectedItem, setSelectedItem} = useContext(SelectedContext);
  
 
     return (             
@@ -26,8 +24,6 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
             oneSectionIsEntered={oneSectionIsEntered}
             arrayOfSections={arrayOfSections}
             setArrayOfSections={setArrayOfSections}
-            selectedItem={selectedItem}
-            setSelectedItem={setSelectedItem}
             setOneSectionIsEntered={setOneSectionIsEntered}
             setSelectedSection={setSelectedSection}
             title={title}
@@ -37,7 +33,6 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
 
         <SectionButtons 
             id={id}
-            selectedItem={selectedItem}
             selectedSection={selectedSection}
             setSelectedSection={setSelectedSection}
             isInDeleteMode={isInDeleteMode}
