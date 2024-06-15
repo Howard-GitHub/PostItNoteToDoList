@@ -7,7 +7,16 @@ const EditButton = ({isInEditMode, setIsInEditMode}) => {
             <button 
                 className="edit-button"
                 onClick={() => handleOnClickEditButton(isInEditMode, setIsInEditMode)}>
-                Edit
+                {isInEditMode ? (
+                    <label className="edit-label">
+                        Done
+                    </label>
+                ):(
+                    <label className="edit-label">
+                        Edit
+                    </label>
+                )
+                }
             </button>
         </div>
     );
