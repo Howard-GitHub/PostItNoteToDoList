@@ -12,6 +12,25 @@ export const handleOnChangeKeyboardInput = (event, textareaRef, setText, height)
     handleChangeTextareaHeight(textareaRef, height);
 }
 
+// Changes height of component to be similar to the height of a textarea
+export const handleChangeComponentHeight = (componentRef, textareaRef) => {
+    let stringTextareaHeight;
+    let numericalTextareaHeight;
+    if (textareaRef.current) {
+        stringTextareaHeight = textareaRef.current.style.height;
+        numericalTextareaHeight = parseInt(stringTextareaHeight.replace("px", ""));
+
+        if (isNaN(numericalTextareaHeight)) {
+            // Default height if the user has not typed anything yet
+            componentRef.current.style.height = '35px';
+        }
+        else {
+            componentRef.current.style.height = `${numericalTextareaHeight + 5}px`;
+        }
+    }
+
+}
+
 // Enters selected post it note section
 export const handleOnClickToEnterSection = (id, setOneSectionIsEntered, setSelectedSection) => {
     setOneSectionIsEntered(true);
