@@ -31,3 +31,22 @@
 .task-name.cursor-leave {
     border: transparent;
 }
+
+.to-do-task-container .select-to-delete {
+        position: absolute;
+        width: 320px;
+        height: 30px;
+        border: 1px solid black;
+        transition: background-color ease 0.3s,
+                    opacity ease 0.3s;
+    }
+
+.to-do-task-container .select-to-delete.cursor-enter {
+        background-color: rgb(254, 0, 0);
+        opacity: 0.3;
+    }
+
+.to-do-task-container .select-to-delete.cursor-leave {
+        background-color: transparent;
+        opacity: 0;
+    }

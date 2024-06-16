@@ -24,6 +24,10 @@ const PostItNoteToDoList = ({id, isInDeleteMode, arrayOfPostItNoteToDoLists, set
                     {arrayOfTasks.map((task) => (
                         <ToDoTask
                             key={task.id}
+                            id={task.id}
+                            arrayOfTasks={arrayOfTasks}
+                            setArrayOfTasks={setArrayOfTasks}
+                            isInEditMode={isInEditMode}
                         />
                     ))}
                     {(isInEditMode && !isInDeleteMode) &&

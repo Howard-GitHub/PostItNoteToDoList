@@ -1,10 +1,11 @@
 import useDetectMouseHoverOver from '../../../../hooks/useDetectMouseHoverOver';
 import useDetectOnFocus from '../../../../hooks/useDetectOnFocus';
 import {handleOnChangeKeyboardInput} from '../../../../utils/SectionUtils';
+import SelectToDelete from '../../SelectToDelete/SelectToDelete';
 import './ToDoTask.css';
 import {useRef, useState} from "react";
 
-const ToDoTask = () => {
+const ToDoTask = ({id, arrayOfTasks, setArrayOfTasks, isInEditMode}) => {
     const {isHoveringOver, handleMouseEnterItem, handleMouseLeaveItem} = useDetectMouseHoverOver();
     const {isOnFocus, handleOnFocusTextarea, handleOnBlurTextarea} = useDetectOnFocus();
     const [taskIsChecked, setTaskIsChecked] = useState(false);
@@ -28,6 +29,14 @@ const ToDoTask = () => {
                 onFocus={handleOnFocusTextarea}
                 onBlur={handleOnBlurTextarea}
             />
+            
+            {!isInEditMode &&
+                <SelectToDelete 
+                    id={id}
+                    arrayOfItems={arrayOfTasks}
+                    setArrayOfItems={setArrayOfTasks}
+                />
+            }
         </div>
     );
 }

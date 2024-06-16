@@ -1,4 +1,4 @@
-import { handleOnClickEditButton } from '../../../../utils/SectionUtils';
+import {handleOnClickEditButton} from '../../../../utils/SectionUtils';
 import './EditButton.css';
 
 const EditButton = ({isInEditMode, setIsInEditMode}) => {
