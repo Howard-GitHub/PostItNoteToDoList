@@ -16,21 +16,21 @@
     overflow-x: hidden;
 }
 
-.select-to-delete {
+.to-do-list .select-to-delete {
     position: absolute;
     height: 350px;
     width: 350px;
     background-color: transparent;
 }
 
-.select-to-delete.cursor-enter {
+.to-do-list .select-to-delete.cursor-enter {
     border: 3px solid red;
     box-shadow: 0px 0px 10px 2px red,
                 0px 15px 10px lightgray;
     cursor: pointer;
 }
 
-.select-to-delete.cursor-leave {
+.to-do-list .select-to-delete.cursor-leave {
     border: transparent;
 }
 

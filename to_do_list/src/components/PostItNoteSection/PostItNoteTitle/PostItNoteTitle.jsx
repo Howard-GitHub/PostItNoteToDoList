@@ -1,16 +1,9 @@
 import {handleOnChangeKeyboardInput, handleOnClickToEnterSection} from '../../../utils/SectionUtils';
-import {handleOnClickToDeleteItem} from '../../../utils/ModifyArrayUtils';
 import './PostItNoteTitle.css';
-import useDetectMouseHoverOver from '../../../hooks/useDetectMouseHoverOver';
 import SelectToDelete from '../SelectToDelete/SelectToDelete';
-
-
-
 
 const PostItNoteTitle = ({id, titleRef, isInDeleteMode, oneSectionIsEntered, arrayOfSections, setArrayOfSections,
                         setOneSectionIsEntered, setSelectedSection, title, setTitle, isInEditMode}) => {
-
-    const {isHoveringOver, handleMouseEnterItem, handleMouseLeaveItem} = useDetectMouseHoverOver();
 
     return ( 
         <div className="title-container">
@@ -19,12 +12,12 @@ const PostItNoteTitle = ({id, titleRef, isInDeleteMode, oneSectionIsEntered, arr
                     <div className="block-from-selecting"/>
                 }
                 {(isInDeleteMode && !oneSectionIsEntered) &&
-                    <div 
-                        className={isHoveringOver ? "select-to-delete cursor-enter" : "select-to-delete cursor-leave"}
-                        onMouseEnter={handleMouseEnterItem}
-                        onMouseLeave={handleMouseLeaveItem}
-                        onClick={() => handleOnClickToDeleteItem(id, arrayOfSections, setArrayOfSections)}
-                    />
+                <SelectToDelete 
+                    id={id}
+                    arrayOfItems={arrayOfSections}
+                    setArrayOfItems={setArrayOfSections}
+                />
+
                 }
                 {((!oneSectionIsEntered && !isInDeleteMode) && 
                     <div 

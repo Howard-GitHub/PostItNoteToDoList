@@ -1,25 +1,16 @@
 import './PostItNoteToDoList.css';
-import {handleOnClickAddNewItem, handleOnClickToDeleteItem} from '../../../utils/ModifyArrayUtils';
-import useDetectMouseHoverOver from '../../../hooks/useDetectMouseHoverOver';
+import {handleOnClickAddNewItem} from '../../../utils/ModifyArrayUtils';
 import ToDoTask from './ToDoTask/ToDoTask';
 import {useState} from 'react';
+import SelectToDelete from '../SelectToDelete/SelectToDelete';
 
 const PostItNoteToDoList = ({id, isInDeleteMode, arrayOfPostItNoteToDoLists, setArrayOfPostItNoteToDoLists, oneSectionIsEntered, isInEditMode}) => {
-    const {isHoveringOver, handleMouseEnterItem, handleMouseLeaveItem} = useDetectMouseHoverOver();
     const [arrayOfTasks, setArrayOfTasks] = useState([]);
     
     return ( 
         <div className="to-do-list-container">
             <div 
                 className="to-do-list">
-                {(isInDeleteMode && oneSectionIsEntered) &&
-                    <div 
-                        className={isHoveringOver ? "select-to-delete cursor-enter" : "select-to-delete cursor-leave"}
-                        onMouseEnter={handleMouseEnterItem}
-                        onMouseLeave={handleMouseLeaveItem}
-                        onClick={() => handleOnClickToDeleteItem(id, arrayOfPostItNoteToDoLists, setArrayOfPostItNoteToDoLists)}
-                    />
-                }
                 <div className="checkboxes-container">
                     {arrayOfTasks.map((task) => (
                         <ToDoTask
@@ -39,6 +30,13 @@ const PostItNoteToDoList = ({id, isInDeleteMode, arrayOfPostItNoteToDoLists, set
                         </button>
                     }
                 </div> 
+                {(isInDeleteMode && oneSectionIsEntered) &&
+                    <SelectToDelete
+                        id={id}
+                        arrayOfItems={arrayOfPostItNoteToDoLists}
+                        setArrayOfItems={setArrayOfPostItNoteToDoLists}
+                    />
+                }
             </div>
         </div>
     );
