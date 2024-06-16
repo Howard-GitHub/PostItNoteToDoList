@@ -3,13 +3,9 @@ import useDetectMouseHoverOver from "../../../hooks/useDetectMouseHoverOver";
 import {handleOnClickToDeleteItem} from "../../../utils/ModifyArrayUtils";
 import {handleChangeComponentHeight} from "../../../utils/SectionUtils";
 
-const SelectToDelete = ({id, taskRef, arrayOfItems, setArrayOfItems}) => {
-    const deleteComponentRef = useRef();
+const SelectToDelete = ({id, deleteComponentRef, arrayOfItems, setArrayOfItems}) => {
     const {isHoveringOver, handleMouseEnterItem, handleMouseLeaveItem} = useDetectMouseHoverOver();
 
-    useEffect(() => {
-        handleChangeComponentHeight(deleteComponentRef, taskRef);
-    }, [])
 
     return (  
         <div 

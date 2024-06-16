@@ -16,7 +16,7 @@ export const handleOnChangeKeyboardInput = (event, textareaRef, setText, height)
 export const handleChangeComponentHeight = (componentRef, textareaRef) => {
     let stringTextareaHeight;
     let numericalTextareaHeight;
-    if (textareaRef.current) {
+    if (textareaRef.current && componentRef.current) {
         stringTextareaHeight = textareaRef.current.style.height;
         numericalTextareaHeight = parseInt(stringTextareaHeight.replace("px", ""));
 

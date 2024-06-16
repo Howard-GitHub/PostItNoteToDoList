@@ -2,6 +2,7 @@ import {handleOnChangeKeyboardInput, handleOnClickToEnterSection} from '../../..
 import {handleOnClickToDeleteItem} from '../../../utils/ModifyArrayUtils';
 import './PostItNoteTitle.css';
 import useDetectMouseHoverOver from '../../../hooks/useDetectMouseHoverOver';
+import SelectToDelete from '../SelectToDelete/SelectToDelete';
 
 
 

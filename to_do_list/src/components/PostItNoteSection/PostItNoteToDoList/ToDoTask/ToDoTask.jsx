@@ -3,18 +3,20 @@ import useDetectOnFocus from '../../../../hooks/useDetectOnFocus';
 import {handleOnChangeKeyboardInput} from '../../../../utils/SectionUtils';
 import SelectToDelete from '../../SelectToDelete/SelectToDelete';
 import './ToDoTask.css';
-import {useRef, useState} from "react";
+import {useRef, useState, useEffect} from "react";
+import {handleChangeComponentHeight} from '../../../../utils/SectionUtils';
 
 const ToDoTask = ({id, arrayOfTasks, setArrayOfTasks, isInEditMode}) => {
     const {isHoveringOver, handleMouseEnterItem, handleMouseLeaveItem} = useDetectMouseHoverOver();
     const {isOnFocus, handleOnFocusTextarea, handleOnBlurTextarea} = useDetectOnFocus();
-    const [taskIsChecked, setTaskIsChecked] = useState(false);
     const [task, setTask] = useState("");
     const taskRef = useRef();
+    const deleteComponentRef = useRef();
 
-    const handleOnChangeCheckTask = () => {
-        setTaskIsChecked(true);
-    }
+    useEffect(() => {
+        handleChangeComponentHeight(deleteComponentRef, taskRef);
+    }, [isInEditMode])
+
 
     return ( 
         <div className="to-do-task-container">
@@ -33,7 +35,7 @@ const ToDoTask = ({id, arrayOfTasks, setArrayOfTasks, isInEditMode}) => {
             {!isInEditMode &&
                 <SelectToDelete 
                     id={id}
-                    taskRef={taskRef}
+                    deleteComponentRef={deleteComponentRef}
                     arrayOfItems={arrayOfTasks}
                     setArrayOfItems={setArrayOfTasks}
                 />
