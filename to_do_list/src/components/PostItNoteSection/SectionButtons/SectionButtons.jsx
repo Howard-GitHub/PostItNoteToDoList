@@ -3,8 +3,8 @@ import DashboardButton from "../Buttons/DashboardButton/DashboardButton";
 import ItemsButtonBar from "../../ItemsButtonBar/ItemsButtonBar";
 import EditButton from "../Buttons/EditButton/EditButton";
 
-const SectionButtons = ({id, selectedSection, setSelectedSection, isInDeleteMode, setIsInDeleteMode, 
-                        setOneSectionIsEntered, arrayOfPostItNoteToDoLists, setArrayOfPostItNoteToDoLists, isInEditMode, setIsInEditMode}) => {
+const SectionButtons = ({id, selectedSection, setSelectedSection, isInDeleteMode, setIsInDeleteMode, setOneSectionIsEntered, arrayOfPostItNoteToDoLists, 
+                        setArrayOfPostItNoteToDoLists, isInEditMode, setIsInEditMode, handleOnClickAddNewItem}) => {
     return ( 
         <div className="section-buttons-container">
             {(selectedSection === id) &&
@@ -31,6 +31,7 @@ const SectionButtons = ({id, selectedSection, setSelectedSection, isInDeleteMode
                             setArrayOfItems={setArrayOfPostItNoteToDoLists}
                             isInDeleteMode={isInDeleteMode}
                             setIsInDeleteMode={setIsInDeleteMode}
+                            handleOnClickAddNewItem={handleOnClickAddNewItem}
                         />
                     }
                 </div>

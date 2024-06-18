@@ -1,11 +1,13 @@
 import './PostItNoteToDoList.css';
-import {handleOnClickAddNewItem} from '../../../utils/ModifyArrayUtils';
 import ToDoTask from './ToDoTask/ToDoTask';
 import {useState} from 'react';
 import SelectToDelete from '../SelectToDelete/SelectToDelete';
+import AddNewItemButton from '../../ItemsButtonBar/Buttons/AddNewItemButton/AddNewItemButton';
+import useLocalStoredArray from '../../../hooks/useLocalStoredArray';
 
 const PostItNoteToDoList = ({id, isInDeleteMode, arrayOfPostItNoteToDoLists, setArrayOfPostItNoteToDoLists, oneSectionIsEntered, isInEditMode}) => {
     const [arrayOfTasks, setArrayOfTasks] = useState([]);
+    const {handleOnClickAddNewItem} = useLocalStoredArray(id, arrayOfTasks, setArrayOfTasks);
     
     return ( 
         <div className="to-do-list-container">
@@ -22,12 +24,11 @@ const PostItNoteToDoList = ({id, isInDeleteMode, arrayOfPostItNoteToDoLists, set
                         />
                     ))}
                     {(isInEditMode && !isInDeleteMode) &&
-                        <button
-                            className="add-task-button"
-                            onClick={() => handleOnClickAddNewItem(arrayOfTasks, setArrayOfTasks)}
-                        >
-                            Add Task
-                        </button>
+                        <AddNewItemButton
+                            arrayOfItems={arrayOfTasks}
+                            setArrayOfItems={setArrayOfTasks}
+                            handleOnClickAddNewItem={handleOnClickAddNewItem}
+                        />
                     }
                 </div> 
                 {(isInDeleteMode && oneSectionIsEntered) &&

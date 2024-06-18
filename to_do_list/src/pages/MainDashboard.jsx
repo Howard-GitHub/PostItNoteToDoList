@@ -4,6 +4,7 @@ import ItemsButtonBar from '../components/ItemsButtonBar/ItemsButtonBar';
 import ExitDeleteItemModeButton from '../components/ExitDeleteItemModeButton/ExitDeleteItemModeButton';
 import {initialPostItNoteSection} from '../utils/ModifyArrayUtils';
 import './MainDashboard.css';
+import useLocalStoredArray from '../hooks/useLocalStoredArray';
 
 const MainDashboard = () => {
 
@@ -13,6 +14,8 @@ const MainDashboard = () => {
     const [isInDeleteMode, setIsInDeleteMode] = useState(false);
     const [oneSectionIsEntered, setOneSectionIsEntered] = useState(false);
     const [selectedSection, setSelectedSection] = useState(null);
+    const {handleOnClickAddNewItem} = useLocalStoredArray("mainDashboard", arrayOfSections, setArrayOfSections);
+
 
     return ( 
             <div className="main-dashboard-container">
@@ -42,7 +45,9 @@ const MainDashboard = () => {
                         arrayOfItems={arrayOfSections} 
                         setArrayOfItems={setArrayOfSections}
                         isInDeleteMode={isInDeleteMode}
-                        setIsInDeleteMode={setIsInDeleteMode}/>
+                        setIsInDeleteMode={setIsInDeleteMode}
+                        handleOnClickAddNewItem={handleOnClickAddNewItem}
+                    />
                 }
             </div>
     );
