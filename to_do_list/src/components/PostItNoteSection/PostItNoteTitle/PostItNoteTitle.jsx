@@ -13,6 +13,7 @@ const PostItNoteTitle = ({id, titleRef, isInDeleteMode, oneSectionIsEntered, arr
                 }
                 {(isInDeleteMode && !oneSectionIsEntered) &&
                 <SelectToDelete 
+                    type={"post-it-note"}
                     id={id}
                     arrayOfItems={arrayOfSections}
                     setArrayOfItems={setArrayOfSections}

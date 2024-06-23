@@ -45,7 +45,6 @@
 .to-do-task-container .select-to-delete.cursor-enter {
         background-color: rgb(254, 0, 0);
         opacity: 0.3;
-        border: transparent;
     }
 
 .to-do-task-container .select-to-delete.cursor-leave {

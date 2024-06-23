@@ -16,10 +16,6 @@
     left: 10px;
 }
 
-.add-new-item-button.cursor-enter {
-    background-color: antiquewhite;
-}
-
-.add-new-item-button.cursor-enter {
+.add-new-item-button:hover {
     background-color: rgb(255, 210, 152);
 }

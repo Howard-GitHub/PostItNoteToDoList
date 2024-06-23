@@ -16,24 +16,6 @@
     overflow-x: hidden;
 }
 
-.to-do-list .select-to-delete {
-    position: absolute;
-    height: 350px;
-    width: 350px;
-    background-color: transparent;
-}
-
-.to-do-list .select-to-delete.cursor-enter {
-    border: 3px solid red;
-    box-shadow: 0px 0px 10px 2px red,
-                0px 15px 10px lightgray;
-    cursor: pointer;
-}
-
-.to-do-list .select-to-delete.cursor-leave {
-    border: transparent;
-}
-
 .checkboxes-container {
     height: 350px;
     width: 320px;

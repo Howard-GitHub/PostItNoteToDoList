@@ -16,10 +16,6 @@
     left: 20px;
 }
 
-.delete-item-button.cursor-enter {
+.delete-item-button:hover {
     background-color: rgb(255, 210, 152);
-}
-
-.delete-item-button.cursor-leave {
-    background-color: antiquewhite;
 }

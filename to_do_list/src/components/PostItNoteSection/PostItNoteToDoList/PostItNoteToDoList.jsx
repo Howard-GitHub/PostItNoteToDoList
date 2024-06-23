@@ -33,6 +33,7 @@ const PostItNoteToDoList = ({id, isInDeleteMode, arrayOfPostItNoteToDoLists, set
                 </div> 
                 {(isInDeleteMode && oneSectionIsEntered) &&
                     <SelectToDelete
+                        type={"post-it-note"}
                         id={id}
                         arrayOfItems={arrayOfPostItNoteToDoLists}
                         setArrayOfItems={setArrayOfPostItNoteToDoLists}

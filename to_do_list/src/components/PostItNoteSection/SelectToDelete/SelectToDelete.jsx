@@ -1,15 +1,12 @@
-import useDetectMouseHoverOver from "../../../hooks/useDetectMouseHoverOver";
 import {handleOnClickToDeleteItem} from "../../../utils/ModifyArrayUtils";
+import './SelectToDelete.css';
 
-const SelectToDelete = ({id, deleteComponentRef, arrayOfItems, setArrayOfItems}) => {
-    const {isHoveringOver, handleMouseEnterItem, handleMouseLeaveItem} = useDetectMouseHoverOver();
+const SelectToDelete = ({type, id, deleteComponentRef, arrayOfItems, setArrayOfItems}) => {
 
     return (  
         <div 
-            className={isHoveringOver ? "select-to-delete cursor-enter" : "select-to-delete cursor-leave"}
+            className={`select-to-delete select-to-delete--${type}`}
             ref={deleteComponentRef}
-            onMouseEnter={handleMouseEnterItem}
-            onMouseLeave={handleMouseLeaveItem}
             onClick={() => handleOnClickToDeleteItem(id, arrayOfItems, setArrayOfItems)}
         />
     );

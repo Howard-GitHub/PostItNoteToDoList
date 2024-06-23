@@ -34,6 +34,7 @@ const ToDoTask = ({id, arrayOfTasks, setArrayOfTasks, isInEditMode}) => {
             
             {!isInEditMode &&
                 <SelectToDelete 
+                    type={"task"}
                     id={id}
                     deleteComponentRef={deleteComponentRef}
                     arrayOfItems={arrayOfTasks}

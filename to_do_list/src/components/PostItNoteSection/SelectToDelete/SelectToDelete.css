@@ -1,0 +1,33 @@
+.select-to-delete {
+    position: absolute
+}
+
+
+
+.select-to-delete--post-it-note {
+    width: 350px;
+    height: 350px;
+    background-color: transparent;
+}
+
+.select-to-delete--post-it-note:hover {
+    border: 3px solid red;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 2px red,
+                0px 15px 10px lightgray;
+}
+
+
+
+.select-to-delete--task {
+    width: 327px;
+    height: 30px;
+    background-color: transparent;
+    opacity: 0.3;
+    transition: background-color ease 0.3s,
+                box-shadow ease 0.3s;
+}
+
+.select-to-delete--task:hover {
+    background-color: rgb(254, 0, 0);
+}
