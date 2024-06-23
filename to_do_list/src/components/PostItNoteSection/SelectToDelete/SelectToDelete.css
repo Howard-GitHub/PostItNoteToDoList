@@ -8,6 +8,7 @@
     width: 350px;
     height: 350px;
     background-color: transparent;
+    cursor: pointer;
 }
 
 .select-to-delete--post-it-note:hover {
@@ -24,6 +25,7 @@
     height: 30px;
     background-color: transparent;
     opacity: 0.3;
+    cursor: pointer;
     transition: background-color ease 0.3s,
                 box-shadow ease 0.3s;
 }

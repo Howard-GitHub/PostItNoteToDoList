@@ -15,7 +15,6 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
     return (             
     (!oneSectionIsEntered || (selectedSection === id)) && 
     (<div className="post-it-note-section-container">
-
         <PostItNoteTitle
             id={id}
             titleRef={titleRef}

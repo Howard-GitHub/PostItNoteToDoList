@@ -1,6 +1,6 @@
-import './AddNewItemButton.css';
+import './AddItemButton.css';
 
-const AddNewItemButton = ({arrayOfItems, setArrayOfItems, handleOnClickAddNewItem}) => {
+const AddItemButton = ({arrayOfItems, setArrayOfItems, handleOnClickAddNewItem}) => {
 
     return ( 
         <div className="add-new-item-container">
@@ -14,4 +14,4 @@ const AddNewItemButton = ({arrayOfItems, setArrayOfItems, handleOnClickAddNewIte
     );
 }
  
-export default AddNewItemButton;
+export default AddItemButton;

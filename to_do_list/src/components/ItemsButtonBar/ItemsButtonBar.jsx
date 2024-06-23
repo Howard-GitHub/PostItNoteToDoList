@@ -1,5 +1,5 @@
 import './ItemsButtonBar.css';
-import AddNewItemButton from "./Buttons/AddNewItemButton/AddNewItemButton";
+import AddItemButton from "./Buttons/AddItemButton/AddItemButton";
 import DeleteItemButton from "./Buttons/DeleteItemButton/DeleteItemButton";
 
 const ItemsButtonBar = ({arrayOfItems, setArrayOfItems, isInDeleteMode, setIsInDeleteMode, handleOnClickAddNewItem}) => {
@@ -7,14 +7,15 @@ const ItemsButtonBar = ({arrayOfItems, setArrayOfItems, isInDeleteMode, setIsInD
         <div className="button-bar-container">
             <div 
                 className="button-bar">
-                <AddNewItemButton 
+                <AddItemButton 
                     arrayOfItems={arrayOfItems} 
                     setArrayOfItems={setArrayOfItems}
                     handleOnClickAddNewItem={handleOnClickAddNewItem}
                 />
                 <DeleteItemButton 
                     isInDeleteMode={isInDeleteMode}
-                    setIsInDeleteMode={setIsInDeleteMode}/>
+                    setIsInDeleteMode={setIsInDeleteMode}
+                />
             </div>
         </div>
      );
