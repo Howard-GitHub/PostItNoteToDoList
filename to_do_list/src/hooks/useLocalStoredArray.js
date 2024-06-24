@@ -9,18 +9,12 @@ const useLocalStoredArray = (localKey, arrayOfItems, setArrayOfItems) => {
         // Retrieves array from local storage if the array from the local storage is not empty
         if ((locallyStoredArray !== "[null]") && (locallyStoredArray !== "[]") && (locallyStoredArray !== "null")) {
             setArrayOfItems(JSON.parse(locallyStoredArray));
-            console.log("runs", JSON.parse(locallyStoredArray));
         }
-        console.log("double check", JSON.parse(locallyStoredArray));
     }, [])
 
     // Saves changes to array in the local storage every time the array is modified
     useEffect(() => {
         localStorage.setItem(localKey, JSON.stringify(arrayOfItems));
-
-        const locallyStoredArray = localStorage.getItem(localKey);
-        console.log(arrayOfItems)
-        console.log(locallyStoredArray);
     }, [arrayOfItems])
 
     // Adds a new item to the array

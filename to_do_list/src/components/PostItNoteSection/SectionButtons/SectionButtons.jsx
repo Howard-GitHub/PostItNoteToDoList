@@ -27,8 +27,6 @@ const SectionButtons = ({id, selectedSection, setSelectedSection, isInDeleteMode
                     }
                     {(!isInDeleteMode && isInEditMode) &&
                         <ItemsButtonBar 
-                            arrayOfItems={arrayOfPostItNoteToDoLists}
-                            setArrayOfItems={setArrayOfPostItNoteToDoLists}
                             isInDeleteMode={isInDeleteMode}
                             setIsInDeleteMode={setIsInDeleteMode}
                             handleOnClickAddNewItem={handleOnClickAddNewItem}

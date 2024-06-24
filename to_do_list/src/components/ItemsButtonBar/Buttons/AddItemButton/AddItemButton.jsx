@@ -1,6 +1,6 @@
 import './AddItemButton.css';
 
-const AddItemButton = ({arrayOfItems, setArrayOfItems, handleOnClickAddNewItem}) => {
+const AddItemButton = ({handleOnClickAddNewItem}) => {
 
     return ( 
         <div className="add-new-item-container">
