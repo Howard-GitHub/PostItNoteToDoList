@@ -14,15 +14,17 @@ const PostItNoteToDoList = ({id, isInDeleteMode, arrayOfPostItNoteToDoLists, set
             <div 
                 className="to-do-list">
                 <div className="checkboxes-container">
-                    {arrayOfTasks.map((task) => (
-                        <ToDoTask
-                            key={task.id}
-                            id={task.id}
-                            arrayOfTasks={arrayOfTasks}
-                            setArrayOfTasks={setArrayOfTasks}
-                            isInEditMode={isInEditMode}
-                        />
-                    ))}
+                    {(arrayOfTasks !== null) &&
+                        arrayOfTasks.map((task) => (
+                            <ToDoTask
+                                key={task.id}
+                                id={task.id}
+                                arrayOfTasks={arrayOfTasks}
+                                setArrayOfTasks={setArrayOfTasks}
+                                isInEditMode={isInEditMode}
+                            />
+                        ))
+                    }
                     {(isInEditMode && !isInDeleteMode) &&
                         <AddItemButton
                             arrayOfItems={arrayOfTasks}
