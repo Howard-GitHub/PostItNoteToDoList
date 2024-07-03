@@ -1,6 +1,6 @@
 import './ItemsButtonBar.css';
-import AddItemButton from "./Buttons/AddItemButton/AddItemButton";
-import DeleteItemButton from "./Buttons/DeleteItemButton/DeleteItemButton";
+import AddItemButton from "../AddItemButton/AddItemButton";
+import DeleteItemButton from "./DeleteItemButton/DeleteItemButton";
 
 const ItemsButtonBar = ({handleClickAddItem, handleClickEnterDeleteMode, setIsInDeleteMode}) => {
     return ( 

@@ -2,7 +2,7 @@ import './PostItNoteToDoList.css';
 import ToDoTask from './ToDoTask/ToDoTask';
 import {useState} from 'react';
 import SelectToDelete from '../SelectToDelete/SelectToDelete';
-import AddItemButton from '../../ItemsButtonBar/Buttons/AddItemButton/AddItemButton';
+import AddItemButton from '../../AddItemButton/AddItemButton';
 import useLocalStoredArray from '../../../hooks/useLocalStoredArray';
 
 const PostItNoteToDoList = ({id, isInDeleteMode, oneSectionIsEntered, isInEditMode, handleClickDeleteToDoList}) => {

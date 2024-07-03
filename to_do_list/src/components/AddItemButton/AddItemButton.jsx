@@ -3,9 +3,9 @@ import './AddItemButton.css';
 const AddItemButton = ({handleClickAddItem}) => {
 
     return ( 
-        <div className="add-new-item-container">
+        <div className="add-item-container">
             <button 
-                className="add-new-item-button"
+                className="add-item-button"
                 onClick={handleClickAddItem}
             >
                 +
