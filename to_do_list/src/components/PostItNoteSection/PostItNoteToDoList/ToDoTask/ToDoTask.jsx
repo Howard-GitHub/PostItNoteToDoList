@@ -4,7 +4,7 @@ import './ToDoTask.css';
 import {useRef, useState, useEffect} from "react";
 import {handleChangeComponentHeight} from '../../../../utils/SectionUtils';
 
-const ToDoTask = ({id, arrayOfTasks, setArrayOfTasks, isInEditMode}) => {
+const ToDoTask = ({id, isInEditMode, handleClickDeleteTask}) => {
     const [task, setTask] = useState("");
     const taskRef = useRef();
     const deleteComponentRef = useRef();
@@ -28,9 +28,7 @@ const ToDoTask = ({id, arrayOfTasks, setArrayOfTasks, isInEditMode}) => {
                 <SelectToDelete 
                     type={"task"}
                     id={id}
-                    deleteComponentRef={deleteComponentRef}
-                    arrayOfItems={arrayOfTasks}
-                    setArrayOfItems={setArrayOfTasks}
+                    handleClickDeleteItem={handleClickDeleteTask}
                 />
             }
         </div>

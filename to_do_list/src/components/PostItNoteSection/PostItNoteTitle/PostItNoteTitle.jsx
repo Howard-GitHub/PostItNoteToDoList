@@ -2,8 +2,8 @@ import {handleOnChangeKeyboardInput, handleOnClickToEnterSection} from '../../..
 import './PostItNoteTitle.css';
 import SelectToDelete from '../SelectToDelete/SelectToDelete';
 
-const PostItNoteTitle = ({id, titleRef, isInDeleteMode, oneSectionIsEntered, arrayOfSections, setArrayOfSections,
-                        setOneSectionIsEntered, setSelectedSection, title, setTitle, isInEditMode}) => {
+const PostItNoteTitle = ({id, titleRef, isInDeleteMode, oneSectionIsEntered, setOneSectionIsEntered, setSelectedSection, 
+                        title, setTitle, isInEditMode, handleClickDeleteSection}) => {
 
     return ( 
         <div className="title-container">
@@ -15,10 +15,8 @@ const PostItNoteTitle = ({id, titleRef, isInDeleteMode, oneSectionIsEntered, arr
                 <SelectToDelete 
                     type={"post-it-note"}
                     id={id}
-                    arrayOfItems={arrayOfSections}
-                    setArrayOfItems={setArrayOfSections}
+                    handleClickDeleteItem={handleClickDeleteSection}
                 />
-
                 }
                 {((!oneSectionIsEntered && !isInDeleteMode) && 
                     <div 

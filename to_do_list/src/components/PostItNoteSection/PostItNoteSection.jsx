@@ -4,14 +4,16 @@ import PostItNoteToDoList from './PostItNoteToDoList/PostItNoteToDoList';
 import SectionButtons from './SectionButtons/SectionButtons';
 import PostItNoteTitle from './PostItNoteTitle/PostItNoteTitle';
 import useLocalStoredArray from '../../hooks/useLocalStoredArray';
+import {handleClickEnterDeleteMode, handleClickExitDeleteMode} from '../../utils/DeleteModeUtils';
 
-const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSections, setArrayOfSections, oneSectionIsEntered, setOneSectionIsEntered, selectedSection, setSelectedSection}) => {
+const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSections, setArrayOfSections, oneSectionIsEntered, setOneSectionIsEntered, 
+                            selectedSection, setSelectedSection, handleClickDeleteSection}) => {
     const [title, setTitle] = useState("");
     const [isInEditMode, setIsInEditMode] = useState(false);
     const titleRef = useRef();
     const [arrayOfPostItNoteToDoLists, setArrayOfPostItNoteToDoLists] = useState([]);
-    const {handleOnClickAddNewItem} = useLocalStoredArray(id, arrayOfPostItNoteToDoLists, setArrayOfPostItNoteToDoLists);
-    
+    const {handleOnClickAddNewItem, handleClickDeleteItem} = useLocalStoredArray(id, arrayOfPostItNoteToDoLists, setArrayOfPostItNoteToDoLists);
+
     return (             
     (!oneSectionIsEntered || (selectedSection === id)) && 
     (<div className="post-it-note-section-container">
@@ -27,6 +29,7 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
             title={title}
             setTitle={setTitle}
             isInEditMode={isInEditMode}
+            handleClickDeleteSection={handleClickDeleteSection}
         />    
 
         <SectionButtons 
@@ -41,19 +44,20 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
             isInEditMode={isInEditMode}
             setIsInEditMode={setIsInEditMode}
             handleOnClickAddNewItem={handleOnClickAddNewItem}
+            handleClickEnterDeleteMode={handleClickEnterDeleteMode}
+            handleClickExitDeleteMode={handleClickExitDeleteMode}
         />
 
-        {(selectedSection === id) &&
+        {((selectedSection === id) && (arrayOfPostItNoteToDoLists !== null)) &&
             <div className="to-do-list-array-container">
                 {arrayOfPostItNoteToDoLists.map((singlePostItNote) => (
                     <PostItNoteToDoList 
                         key={singlePostItNote.id}
                         id={singlePostItNote.id}
                         isInDeleteMode={isInDeleteMode}
-                        arrayOfPostItNoteToDoLists={arrayOfPostItNoteToDoLists}
-                        setArrayOfPostItNoteToDoLists={setArrayOfPostItNoteToDoLists}
                         oneSectionIsEntered={oneSectionIsEntered}
                         isInEditMode={isInEditMode}
+                        handleClickDeleteToDoList={handleClickDeleteItem}
                     />
                 ))}
             </div>

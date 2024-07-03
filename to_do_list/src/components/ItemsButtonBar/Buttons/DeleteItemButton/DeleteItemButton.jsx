@@ -1,12 +1,11 @@
-import {handleOnClickToEnterDeleteMode} from '../../../../utils/ModifyArrayUtils';
 import './DeleteItemButton.css';
 
-const DeleteItemButton = ({setIsInDeleteMode}) => {
+const DeleteItemButton = ({handleClickEnterDeleteMode, setIsInDeleteMode}) => {
     return ( 
         <div className="delete-item-button-container">
             <button 
                 className="delete-item-button"
-                onClick={() => handleOnClickToEnterDeleteMode(setIsInDeleteMode)}>
+                onClick={() => handleClickEnterDeleteMode(setIsInDeleteMode)}>
             </button>
         </div>
     );

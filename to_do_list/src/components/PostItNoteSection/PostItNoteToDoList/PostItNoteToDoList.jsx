@@ -5,9 +5,9 @@ import SelectToDelete from '../SelectToDelete/SelectToDelete';
 import AddItemButton from '../../ItemsButtonBar/Buttons/AddItemButton/AddItemButton';
 import useLocalStoredArray from '../../../hooks/useLocalStoredArray';
 
-const PostItNoteToDoList = ({id, isInDeleteMode, arrayOfPostItNoteToDoLists, setArrayOfPostItNoteToDoLists, oneSectionIsEntered, isInEditMode}) => {
+const PostItNoteToDoList = ({id, isInDeleteMode, oneSectionIsEntered, isInEditMode, handleClickDeleteToDoList}) => {
     const [arrayOfTasks, setArrayOfTasks] = useState([]);
-    const {handleOnClickAddNewItem} = useLocalStoredArray(id, arrayOfTasks, setArrayOfTasks);
+    const {handleOnClickAddNewItem, handleClickDeleteItem} = useLocalStoredArray(id, arrayOfTasks, setArrayOfTasks);
     
     return ( 
         <div className="to-do-list-container">
@@ -19,9 +19,8 @@ const PostItNoteToDoList = ({id, isInDeleteMode, arrayOfPostItNoteToDoLists, set
                             <ToDoTask
                                 key={task.id}
                                 id={task.id}
-                                arrayOfTasks={arrayOfTasks}
-                                setArrayOfTasks={setArrayOfTasks}
                                 isInEditMode={isInEditMode}
+                                handleClickDeleteTask={handleClickDeleteItem}
                             />
                         ))
                     }
@@ -35,8 +34,7 @@ const PostItNoteToDoList = ({id, isInDeleteMode, arrayOfPostItNoteToDoLists, set
                     <SelectToDelete
                         type={"post-it-note"}
                         id={id}
-                        arrayOfItems={arrayOfPostItNoteToDoLists}
-                        setArrayOfItems={setArrayOfPostItNoteToDoLists}
+                        handleClickDeleteItem={handleClickDeleteToDoList}
                     />
                 }
             </div>

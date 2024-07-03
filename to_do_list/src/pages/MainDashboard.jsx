@@ -2,9 +2,9 @@ import {useState} from 'react';
 import PostItNoteSection from '../components/PostItNoteSection/PostItNoteSection';
 import ItemsButtonBar from '../components/ItemsButtonBar/ItemsButtonBar';
 import ExitDeleteItemModeButton from '../components/ExitDeleteItemModeButton/ExitDeleteItemModeButton';
-import {initialPostItNoteSection} from '../utils/ModifyArrayUtils';
 import './MainDashboard.css';
 import useLocalStoredArray from '../hooks/useLocalStoredArray';
+import {handleClickEnterDeleteMode, handleClickExitDeleteMode} from '../utils/DeleteModeUtils';
 
 const MainDashboard = () => {
 
@@ -14,7 +14,7 @@ const MainDashboard = () => {
     const [isInDeleteMode, setIsInDeleteMode] = useState(false);
     const [oneSectionIsEntered, setOneSectionIsEntered] = useState(false);
     const [selectedSection, setSelectedSection] = useState(null);
-    const {handleOnClickAddNewItem} = useLocalStoredArray("mainDashboard", arrayOfSections, setArrayOfSections);
+    const {handleOnClickAddNewItem, handleClickDeleteItem} = useLocalStoredArray("mainDashboard", arrayOfSections, setArrayOfSections);
 
 
     return ( 
@@ -22,8 +22,8 @@ const MainDashboard = () => {
                 {isInDeleteMode && 
                     <ExitDeleteItemModeButton 
                         setIsInDeleteMode={setIsInDeleteMode}
-                        arrayOfSections={arrayOfSections}
-                        setArrayOfSections={setArrayOfSections}/>
+                        handleClickExitDeleteMode={handleClickExitDeleteMode}
+                    />
                 }
 
                 {arrayOfSections.map((singlePostItNoteSection) => (
@@ -37,16 +37,17 @@ const MainDashboard = () => {
                         oneSectionIsEntered={oneSectionIsEntered}
                         setOneSectionIsEntered={setOneSectionIsEntered}
                         selectedSection={selectedSection}
-                        setSelectedSection={setSelectedSection}/>
+                        setSelectedSection={setSelectedSection}
+                        handleClickDeleteSection={handleClickDeleteItem}
+                    />
                 ))}
 
                 {(!isInDeleteMode && !oneSectionIsEntered) && 
                     <ItemsButtonBar
-                        arrayOfItems={arrayOfSections} 
-                        setArrayOfItems={setArrayOfSections}
                         isInDeleteMode={isInDeleteMode}
                         setIsInDeleteMode={setIsInDeleteMode}
                         handleOnClickAddNewItem={handleOnClickAddNewItem}
+                        handleClickEnterDeleteMode={handleClickEnterDeleteMode}
                     />
                 }
             </div>

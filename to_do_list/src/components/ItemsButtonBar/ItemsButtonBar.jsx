@@ -2,7 +2,7 @@ import './ItemsButtonBar.css';
 import AddItemButton from "./Buttons/AddItemButton/AddItemButton";
 import DeleteItemButton from "./Buttons/DeleteItemButton/DeleteItemButton";
 
-const ItemsButtonBar = ({isInDeleteMode, setIsInDeleteMode, handleOnClickAddNewItem}) => {
+const ItemsButtonBar = ({handleOnClickAddNewItem, handleClickEnterDeleteMode, setIsInDeleteMode}) => {
     return ( 
         <div className="button-bar-container">
             <div 
@@ -11,7 +11,7 @@ const ItemsButtonBar = ({isInDeleteMode, setIsInDeleteMode, handleOnClickAddNewI
                     handleOnClickAddNewItem={handleOnClickAddNewItem}
                 />
                 <DeleteItemButton 
-                    isInDeleteMode={isInDeleteMode}
+                    handleClickEnterDeleteMode={handleClickEnterDeleteMode}
                     setIsInDeleteMode={setIsInDeleteMode}
                 />
             </div>
