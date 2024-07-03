@@ -1,4 +1,4 @@
-import {handleOnChangeKeyboardInput} from '../../../../utils/SectionUtils';
+import {handleChangeKeyboardInput} from '../../../../utils/SectionUtils';
 import SelectToDelete from '../../SelectToDelete/SelectToDelete';
 import './ToDoTask.css';
 import {useRef, useState, useEffect} from "react";
@@ -21,7 +21,7 @@ const ToDoTask = ({id, isInEditMode, handleClickDeleteTask}) => {
                 className="task-name"
                 ref={taskRef}
                 value={task}
-                onChange={(event) => handleOnChangeKeyboardInput(event, taskRef, setTask, '30px')}
+                onChange={(event) => handleChangeKeyboardInput(event, taskRef, setTask, '30px')}
             />
             
             {!isInEditMode &&

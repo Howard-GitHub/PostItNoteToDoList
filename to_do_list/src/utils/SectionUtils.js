@@ -7,7 +7,7 @@ export const handleChangeTextareaHeight = (textareaRef, height) => {
 }
 
 // Tracks and saves user input for the title of a post it note section
-export const handleOnChangeKeyboardInput = (event, textareaRef, setText, height) => {
+export const handleChangeKeyboardInput = (event, textareaRef, setText, height) => {
     setText(event.target.value);
     handleChangeTextareaHeight(textareaRef, height);
 }
@@ -38,13 +38,13 @@ export const handleOnClickToEnterSection = (id, setOneSectionIsEntered, setSelec
 }
 
 // Returns to dashboard
-export const handleOnClickToDashboard = (setOneSectionIsEntered, setSelectedSection) => {
+export const handleClickToDashboard = (setOneSectionIsEntered, setSelectedSection) => {
     setOneSectionIsEntered(false);
     setSelectedSection(null);
 }
 
 // Allows user to edit post it note section
-export const handleOnClickEditButton = (isInEditMode, setIsInEditMode) => {
+export const handleClickEdit = (isInEditMode, setIsInEditMode) => {
     if (isInEditMode) {
         setIsInEditMode(false);
     }

@@ -1,4 +1,4 @@
-import {handleOnClickEditButton} from '../../../../utils/SectionUtils';
+import {handleClickEdit} from '../../../../utils/SectionUtils';
 import './EditButton.css';
 
 const EditButton = ({isInEditMode, setIsInEditMode}) => {
@@ -6,7 +6,7 @@ const EditButton = ({isInEditMode, setIsInEditMode}) => {
         <div className="edit-button-container">
             <button 
                 className="edit-button"
-                onClick={() => handleOnClickEditButton(isInEditMode, setIsInEditMode)}>
+                onClick={() => handleClickEdit(isInEditMode, setIsInEditMode)}>
                 {isInEditMode ? (
                     <label className="edit-label">
                         Done

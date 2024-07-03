@@ -12,7 +12,7 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
     const [isInEditMode, setIsInEditMode] = useState(false);
     const titleRef = useRef();
     const [arrayOfPostItNoteToDoLists, setArrayOfPostItNoteToDoLists] = useState([]);
-    const {handleOnClickAddNewItem, handleClickDeleteItem} = useLocalStoredArray(id, arrayOfPostItNoteToDoLists, setArrayOfPostItNoteToDoLists);
+    const {handleClickAddItem, handleClickDeleteItem} = useLocalStoredArray(id, arrayOfPostItNoteToDoLists, setArrayOfPostItNoteToDoLists);
 
     return (             
     (!oneSectionIsEntered || (selectedSection === id)) && 
@@ -43,7 +43,7 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
             setArrayOfPostItNoteToDoLists={setArrayOfPostItNoteToDoLists}
             isInEditMode={isInEditMode}
             setIsInEditMode={setIsInEditMode}
-            handleOnClickAddNewItem={handleOnClickAddNewItem}
+            handleClickAddItem={handleClickAddItem}
             handleClickEnterDeleteMode={handleClickEnterDeleteMode}
             handleClickExitDeleteMode={handleClickExitDeleteMode}
         />

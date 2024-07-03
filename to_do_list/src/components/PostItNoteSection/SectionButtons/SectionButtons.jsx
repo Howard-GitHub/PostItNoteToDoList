@@ -4,7 +4,7 @@ import ItemsButtonBar from "../../ItemsButtonBar/ItemsButtonBar";
 import EditButton from "../Buttons/EditButton/EditButton";
 
 const SectionButtons = ({id, selectedSection, setSelectedSection, isInDeleteMode, setIsInDeleteMode, setOneSectionIsEntered, isInEditMode, setIsInEditMode, 
-                        handleOnClickAddNewItem, handleClickEnterDeleteMode, handleClickExitDeleteMode}) => {
+                        handleClickAddItem, handleClickEnterDeleteMode, handleClickExitDeleteMode}) => {
     return ( 
         <div className="section-buttons-container">
             {(selectedSection === id) &&
@@ -30,7 +30,7 @@ const SectionButtons = ({id, selectedSection, setSelectedSection, isInDeleteMode
                         <ItemsButtonBar 
                             isInDeleteMode={isInDeleteMode}
                             setIsInDeleteMode={setIsInDeleteMode}
-                            handleOnClickAddNewItem={handleOnClickAddNewItem}
+                            handleClickAddItem={handleClickAddItem}
                             handleClickEnterDeleteMode={handleClickEnterDeleteMode}
                         />
                     }

@@ -7,7 +7,7 @@ import useLocalStoredArray from '../../../hooks/useLocalStoredArray';
 
 const PostItNoteToDoList = ({id, isInDeleteMode, oneSectionIsEntered, isInEditMode, handleClickDeleteToDoList}) => {
     const [arrayOfTasks, setArrayOfTasks] = useState([]);
-    const {handleOnClickAddNewItem, handleClickDeleteItem} = useLocalStoredArray(id, arrayOfTasks, setArrayOfTasks);
+    const {handleClickAddItem, handleClickDeleteItem} = useLocalStoredArray(id, arrayOfTasks, setArrayOfTasks);
     
     return ( 
         <div className="to-do-list-container">
@@ -26,7 +26,7 @@ const PostItNoteToDoList = ({id, isInDeleteMode, oneSectionIsEntered, isInEditMo
                     }
                     {(isInEditMode && !isInDeleteMode) &&
                         <AddItemButton
-                            handleOnClickAddNewItem={handleOnClickAddNewItem}
+                            handleClickAddItem={handleClickAddItem}
                         />
                     }
                 </div> 

@@ -1,5 +1,5 @@
 import './DashboardButton.css';
-import {handleOnClickToDashboard} from '../../../../utils/SectionUtils';
+import {handleClickToDashboard} from '../../../../utils/SectionUtils';
 
 const DashboardButton = ({setOneSectionIsEntered, setSelectedSection}) => {
 
@@ -7,7 +7,7 @@ const DashboardButton = ({setOneSectionIsEntered, setSelectedSection}) => {
         <div className="dashboard-button-container">
             <button 
                 className="dashboard-button"
-                onClick={() => handleOnClickToDashboard(setOneSectionIsEntered, setSelectedSection)}>
+                onClick={() => handleClickToDashboard(setOneSectionIsEntered, setSelectedSection)}>
                 {"< Dashboard"}
             </button>
         </div>

@@ -14,7 +14,7 @@ const MainDashboard = () => {
     const [isInDeleteMode, setIsInDeleteMode] = useState(false);
     const [oneSectionIsEntered, setOneSectionIsEntered] = useState(false);
     const [selectedSection, setSelectedSection] = useState(null);
-    const {handleOnClickAddNewItem, handleClickDeleteItem} = useLocalStoredArray("mainDashboard", arrayOfSections, setArrayOfSections);
+    const {handleClickAddItem, handleClickDeleteItem} = useLocalStoredArray("mainDashboard", arrayOfSections, setArrayOfSections);
 
 
     return ( 
@@ -46,7 +46,7 @@ const MainDashboard = () => {
                     <ItemsButtonBar
                         isInDeleteMode={isInDeleteMode}
                         setIsInDeleteMode={setIsInDeleteMode}
-                        handleOnClickAddNewItem={handleOnClickAddNewItem}
+                        handleClickAddItem={handleClickAddItem}
                         handleClickEnterDeleteMode={handleClickEnterDeleteMode}
                     />
                 }

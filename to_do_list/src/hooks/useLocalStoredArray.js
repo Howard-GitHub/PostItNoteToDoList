@@ -22,7 +22,7 @@ const useLocalStoredArray = (localKey, arrayOfItems, setArrayOfItems) => {
 
     
     // Adds a new item to the array
-    const handleOnClickAddNewItem = () => {
+    const handleClickAddItem = () => {
         const uniqueIdentifier = {
             id: uuidv4()
         }
@@ -37,7 +37,7 @@ const useLocalStoredArray = (localKey, arrayOfItems, setArrayOfItems) => {
 
 
     return {
-        handleOnClickAddNewItem,
+        handleClickAddItem,
         handleClickDeleteItem
     };
 }
