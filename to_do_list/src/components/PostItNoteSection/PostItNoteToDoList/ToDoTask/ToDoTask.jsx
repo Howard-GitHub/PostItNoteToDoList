@@ -28,6 +28,7 @@ const ToDoTask = ({id, isInEditMode, handleClickDeleteTask}) => {
                 <SelectToDelete 
                     type={"task"}
                     id={id}
+                    deleteComponentRef={deleteComponentRef}
                     handleClickDeleteItem={handleClickDeleteTask}
                 />
             }
