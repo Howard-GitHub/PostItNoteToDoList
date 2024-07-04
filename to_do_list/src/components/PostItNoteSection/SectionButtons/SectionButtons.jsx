@@ -15,10 +15,12 @@ const SectionButtons = ({id, selectedSection, setSelectedSection, isInDeleteMode
                             handleClickExitDeleteMode={handleClickExitDeleteMode}
                         />
                     }
-                    <EditButton 
-                        isInEditMode={isInEditMode}
-                        setIsInEditMode={setIsInEditMode}
-                    />
+                    {!isInDeleteMode &&
+                        <EditButton 
+                            isInEditMode={isInEditMode}
+                            setIsInEditMode={setIsInEditMode}
+                        />
+                    }
                             
                     {!isInEditMode &&
                         <DashboardButton 
