@@ -27,6 +27,7 @@ const PostItNoteToDoList = ({id, isInDeleteMode, oneSectionIsEntered, isInEditMo
                     {(isInEditMode && !isInDeleteMode) &&
                         <AddItemButton
                             handleClickAddItem={handleClickAddItem}
+                            type={"task"}
                         />
                     }
                 </div> 

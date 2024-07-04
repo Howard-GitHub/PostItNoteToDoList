@@ -9,6 +9,7 @@ const ItemsButtonBar = ({handleClickAddItem, handleClickEnterDeleteMode, setIsIn
                 className="button-bar">
                 <AddItemButton 
                     handleClickAddItem={handleClickAddItem}
+                    type={"post-it-note"}
                 />
                 <DeleteItemButton 
                     handleClickEnterDeleteMode={handleClickEnterDeleteMode}
