@@ -8,7 +8,7 @@ const AddItemButton = ({handleClickAddItem, type}) => {
                 className={`add-item-button add-item-button--${type}`}
                 onClick={handleClickAddItem}
             >
-                {type === "post-it-note" ? "+" : "Add Item"}
+                {type === "post-it-note" ? "+" : "Add Task"}
             </button>
         </div>
     );

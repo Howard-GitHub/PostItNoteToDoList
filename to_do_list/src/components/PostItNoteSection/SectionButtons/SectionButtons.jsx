@@ -21,7 +21,6 @@ const SectionButtons = ({id, selectedSection, setSelectedSection, isInDeleteMode
                             setIsInEditMode={setIsInEditMode}
                         />
                     }
-                            
                     {!isInEditMode &&
                         <DashboardButton 
                             setOneSectionIsEntered={setOneSectionIsEntered}
