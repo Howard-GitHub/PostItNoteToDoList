@@ -4,6 +4,7 @@ const useLocalStoredTextarea = (id, text, setText, textareaRef) => {
 
     const [textIsLoaded, setTextIsLoaded] = useState(false);
 
+    // Retrieves data from the local storage when the program first runs
     useEffect(() => {
         const locallyStoredText = localStorage.getItem("text:" + id);
         if (locallyStoredText !== null) {
@@ -11,26 +12,19 @@ const useLocalStoredTextarea = (id, text, setText, textareaRef) => {
         }
 
         setTextIsLoaded(true);
-
-        //console.log("first useEffect:", textareaRef.current.scrollHeight);
-        //textareaRef.current.style.height = `${textareaRef.current.scrollHeight + 3}px`;
-
     }, [])
 
     useEffect(() => {
-        console.log("textareaIsLoaded effect:", textareaRef.current.scrollHeight)
-        console.log("textAreaIsLoaded:", textIsLoaded)
         if (textIsLoaded) {
             textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
         }
     }, [textIsLoaded])
 
+    // Saves changes to textarea in the local storage every time the text is modified
     useEffect(() => {
-        if (text !== "") { 
+        if (textIsLoaded) { 
             localStorage.setItem("text:" + id, text);
         }
-        //textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
-        console.log("second useEffect:", textareaRef.current.scrollHeight);
     }, [text])
 
 
