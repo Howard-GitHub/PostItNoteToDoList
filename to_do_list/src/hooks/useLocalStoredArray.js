@@ -3,12 +3,13 @@ import {v4 as uuidv4} from 'uuid';
 
 const useLocalStoredArray = (localKey, arrayOfItems, setArrayOfItems) => {
 
+    // Retrieves data from the local storage when the program first runs
     useEffect(() => {
-            const locallyStoredArray = localStorage.getItem(localKey);
+        const locallyStoredArray = localStorage.getItem(localKey);
 
-            if (locallyStoredArray !== null) {
-                setArrayOfItems(JSON.parse(locallyStoredArray));
-            }
+        if (locallyStoredArray !== null) {
+            setArrayOfItems(JSON.parse(locallyStoredArray));
+        }
     }, [])
 
     

@@ -3,11 +3,13 @@ import SelectToDelete from '../../SelectToDelete/SelectToDelete';
 import './ToDoTask.css';
 import {useRef, useState, useEffect} from "react";
 import {handleChangeComponentHeight} from '../../../../utils/SectionUtils';
+import useLocalStoredTextarea from '../../../../hooks/useLocalStoredTextarea';
 
 const ToDoTask = ({id, isInEditMode, handleClickDeleteTask}) => {
     const [task, setTask] = useState("");
     const taskRef = useRef();
     const deleteComponentRef = useRef();
+    const {} = useLocalStoredTextarea(id, task, setTask, taskRef);
 
     useEffect(() => {
         handleChangeComponentHeight(deleteComponentRef, taskRef);
