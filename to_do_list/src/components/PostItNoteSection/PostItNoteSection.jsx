@@ -14,7 +14,7 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
     const titleRef = useRef();
     const [arrayOfPostItNoteToDoLists, setArrayOfPostItNoteToDoLists] = useState([]);
     const {handleClickAddItem, handleClickDeleteItem} = useLocalStoredArray(id, arrayOfPostItNoteToDoLists, setArrayOfPostItNoteToDoLists);
-    const {} = useLocalStoredTextarea(id, title, setTitle, titleRef);
+    const {handleChangeKeyboardInput} = useLocalStoredTextarea(id, title, setTitle, titleRef, '35px');
 
     return (             
     (!oneSectionIsEntered || (selectedSection === id)) && 
@@ -29,9 +29,9 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
             setOneSectionIsEntered={setOneSectionIsEntered}
             setSelectedSection={setSelectedSection}
             title={title}
-            setTitle={setTitle}
             isInEditMode={isInEditMode}
             handleClickDeleteSection={handleClickDeleteSection}
+            handleChangeKeyboardInput={handleChangeKeyboardInput}
         />    
 
         <SectionButtons 

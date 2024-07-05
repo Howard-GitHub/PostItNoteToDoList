@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
 
-const useLocalStoredTextarea = (id, text, setText, textareaRef, deleteComponentRef) => {
+const useLocalStoredTextarea = (id, text, setText, textareaRef, height, deleteComponentRef) => {
 
     const [textIsLoaded, setTextIsLoaded] = useState(false);
 
@@ -40,10 +40,41 @@ const useLocalStoredTextarea = (id, text, setText, textareaRef, deleteComponentR
         }
     }, [text])
 
+    // Changes the height of the textarea everytime a new line is added
+    const handleChangeTextareaHeight = (textareaRef, height) => {
+        if (textareaRef.current) {
+            textareaRef.current.style.height = height;
+            textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
+        }
+    }
 
+    // Tracks and saves user input for a textarea
+    const handleChangeKeyboardInput = (event) => {
+        setText(event.target.value);
+        handleChangeTextareaHeight(textareaRef, height);
+    }
+
+    // Changes height of component to be similar to the height of a textarea
+    const handleChangeComponentHeight = (componentRef) => {
+        let stringTextareaHeight;
+        let numericalTextareaHeight;
+        if (textareaRef.current && componentRef.current) {
+            stringTextareaHeight = textareaRef.current.style.height;
+            numericalTextareaHeight = parseInt(stringTextareaHeight.replace("px", ""));
+
+            if (isNaN(numericalTextareaHeight)) {
+                // Default height if the textarea was just created
+                componentRef.current.style.height = '35px';
+            }
+            else {
+                componentRef.current.style.height = `${numericalTextareaHeight + 5}px`;
+            }
+        }
+    }
 
     return {
-
+        handleChangeKeyboardInput,
+        handleChangeComponentHeight
     };
 }
  

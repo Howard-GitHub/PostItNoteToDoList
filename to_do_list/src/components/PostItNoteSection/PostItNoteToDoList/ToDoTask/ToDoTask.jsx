@@ -1,18 +1,16 @@
-import {handleChangeKeyboardInput} from '../../../../utils/SectionUtils';
 import SelectToDelete from '../../SelectToDelete/SelectToDelete';
 import './ToDoTask.css';
 import {useRef, useState, useEffect} from "react";
-import {handleChangeComponentHeight} from '../../../../utils/SectionUtils';
 import useLocalStoredTextarea from '../../../../hooks/useLocalStoredTextarea';
 
 const ToDoTask = ({id, isInEditMode, handleClickDeleteTask}) => {
     const [task, setTask] = useState("");
     const taskRef = useRef();
     const deleteComponentRef = useRef();
-    const {} = useLocalStoredTextarea(id, task, setTask, taskRef, deleteComponentRef);
+    const {handleChangeKeyboardInput, handleChangeComponentHeight} = useLocalStoredTextarea(id, task, setTask, taskRef, '30px', deleteComponentRef);
 
     useEffect(() => {
-        handleChangeComponentHeight(deleteComponentRef, taskRef);
+        handleChangeComponentHeight(deleteComponentRef);
     }, [isInEditMode])
 
 
@@ -23,7 +21,7 @@ const ToDoTask = ({id, isInEditMode, handleClickDeleteTask}) => {
                 className="task-name"
                 ref={taskRef}
                 value={task}
-                onChange={(event) => handleChangeKeyboardInput(event, taskRef, setTask, '30px')}
+                onChange={(event) => handleChangeKeyboardInput(event)}
             />
             
             {!isInEditMode &&

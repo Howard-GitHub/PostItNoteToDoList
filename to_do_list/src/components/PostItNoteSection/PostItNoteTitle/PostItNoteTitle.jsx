@@ -1,9 +1,9 @@
-import {handleChangeKeyboardInput, handleOnClickToEnterSection} from '../../../utils/SectionUtils';
+import {handleOnClickToEnterSection} from '../../../utils/SectionUtils';
 import './PostItNoteTitle.css';
 import SelectToDelete from '../SelectToDelete/SelectToDelete';
 
 const PostItNoteTitle = ({id, titleRef, isInDeleteMode, oneSectionIsEntered, setOneSectionIsEntered, setSelectedSection, 
-                        title, setTitle, isInEditMode, handleClickDeleteSection}) => {
+                        title, isInEditMode, handleClickDeleteSection, handleChangeKeyboardInput}) => {
 
     return ( 
         <div className="title-container">
@@ -28,7 +28,7 @@ const PostItNoteTitle = ({id, titleRef, isInDeleteMode, oneSectionIsEntered, set
                     className="title"
                     ref={titleRef}
                     value={title}
-                    onChange={(event) => handleChangeKeyboardInput(event, titleRef, setTitle, '35px')}
+                    onChange={(event) => handleChangeKeyboardInput(event)}
                     placeholder="Untitled"
                 />
             </div>

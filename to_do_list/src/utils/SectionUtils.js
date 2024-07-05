@@ -1,16 +1,3 @@
-// Changes the height of the textarea everytime a new line is added
-export const handleChangeTextareaHeight = (textareaRef, height) => {
-    if (textareaRef.current) {
-        textareaRef.current.style.height = height;
-        textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
-    }
-}
-
-// Tracks and saves user input for the title of a post it note section
-export const handleChangeKeyboardInput = (event, textareaRef, setText, height) => {
-    setText(event.target.value);
-    handleChangeTextareaHeight(textareaRef, height);
-}
 
 // Changes height of component to be similar to the height of a textarea
 export const handleChangeComponentHeight = (componentRef, textareaRef) => {
