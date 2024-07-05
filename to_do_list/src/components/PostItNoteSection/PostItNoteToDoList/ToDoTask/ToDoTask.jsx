@@ -9,7 +9,7 @@ const ToDoTask = ({id, isInEditMode, handleClickDeleteTask}) => {
     const [task, setTask] = useState("");
     const taskRef = useRef();
     const deleteComponentRef = useRef();
-    const {} = useLocalStoredTextarea(id, task, setTask, taskRef);
+    const {} = useLocalStoredTextarea(id, task, setTask, taskRef, deleteComponentRef);
 
     useEffect(() => {
         handleChangeComponentHeight(deleteComponentRef, taskRef);

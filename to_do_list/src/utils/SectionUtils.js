@@ -21,14 +21,13 @@ export const handleChangeComponentHeight = (componentRef, textareaRef) => {
         numericalTextareaHeight = parseInt(stringTextareaHeight.replace("px", ""));
 
         if (isNaN(numericalTextareaHeight)) {
-            // Default height if the user has not typed anything yet
+            // Default height if the textarea was just created
             componentRef.current.style.height = '35px';
         }
         else {
             componentRef.current.style.height = `${numericalTextareaHeight + 5}px`;
         }
     }
-
 }
 
 // Enters selected post it note section

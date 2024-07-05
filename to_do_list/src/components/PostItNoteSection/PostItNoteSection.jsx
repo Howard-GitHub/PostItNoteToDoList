@@ -5,6 +5,7 @@ import SectionButtons from './SectionButtons/SectionButtons';
 import PostItNoteTitle from './PostItNoteTitle/PostItNoteTitle';
 import useLocalStoredArray from '../../hooks/useLocalStoredArray';
 import {handleClickEnterDeleteMode, handleClickExitDeleteMode} from '../../utils/DeleteModeUtils';
+import useLocalStoredTextarea from '../../hooks/useLocalStoredTextarea';
 
 const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSections, setArrayOfSections, oneSectionIsEntered, setOneSectionIsEntered, 
                             selectedSection, setSelectedSection, handleClickDeleteSection}) => {
@@ -13,6 +14,7 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
     const titleRef = useRef();
     const [arrayOfPostItNoteToDoLists, setArrayOfPostItNoteToDoLists] = useState([]);
     const {handleClickAddItem, handleClickDeleteItem} = useLocalStoredArray(id, arrayOfPostItNoteToDoLists, setArrayOfPostItNoteToDoLists);
+    const {} = useLocalStoredTextarea(id, title, setTitle, titleRef);
 
     return (             
     (!oneSectionIsEntered || (selectedSection === id)) && 
