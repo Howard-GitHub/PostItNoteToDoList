@@ -16,16 +16,29 @@
     position: relative;
     left: 5px;
     width: 300px;
-    height: 10px;
     background-color: transparent;
     resize: none;
     font-family: 'Comic Sans MS';
     font-size: 19px;
     height: 30px;
     outline: none;
-    border: transparent;
+    border: none;
+}
+
+.task-display {
+    padding-bottom: 7px;
+    position: relative;
+    top: 2px;
+    left: 7px;
+    width: 300px;
+    background-color: transparent;
+    resize: none;
+    font-family: 'Comic Sans MS';
+    font-size: 19px;
+    word-wrap: break-word;
+    text-align: left;
 }
 
 .task-name:focus {
-    border: 1px solid black;
+    border: 1px solid rgb(6, 5, 5);
 }

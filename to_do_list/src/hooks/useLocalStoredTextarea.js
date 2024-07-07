@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
 
-const useLocalStoredTextarea = (id, text, setText, textareaRef, height, deleteComponentRef) => {
+const useLocalStoredTextarea = (id, text, setText, textareaRef, height) => {
 
     const [textIsLoaded, setTextIsLoaded] = useState(false);
 
@@ -16,22 +16,10 @@ const useLocalStoredTextarea = (id, text, setText, textareaRef, height, deleteCo
 
     // Sets the initial height of the textarea based on the amount of content it contains
     useEffect(() => {
-        if (textIsLoaded) {
-            let stringTextareaHeight;
-            let numericalTextareaHeight;
-            
-            if (textareaRef.current) {
-                textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
-                stringTextareaHeight = textareaRef.current.style.height;
-                numericalTextareaHeight = parseInt(stringTextareaHeight.replace("px", ""));
-
-                // Runs only if the clickable component, which allows the user to delete the item, needs to resize in correspondence with the textarea
-                if (deleteComponentRef && deleteComponentRef.current) {
-                    deleteComponentRef.current.style.height = `${stringTextareaHeight}`;
-                }
-            }
+        if (textareaRef.current) {
+            textareaRef.current.style.height = `${textareaRef.current.scrollHeight - 5}px`;
         }
-    }, [textIsLoaded])
+    }, [])
 
     // Saves changes to textarea in the local storage every time the text is modified
     useEffect(() => {
@@ -53,6 +41,7 @@ const useLocalStoredTextarea = (id, text, setText, textareaRef, height, deleteCo
         setText(event.target.value);
         handleChangeTextareaHeight(textareaRef, height);
     }
+
 
     // Changes height of component to be similar to the height of a textarea
     const handleChangeComponentHeight = (componentRef) => {

@@ -1,5 +1,5 @@
 .select-to-delete {
-    position: absolute
+    position: absolute;
 }
 
 
@@ -21,15 +21,22 @@
 
 
 .select-to-delete--task {
-    width: 327px;
-    height: 30px;
+    padding-bottom: 7px;
+    position: relative;
+    top: 2px;
+    left: 7px;
+    width: 300px;
     background-color: transparent;
-    opacity: 0.3;
+    resize: none;
+    font-family: 'Comic Sans MS';
+    font-size: 19px;
+    word-wrap: break-word;
+    text-align: left;
     cursor: pointer;
     transition: background-color ease 0.3s,
                 box-shadow ease 0.3s;
 }
 
 .select-to-delete--task:hover {
-    background-color: rgb(254, 0, 0);
+    background-color: rgb(255, 138, 138);
 }
