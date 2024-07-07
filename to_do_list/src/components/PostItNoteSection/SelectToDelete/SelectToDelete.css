@@ -1,5 +1,8 @@
-.select-to-delete {
+.select-to-delete-container {
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -40,3 +43,4 @@
 .select-to-delete--task:hover {
     background-color: rgb(255, 138, 138);
 }
+
