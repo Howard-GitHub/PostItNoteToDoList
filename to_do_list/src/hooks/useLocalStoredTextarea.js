@@ -1,17 +1,13 @@
-import {useEffect, useState} from 'react';
+import {useEffect} from 'react';
 
 const useLocalStoredTextarea = (id, text, setText, textareaRef, height) => {
-
-    const [textIsLoaded, setTextIsLoaded] = useState(false);
-
+    
     // Retrieves data from the local storage when the program first runs
     useEffect(() => {
         const locallyStoredText = localStorage.getItem("text:" + id);
         if (locallyStoredText !== null) {
             setText(locallyStoredText);
         }
-
-        setTextIsLoaded(true);
     }, [])
 
     // Sets the initial height of the textarea based on the amount of content it contains
@@ -23,7 +19,7 @@ const useLocalStoredTextarea = (id, text, setText, textareaRef, height) => {
 
     // Saves changes to textarea in the local storage every time the text is modified
     useEffect(() => {
-        if (textIsLoaded) { 
+        if (text) { 
             localStorage.setItem("text:" + id, text);
         }
     }, [text])

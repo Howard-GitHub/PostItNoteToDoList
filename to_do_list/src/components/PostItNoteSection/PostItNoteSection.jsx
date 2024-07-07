@@ -9,7 +9,7 @@ import useLocalStoredTextarea from '../../hooks/useLocalStoredTextarea';
 
 const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSections, setArrayOfSections, oneSectionIsEntered, setOneSectionIsEntered, 
                             selectedSection, setSelectedSection, handleClickDeleteSection}) => {
-    const [title, setTitle] = useState("");
+    const [title, setTitle] = useState(null);
     const [isInEditMode, setIsInEditMode] = useState(false);
     const titleRef = useRef();
     const [arrayOfPostItNoteToDoLists, setArrayOfPostItNoteToDoLists] = useState([]);

@@ -5,7 +5,7 @@ import useLocalStoredTextarea from '../../../../hooks/useLocalStoredTextarea';
 import {handleKeyDownEnter} from '../../../../utils/SectionUtils';
 
 const ToDoTask = ({id, isInEditMode, handleClickDeleteTask}) => {
-    const [task, setTask] = useState("");
+    const [task, setTask] = useState(null);
     const taskRef = useRef();
     const {handleChangeKeyboardInput} = useLocalStoredTextarea(id, task, setTask, taskRef, '30px');
 
