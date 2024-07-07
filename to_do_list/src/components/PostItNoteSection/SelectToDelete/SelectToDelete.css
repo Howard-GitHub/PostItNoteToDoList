@@ -1,5 +1,5 @@
 .select-to-delete-container {
-    
+
 }
 
 .select-to-delete-container--post-it-note {
@@ -13,11 +13,11 @@
 
 }
 
+
+
 .select-to-delete {
 
 }
-
-
 
 .select-to-delete--post-it-note {
     width: 350px;
@@ -37,7 +37,7 @@
 
 
 .select-to-delete--task {
-    padding-bottom: 7px;
+    padding-bottom: 11px;
     position: relative;
     top: 2px;
     left: 7px;

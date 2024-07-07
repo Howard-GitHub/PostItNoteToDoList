@@ -14,7 +14,15 @@
     box-sizing: border-box;
     overflow: auto;
     overflow-x: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none;
 }
+
+.to-do-list::-webkit-scrollbar {
+    display: none;
+}
+
+
 
 .tasks-container {
     height: 350px;
