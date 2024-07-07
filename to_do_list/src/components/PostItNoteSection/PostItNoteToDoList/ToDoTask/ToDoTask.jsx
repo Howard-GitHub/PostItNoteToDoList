@@ -7,8 +7,7 @@ import {handleKeyDownEnter} from '../../../../utils/SectionUtils';
 const ToDoTask = ({id, isInEditMode, handleClickDeleteTask}) => {
     const [task, setTask] = useState("");
     const taskRef = useRef();
-    const deleteComponentRef = useRef();
-    const {handleChangeKeyboardInput, handleChangeComponentHeight} = useLocalStoredTextarea(id, task, setTask, taskRef, '30px');
+    const {handleChangeKeyboardInput} = useLocalStoredTextarea(id, task, setTask, taskRef, '30px');
 
     useEffect(() => {
         if (taskRef.current) {
@@ -20,13 +19,13 @@ const ToDoTask = ({id, isInEditMode, handleClickDeleteTask}) => {
         <div className="to-do-task-container">
             <div className="bullet-point"/>
                 {isInEditMode ? (
-                <textarea 
-                    className="task-name"
-                    ref={taskRef}
-                    value={task}
-                    onKeyDown={(event) => handleKeyDownEnter(event)}
-                    onChange={(event) => handleChangeKeyboardInput(event)}
-                />
+                    <textarea 
+                        className="task-name"
+                        ref={taskRef}
+                        value={task}
+                        onKeyDown={(event) => handleKeyDownEnter(event)}
+                        onChange={(event) => handleChangeKeyboardInput(event)}
+                    />
                 ) : (
                     <SelectToDelete 
                         type={"task"}

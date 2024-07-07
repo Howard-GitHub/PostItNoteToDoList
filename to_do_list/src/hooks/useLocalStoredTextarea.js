@@ -42,28 +42,8 @@ const useLocalStoredTextarea = (id, text, setText, textareaRef, height) => {
         handleChangeTextareaHeight(textareaRef, height);
     }
 
-
-    // Changes height of component to be similar to the height of a textarea
-    const handleChangeComponentHeight = (componentRef) => {
-        let stringTextareaHeight;
-        let numericalTextareaHeight;
-        if (textareaRef.current && componentRef.current) {
-            stringTextareaHeight = textareaRef.current.style.height;
-            numericalTextareaHeight = parseInt(stringTextareaHeight.replace("px", ""));
-
-            if (isNaN(numericalTextareaHeight)) {
-                // Default height if the textarea was just created
-                componentRef.current.style.height = '35px';
-            }
-            else {
-                componentRef.current.style.height = `${numericalTextareaHeight + 5}px`;
-            }
-        }
-    }
-
     return {
-        handleChangeKeyboardInput,
-        handleChangeComponentHeight
+        handleChangeKeyboardInput
     };
 }
  
