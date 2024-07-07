@@ -3,7 +3,7 @@ import './SelectToDelete.css';
 const SelectToDelete = ({type, id, deleteComponentRef, handleClickDeleteItem, task}) => {
 
     return (  
-        <div className="select-to-delete-container">
+        <div className={`select-to-delete-container--${type}`}>
             {(type === "post-it-note") ? (
                 <div 
                     className={`select-to-delete--${type}`}
