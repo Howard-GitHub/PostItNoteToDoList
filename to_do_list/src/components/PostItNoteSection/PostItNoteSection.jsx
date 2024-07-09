@@ -1,4 +1,4 @@
-import {useState, useRef} from 'react';
+import {useState, useRef, useEffect} from 'react';
 import './PostItNoteSection.css'
 import PostItNoteToDoList from './PostItNoteToDoList/PostItNoteToDoList';
 import SectionButtons from './SectionButtons/SectionButtons';
@@ -13,6 +13,7 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
     const [isInEditMode, setIsInEditMode] = useState(false);
     const titleRef = useRef();
     const [arrayOfPostItNoteToDoLists, setArrayOfPostItNoteToDoLists] = useState([]);
+    const [deleteSectionFromLocal, setDeleteSectionFromLocal] = useState(false);
     const {handleClickAddItem, handleClickDeleteItem} = useLocalStoredArray(id, arrayOfPostItNoteToDoLists, setArrayOfPostItNoteToDoLists);
     const {handleChangeKeyboardInput} = useLocalStoredTextarea(id, title, setTitle, titleRef, '35px');
 
@@ -32,6 +33,8 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
             isInEditMode={isInEditMode}
             handleClickDeleteSection={handleClickDeleteSection}
             handleChangeKeyboardInput={handleChangeKeyboardInput}
+            setDeleteSectionFromLocal={setDeleteSectionFromLocal}
+            arrayOfPostItNoteToDoLists={arrayOfPostItNoteToDoLists}
         />    
 
         <SectionButtons 

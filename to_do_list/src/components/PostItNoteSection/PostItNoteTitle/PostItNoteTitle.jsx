@@ -3,7 +3,9 @@ import './PostItNoteTitle.css';
 import SelectToDelete from '../SelectToDelete/SelectToDelete';
 
 const PostItNoteTitle = ({id, titleRef, isInDeleteMode, oneSectionIsEntered, setOneSectionIsEntered, setSelectedSection, 
-                        title, isInEditMode, handleClickDeleteSection, handleChangeKeyboardInput}) => {
+                        title, isInEditMode, handleClickDeleteSection, handleChangeKeyboardInput, setDeleteSectionFromLocal,
+                        arrayOfPostItNoteToDoLists}) => {
+
 
     return ( 
         <div className="title-container">
@@ -16,6 +18,8 @@ const PostItNoteTitle = ({id, titleRef, isInDeleteMode, oneSectionIsEntered, set
                     type={"post-it-note"}
                     id={id}
                     handleClickDeleteItem={handleClickDeleteSection}
+                    itemToDelete={"section"}
+                    arrayOfSubItems={arrayOfPostItNoteToDoLists}
                 />
                 }
                 {((!oneSectionIsEntered && !isInDeleteMode) && 
