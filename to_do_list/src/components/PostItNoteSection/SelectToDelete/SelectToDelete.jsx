@@ -1,6 +1,6 @@
 import './SelectToDelete.css';
 
-const SelectToDelete = ({type, id, deleteComponentRef, handleClickDeleteItem, task, itemToDelete, arrayOfSubItems}) => {
+const SelectToDelete = ({type, id, deleteComponentRef, handleClickDeleteItem, task, itemToDelete, arrayOfPostItNoteToDoLists}) => {
 
     return (  
         <div className={`select-to-delete-container--${type}`}>
@@ -8,12 +8,12 @@ const SelectToDelete = ({type, id, deleteComponentRef, handleClickDeleteItem, ta
                 <div 
                     className={`select-to-delete--${type}`}
                     ref={deleteComponentRef}
-                    onClick={() => handleClickDeleteItem(id, itemToDelete, arrayOfSubItems)}
+                    onClick={() => handleClickDeleteItem(id, itemToDelete, arrayOfPostItNoteToDoLists)}
                 />
             ) : (
                 <div 
                     className={`select-to-delete--${type}`}
-                    onClick={() => handleClickDeleteItem(id)}
+                    onClick={() => handleClickDeleteItem(id, itemToDelete)}
                 >
                     {task}
                 </div>

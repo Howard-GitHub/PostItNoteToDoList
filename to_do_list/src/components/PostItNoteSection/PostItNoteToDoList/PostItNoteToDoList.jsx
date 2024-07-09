@@ -37,7 +37,6 @@ const PostItNoteToDoList = ({id, isInDeleteMode, oneSectionIsEntered, isInEditMo
                         id={id}
                         handleClickDeleteItem={handleClickDeleteToDoList}
                         itemToDelete={"toDoList"}
-                        arrayOfSubItems={arrayOfTasks}
                     />
                 }
             </div>

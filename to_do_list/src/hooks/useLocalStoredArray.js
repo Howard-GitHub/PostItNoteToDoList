@@ -33,38 +33,54 @@ const useLocalStoredArray = (localKey, arrayOfItems, setArrayOfItems) => {
         setArrayOfItems([...arrayOfItems, uniqueIdentifier]);
     }
 
+    // Removes a task name from the local storage
+    const handleRemoveLocalTaskName = (taskId) => {
+        const taskTextLocalKey = "text:" + taskId;
+        console.log("task name(before)", localStorage.getItem(taskTextLocalKey))
+        localStorage.removeItem(taskTextLocalKey);
+        console.log("task name(after)", localStorage.getItem(taskTextLocalKey))
+    }
+
     // Removes all the tasks in a particular to do list from the local storage
     const handleRemoveLocalTaskNames = (toDoListId) => {
         const arrayOfTasksAsStrings = localStorage.getItem(toDoListId);
         const arrayOfTasks = JSON.parse(arrayOfTasksAsStrings);
-        arrayOfTasks.forEach((task) => {
-            const textTaskLocalKey = "text:" + task.id
-            localStorage.removeItem(textTaskLocalKey);
-        })
-    }
-
-    // Removes all the content in a section from the local storage
-    const handleRemoveLocalSectonContent = (arrayOfPostItNoteToDoLists) => {
-        arrayOfPostItNoteToDoLists.forEach((toDoList) => {
-            handleRemoveLocalTaskNames(toDoList.id);
-            localStorage.removeItem(toDoList.id);
-        })
+        if (arrayOfTasks) {
+            arrayOfTasks.forEach((task) => {
+                handleRemoveLocalTaskName(task.id);
+            })
+        }
     }
 
     // Removes all the content in a to do list form the local storage
-    const handleRemoveLocalToDoListContent = () => {
-        const toDoListId = localKey
+    const handleRemoveLocalToDoListContent = (toDoListId) => {
         handleRemoveLocalTaskNames(toDoListId);
-        localStorage.removeItem(localKey);
+        console.log("list of tasks(before)", localStorage.getItem(toDoListId));
+        localStorage.removeItem(toDoListId);
+        console.log("list of tasks(after)", localStorage.getItem(toDoListId));
+    }
+
+    // Removes all the content in a section from the local storage
+    const handleRemoveLocalSectonContent = (sectionId, arrayOfPostItNoteToDoLists) => {
+        console.log("list of todo lists(before)", localStorage.getItem(sectionId));
+        arrayOfPostItNoteToDoLists.forEach((toDoList) => {
+            handleRemoveLocalToDoListContent(toDoList.id);
+        })
+        localStorage.removeItem(sectionId);
+        console.log("list of to do lists(after)", localStorage.getItem(sectionId));
+
     }
 
     // Deletes the post it note section the user clicks on
-    const handleClickDeleteItem = (id, itemToDelete, arrayOfSubItems) => {
+    const handleClickDeleteItem = (id, itemToDelete, arrayOfPostItNoteToDoLists) => {
         if (itemToDelete === "section") {
-            handleRemoveLocalSectonContent(arrayOfSubItems);
+            handleRemoveLocalSectonContent(id, arrayOfPostItNoteToDoLists);
         }
         else if (itemToDelete == "toDoList") {
-            handleRemoveLocalToDoListContent();
+            handleRemoveLocalToDoListContent(id);
+        }
+        else if (itemToDelete == "task") {
+            handleRemoveLocalTaskName(id);
         }
         const newArray = arrayOfItems.filter((arrayOfItems) => arrayOfItems.id !== id)
         setArrayOfItems(newArray);

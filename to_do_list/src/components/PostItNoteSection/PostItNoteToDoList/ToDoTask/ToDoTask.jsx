@@ -29,6 +29,7 @@ const ToDoTask = ({id, isInEditMode, handleClickDeleteTask}) => {
                 ) : (
                     <SelectToDelete 
                         type={"task"}
+                        itemToDelete={"task"}
                         id={id}
                         handleClickDeleteItem={handleClickDeleteTask}
                         task={task}
