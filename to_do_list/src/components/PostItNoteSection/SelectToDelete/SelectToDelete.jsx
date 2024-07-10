@@ -1,10 +1,10 @@
-import {useRef, useEffect, useState} from 'react';
+import {useRef, useEffect} from 'react';
 import './SelectToDelete.css';
 
 const SelectToDelete = ({type, id, handleClickDeleteItem, task, itemToDelete, arrayOfPostItNoteToDoLists}) => {
     const taskDisplayRef = useRef(null);
 
-    
+    // Adjusts the height of the task display to its proper height if it has not been edited yet
     useEffect(() => {
         if (taskDisplayRef.current && (taskDisplayRef.current.scrollHeight < 37)) {
             taskDisplayRef.current.style.height = "27px";

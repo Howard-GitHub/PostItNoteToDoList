@@ -4,6 +4,14 @@
     text-align: center;
 }
 
+.add-item-container--task {
+    padding-bottom: 20px;
+}
+
+.add-item-container--post-it-note {
+    
+}
+
 .add-item-button {
     position: relative;
     display: flex;
