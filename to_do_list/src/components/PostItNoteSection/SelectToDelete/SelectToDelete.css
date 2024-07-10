@@ -49,6 +49,7 @@
     transition: background-color ease 0.3s,
                 box-shadow ease 0.3s,
                 border ease 0.3s;
+    border: 1px solid black;
 }
 
 .select-to-delete--task:hover {

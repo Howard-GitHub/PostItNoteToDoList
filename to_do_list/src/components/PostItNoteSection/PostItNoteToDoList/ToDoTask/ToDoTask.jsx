@@ -7,7 +7,7 @@ import {handleKeyDownEnter} from '../../../../utils/SectionUtils';
 const ToDoTask = ({id, isInEditMode, handleClickDeleteTask}) => {
     const [task, setTask] = useState(null);
     const taskRef = useRef();
-    const {handleChangeKeyboardInput} = useLocalStoredTextarea(id, task, setTask, taskRef, '30px');
+    const {handleChangeKeyboardInput} = useLocalStoredTextarea(id, task, setTask, taskRef);
 
     // Sets the height of the textarea containing the task to its proper height when entering edit mode
     useEffect(() => {

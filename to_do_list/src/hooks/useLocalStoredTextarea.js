@@ -1,6 +1,6 @@
 import {useEffect} from 'react';
 
-const useLocalStoredTextarea = (id, text, setText, textareaRef, height) => {
+const useLocalStoredTextarea = (id, text, setText, textareaRef) => {
     
     // Retrieves data from the local storage when the program first runs
     useEffect(() => {
@@ -14,7 +14,7 @@ const useLocalStoredTextarea = (id, text, setText, textareaRef, height) => {
     useEffect(() => {
         if (text) { 
             localStorage.setItem("text:" + id, text);
-            handleChangeTextareaHeight(textareaRef, height)
+            handleChangeTextareaHeight(textareaRef)
         }
     }, [text])
 

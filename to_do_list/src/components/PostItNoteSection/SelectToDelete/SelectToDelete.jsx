@@ -11,6 +11,12 @@ const SelectToDelete = ({type, id, handleClickDeleteItem, task, itemToDelete, ar
         }
     }, [taskDisplayRef])
 
+    useEffect(() => {
+        if (taskDisplayRef.current && (taskDisplayRef.current.scrollHeight >= 37)) {
+            taskDisplayRef.current.style.height = `${taskDisplayRef.current.scrollHeight}px`;
+        }
+    }, [task])
+
     return (  
         <div className={`select-to-delete-container--${type}`}>
             {(type === "post-it-note") ? (
