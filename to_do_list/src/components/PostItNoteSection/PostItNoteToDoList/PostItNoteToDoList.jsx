@@ -15,6 +15,7 @@ const PostItNoteToDoList = ({id, isInDeleteMode, oneSectionIsEntered, isInEditMo
             <div className="to-do-list">
                 <div className="tasks-container">
                     <ToDoListHeader 
+                        toDoListId={id}
                         isInEditMode={isInEditMode}
                     />
                     {(arrayOfTasks !== null) &&
