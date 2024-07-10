@@ -11,17 +11,24 @@ const useLocalStoredTextarea = (id, text, setText, textareaRef, height) => {
     }, [])
 
     // Sets the initial height of the textarea based on the amount of content it contains
+    /*
     useEffect(() => {
-        if (textareaRef.current) {
+        if (textareaRef.current && text) {
             textareaRef.current.style.height = `${textareaRef.current.scrollHeight - 5}px`;
+            //EDIT
+            console.log("text", text);
+            console.log(textareaRef.current.scrollHeight);
         }
-    }, [])
+    }, [text])*/
 
     // Saves changes to textarea in the local storage every time the text is modified
     useEffect(() => {
         if (text) { 
             localStorage.setItem("text:" + id, text);
+            handleChangeTextareaHeight(textareaRef, height)
+            console.log("run")
         }
+
     }, [text])
 
     // Changes the height of the textarea everytime a new line is added
@@ -35,7 +42,8 @@ const useLocalStoredTextarea = (id, text, setText, textareaRef, height) => {
     // Tracks and saves user input for a textarea
     const handleChangeKeyboardInput = (event) => {
         setText(event.target.value);
-        handleChangeTextareaHeight(textareaRef, height);
+        //EDIT
+        //handleChangeTextareaHeight(textareaRef, height);
     }
 
     return {

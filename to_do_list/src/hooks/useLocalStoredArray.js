@@ -15,15 +15,12 @@ const useLocalStoredArray = (localKey, arrayOfItems, setArrayOfItems) => {
         setInitialArrayIsUpdated(true);
     }, [])
 
-    
     // Saves changes to array in the local storage every time the array is modified
     useEffect(() => {
         if (initialArrayIsUpdated) {
             localStorage.setItem(localKey, JSON.stringify(arrayOfItems));
         }
     }, [arrayOfItems])
-
-
     
     // Adds a new item to the array
     const handleClickAddItem = () => {
@@ -36,9 +33,7 @@ const useLocalStoredArray = (localKey, arrayOfItems, setArrayOfItems) => {
     // Removes a task name from the local storage
     const handleRemoveLocalTaskName = (taskId) => {
         const taskTextLocalKey = "text:" + taskId;
-        console.log("task name(before)", localStorage.getItem(taskTextLocalKey))
         localStorage.removeItem(taskTextLocalKey);
-        console.log("task name(after)", localStorage.getItem(taskTextLocalKey))
     }
 
     // Removes all the tasks in a particular to do list from the local storage
@@ -55,19 +50,15 @@ const useLocalStoredArray = (localKey, arrayOfItems, setArrayOfItems) => {
     // Removes all the content in a to do list form the local storage
     const handleRemoveLocalToDoListContent = (toDoListId) => {
         handleRemoveLocalTaskNames(toDoListId);
-        console.log("list of tasks(before)", localStorage.getItem(toDoListId));
         localStorage.removeItem(toDoListId);
-        console.log("list of tasks(after)", localStorage.getItem(toDoListId));
     }
 
     // Removes all the content in a section from the local storage
     const handleRemoveLocalSectonContent = (sectionId, arrayOfPostItNoteToDoLists) => {
-        console.log("list of todo lists(before)", localStorage.getItem(sectionId));
         arrayOfPostItNoteToDoLists.forEach((toDoList) => {
             handleRemoveLocalToDoListContent(toDoList.id);
         })
         localStorage.removeItem(sectionId);
-        console.log("list of to do lists(after)", localStorage.getItem(sectionId));
 
     }
 

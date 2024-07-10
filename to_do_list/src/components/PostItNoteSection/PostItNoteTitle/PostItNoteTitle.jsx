@@ -1,3 +1,4 @@
+import {useEffect} from 'react';
 import {handleOnClickToEnterSection} from '../../../utils/SectionUtils';
 import './PostItNoteTitle.css';
 import SelectToDelete from '../SelectToDelete/SelectToDelete';
@@ -5,6 +6,9 @@ import SelectToDelete from '../SelectToDelete/SelectToDelete';
 const PostItNoteTitle = ({id, titleRef, isInDeleteMode, oneSectionIsEntered, setOneSectionIsEntered, setSelectedSection, 
                         title, isInEditMode, handleClickDeleteSection, handleChangeKeyboardInput, arrayOfPostItNoteToDoLists}) => {
 
+    useEffect(() => {
+        titleRef.current.style.height = `${titleRef.current.scrollHeight - 7}px`;
+    }, [oneSectionIsEntered])
 
     return ( 
         <div className="title-container">
