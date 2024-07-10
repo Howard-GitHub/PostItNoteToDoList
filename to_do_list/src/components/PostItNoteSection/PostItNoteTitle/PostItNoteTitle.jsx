@@ -6,6 +6,7 @@ import SelectToDelete from '../SelectToDelete/SelectToDelete';
 const PostItNoteTitle = ({id, titleRef, isInDeleteMode, oneSectionIsEntered, setOneSectionIsEntered, setSelectedSection, 
                         title, isInEditMode, handleClickDeleteSection, handleChangeKeyboardInput, arrayOfPostItNoteToDoLists}) => {
 
+    // Updates the size of the textarea containing the title when the user returns to the dashboard
     useEffect(() => {
         titleRef.current.style.height = `${titleRef.current.scrollHeight - 7}px`;
     }, [oneSectionIsEntered])
