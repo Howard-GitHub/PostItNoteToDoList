@@ -34,26 +34,21 @@
                 0px 15px 10px lightgray;
 }
 
-
-
 .select-to-delete--task {
     padding-bottom: 8px;
     position: relative;
     left: 7px;
     width: 300px;
     background-color: transparent;
-    resize: none;
     font-family: 'Comic Sans MS';
     font-size: 19px;
     word-wrap: break-word;
     text-align: left;
     cursor: pointer;
     border: 0px solid rgb(255, 138, 138);
-    
     transition: background-color ease 0.3s,
                 box-shadow ease 0.3s,
                 border ease 0.3s;
-                
 }
 
 .select-to-delete--task:hover {

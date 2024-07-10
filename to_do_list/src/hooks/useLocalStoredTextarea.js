@@ -19,9 +19,9 @@ const useLocalStoredTextarea = (id, text, setText, textareaRef, height) => {
     }, [text])
 
     // Changes the height of the textarea everytime a new line is added
-    const handleChangeTextareaHeight = (textareaRef, height) => {
+    const handleChangeTextareaHeight = (textareaRef) => {
         if (textareaRef.current) {
-            textareaRef.current.style.height = height;
+            textareaRef.current.style.height = "0px";
             textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
         }
     }

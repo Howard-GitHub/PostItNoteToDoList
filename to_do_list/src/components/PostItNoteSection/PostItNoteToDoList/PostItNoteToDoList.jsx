@@ -4,6 +4,7 @@ import {useState} from 'react';
 import SelectToDelete from '../SelectToDelete/SelectToDelete';
 import AddItemButton from '../../AddItemButton/AddItemButton';
 import useLocalStoredArray from '../../../hooks/useLocalStoredArray';
+import ToDoListHeader from './ToDoListHeader/ToDoListHeader';
 
 const PostItNoteToDoList = ({id, isInDeleteMode, oneSectionIsEntered, isInEditMode, handleClickDeleteToDoList}) => {
     const [arrayOfTasks, setArrayOfTasks] = useState([]);
@@ -11,9 +12,11 @@ const PostItNoteToDoList = ({id, isInDeleteMode, oneSectionIsEntered, isInEditMo
     
     return ( 
         <div className="to-do-list-container">
-            <div 
-                className="to-do-list">
+            <div className="to-do-list">
                 <div className="tasks-container">
+                    <ToDoListHeader 
+                        isInEditMode={isInEditMode}
+                    />
                     {(arrayOfTasks !== null) &&
                         arrayOfTasks.map((task) => (
                             <ToDoTask

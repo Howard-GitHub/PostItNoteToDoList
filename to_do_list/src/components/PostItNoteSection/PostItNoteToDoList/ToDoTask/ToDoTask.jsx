@@ -17,7 +17,7 @@ const ToDoTask = ({id, isInEditMode, handleClickDeleteTask}) => {
     }, [isInEditMode])
 
     return ( 
-        <div className="to-do-task-container">
+        <div className="task-container">
             <div className="bullet-point"/>
                 {isInEditMode ? (
                     <textarea 
