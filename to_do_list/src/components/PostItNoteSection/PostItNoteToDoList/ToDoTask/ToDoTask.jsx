@@ -3,18 +3,13 @@ import './ToDoTask.css';
 import {useRef, useState, useEffect} from "react";
 import useLocalStoredTextarea from '../../../../hooks/useLocalStoredTextarea';
 import {handleKeyDownEnter} from '../../../../utils/SectionUtils';
+import useAdjustTextareaHeight from '../../../../hooks/useAdjustTextareaHeight';
 
 const ToDoTask = ({id, isInEditMode, handleClickDeleteTask}) => {
     const [task, setTask] = useState(null);
     const taskRef = useRef();
     const {handleChangeKeyboardInput} = useLocalStoredTextarea(id, task, setTask, taskRef);
-
-    // Sets the height of the textarea containing the task to its proper height when entering edit mode
-    useEffect(() => {
-        if (taskRef.current) {
-            taskRef.current.style.height = `${taskRef.current.scrollHeight}px`;
-        }
-    }, [isInEditMode])
+    useAdjustTextareaHeight(taskRef, isInEditMode, 0);
 
     return ( 
         <div className="task-container">
@@ -34,6 +29,7 @@ const ToDoTask = ({id, isInEditMode, handleClickDeleteTask}) => {
                         id={id}
                         handleClickDeleteItem={handleClickDeleteTask}
                         task={task}
+                        isInEditMode={isInEditMode}
                     />
                 )}
         </div>

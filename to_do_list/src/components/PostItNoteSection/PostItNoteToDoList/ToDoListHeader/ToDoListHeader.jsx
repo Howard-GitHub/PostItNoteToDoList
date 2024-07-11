@@ -1,30 +1,41 @@
 import {useRef, useState, useEffect} from 'react';
 import useLocalStoredTextarea from '../../../../hooks/useLocalStoredTextarea';
 import './ToDoListHeader.css';
+import useAdjustTextareaHeight from '../../../../hooks/useAdjustTextareaHeight';
 
 const ToDoListHeader = ({toDoListId, isInEditMode}) => {
     const [header, setHeader] = useState(null);
-    const headerRef = useRef(null);
-    const {handleChangeKeyboardInput} = useLocalStoredTextarea(toDoListId, header, setHeader, headerRef);
-
-    // Sets the height of the textarea containing the task to its proper height when entering edit mode
+    const headerInputRef = useRef(null);
+    const headerDisplayRef = useRef(null);
+    const {handleChangeKeyboardInput} = useLocalStoredTextarea(toDoListId, header, setHeader, headerInputRef);
+    useAdjustTextareaHeight(headerInputRef, isInEditMode, 0);
+    
+    // Adjusts the height of the task display to its proper height if it has not been edited yet
     useEffect(() => {
-        if (headerRef.current) {
-            headerRef.current.style.height = `${headerRef.current.scrollHeight}px`;
+        if (headerDisplayRef.current) {
+            if (!header) {
+                headerDisplayRef.current.style.height = "41px";
+            }
+            else {
+                headerDisplayRef.current.style.height =`${headerDisplayRef.current.scrollHeight}px`;
+            }
         }
-    }, [isInEditMode])
+    }, [headerDisplayRef, header, isInEditMode])
 
     return (  
         <div className="header-container">
             {isInEditMode ? (
             <textarea 
                 className="header-input"
-                ref={headerRef}
+                ref={headerInputRef}
                 value={header}
                 onChange={handleChangeKeyboardInput}
             />
             ) : (
-            <div className='header-display'>
+            <div 
+                className="header-display"
+                ref={headerDisplayRef}
+            >
                 {header}
             </div>
             )}

@@ -14,7 +14,7 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
     const titleRef = useRef();
     const [arrayOfPostItNoteToDoLists, setArrayOfPostItNoteToDoLists] = useState([]);
     const {handleClickAddItem, handleClickDeleteItem} = useLocalStoredArray(id, arrayOfPostItNoteToDoLists, setArrayOfPostItNoteToDoLists);
-    const {handleChangeKeyboardInput} = useLocalStoredTextarea(id, title, setTitle, titleRef, '35px');
+    const {handleChangeKeyboardInput} = useLocalStoredTextarea(id, title, setTitle, titleRef);
 
     return (             
     (!oneSectionIsEntered || (selectedSection === id)) && 
