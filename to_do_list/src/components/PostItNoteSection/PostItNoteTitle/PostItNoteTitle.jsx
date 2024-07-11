@@ -1,4 +1,3 @@
-import {useEffect} from 'react';
 import {handleOnClickToEnterSection} from '../../../utils/SectionUtils';
 import './PostItNoteTitle.css';
 import SelectToDelete from '../SelectToDelete/SelectToDelete';

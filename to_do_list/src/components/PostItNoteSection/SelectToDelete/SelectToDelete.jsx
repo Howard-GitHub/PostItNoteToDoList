@@ -1,20 +1,10 @@
 import {useRef, useEffect} from 'react';
 import './SelectToDelete.css';
+import useAdjustDisplayHeight from '../../../hooks/useAdjustDisplayHeight';
 
 const SelectToDelete = ({type, id, handleClickDeleteItem, task, itemToDelete, arrayOfPostItNoteToDoLists, isInEditMode}) => {
     const taskDisplayRef = useRef(null);
-
-    // Sets the initial task display height
-    useEffect(() => {
-        if (taskDisplayRef.current) {
-            if (!task) {
-                taskDisplayRef.current.style.height = `27px`;
-            }
-            else {
-                taskDisplayRef.current.style.height = `${taskDisplayRef.current.scrollHeight - 9}px`;
-            }
-        }
-    }, [taskDisplayRef, task, isInEditMode])
+    useAdjustDisplayHeight(taskDisplayRef, task, isInEditMode, "27px", 9);
 
     return (  
         <div className={`select-to-delete-container--${type}`}>
