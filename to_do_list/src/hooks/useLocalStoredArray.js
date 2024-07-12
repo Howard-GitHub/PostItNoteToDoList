@@ -58,8 +58,9 @@ const useLocalStoredArray = (localKey, arrayOfItems, setArrayOfItems) => {
         arrayOfPostItNoteToDoLists.forEach((toDoList) => {
             handleRemoveLocalToDoListContent(toDoList.id);
         })
+        const localSavedTextId = "text:" + sectionId;
         localStorage.removeItem(sectionId);
-
+        localStorage.removeItem(localSavedTextId);
     }
 
     // Deletes the post it note section the user clicks on
