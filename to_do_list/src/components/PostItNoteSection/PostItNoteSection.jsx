@@ -52,16 +52,16 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
         />
 
         {((selectedSection === id) && (arrayOfPostItNoteToDoLists !== null)) &&
-                arrayOfPostItNoteToDoLists.map((singlePostItNote) => (
-                    <PostItNoteToDoList 
-                        key={singlePostItNote.id}
-                        id={singlePostItNote.id}
-                        isInDeleteMode={isInDeleteMode}
-                        oneSectionIsEntered={oneSectionIsEntered}
-                        isInEditMode={isInEditMode}
-                        handleClickDeleteToDoList={handleClickDeleteItem}
-                    />
-                ))
+            arrayOfPostItNoteToDoLists.map((singlePostItNote) => (
+                <PostItNoteToDoList 
+                    key={singlePostItNote.id}
+                    id={singlePostItNote.id}
+                    isInDeleteMode={isInDeleteMode}
+                    oneSectionIsEntered={oneSectionIsEntered}
+                    isInEditMode={isInEditMode}
+                    handleClickDeleteToDoList={handleClickDeleteItem}
+                />
+            ))
         }
     </div> )
     );

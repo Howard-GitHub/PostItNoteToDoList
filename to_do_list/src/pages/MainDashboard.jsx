@@ -19,37 +19,39 @@ const MainDashboard = () => {
 
     return ( 
             <div className="main-dashboard-container">
-                {isInDeleteMode && 
-                    <ExitDeleteItemModeButton 
-                        setIsInDeleteMode={setIsInDeleteMode}
-                        handleClickExitDeleteMode={handleClickExitDeleteMode}
-                    />
-                }
+                <div className="main-dashboard">
+                    {isInDeleteMode && 
+                        <ExitDeleteItemModeButton 
+                            setIsInDeleteMode={setIsInDeleteMode}
+                            handleClickExitDeleteMode={handleClickExitDeleteMode}
+                        />
+                    }
 
-                {arrayOfSections.map((singlePostItNoteSection) => (
-                    <PostItNoteSection 
-                        key={singlePostItNoteSection.id}
-                        id={singlePostItNoteSection.id}
-                        isInDeleteMode={isInDeleteMode}
-                        setIsInDeleteMode={setIsInDeleteMode}
-                        arrayOfSections={arrayOfSections}
-                        setArrayOfSections={setArrayOfSections}
-                        oneSectionIsEntered={oneSectionIsEntered}
-                        setOneSectionIsEntered={setOneSectionIsEntered}
-                        selectedSection={selectedSection}
-                        setSelectedSection={setSelectedSection}
-                        handleClickDeleteSection={handleClickDeleteItem}
-                    />
-                ))}
+                    {arrayOfSections.map((singlePostItNoteSection) => (
+                        <PostItNoteSection 
+                            key={singlePostItNoteSection.id}
+                            id={singlePostItNoteSection.id}
+                            isInDeleteMode={isInDeleteMode}
+                            setIsInDeleteMode={setIsInDeleteMode}
+                            arrayOfSections={arrayOfSections}
+                            setArrayOfSections={setArrayOfSections}
+                            oneSectionIsEntered={oneSectionIsEntered}
+                            setOneSectionIsEntered={setOneSectionIsEntered}
+                            selectedSection={selectedSection}
+                            setSelectedSection={setSelectedSection}
+                            handleClickDeleteSection={handleClickDeleteItem}
+                        />
+                    ))}
 
-                {(!isInDeleteMode && !oneSectionIsEntered) && 
-                    <ItemsButtonBar
-                        isInDeleteMode={isInDeleteMode}
-                        setIsInDeleteMode={setIsInDeleteMode}
-                        handleClickAddItem={handleClickAddItem}
-                        handleClickEnterDeleteMode={handleClickEnterDeleteMode}
-                    />
-                }
+                    {(!isInDeleteMode && !oneSectionIsEntered) && 
+                        <ItemsButtonBar
+                            isInDeleteMode={isInDeleteMode}
+                            setIsInDeleteMode={setIsInDeleteMode}
+                            handleClickAddItem={handleClickAddItem}
+                            handleClickEnterDeleteMode={handleClickEnterDeleteMode}
+                        />
+                    }
+            </div>
             </div>
     );
 }

@@ -33,11 +33,13 @@ const PostItNoteToDoList = ({id, isInDeleteMode, oneSectionIsEntered, isInEditMo
                             isInEditMode={isInEditMode}
                         />
                     }
-                    <HeaderButton
-                        toDoListId={id}
-                        displayHeader={displayHeader}
-                        setDisplayHeader={setDisplayHeader}
-                    />
+                    {(isInEditMode && !isInDeleteMode) &&
+                        <HeaderButton
+                            toDoListId={id}
+                            displayHeader={displayHeader}
+                            setDisplayHeader={setDisplayHeader}
+                        />
+                    }
                     {(arrayOfTasks !== null) &&
                         arrayOfTasks.map((task) => (
                             <ToDoTask

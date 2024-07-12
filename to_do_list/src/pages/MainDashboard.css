@@ -2,10 +2,10 @@ body {
     background-color: rgb(252, 242, 228);
 }
 
-.main-dashboard-container {
-    position: absolute;
-    display: flex;
-    flex-wrap: wrap;
+.main-dashboard {
+    position: relative;
     top: 50px;
     left: 20px;
+    display: flex;
+    flex-wrap: wrap;
 }
