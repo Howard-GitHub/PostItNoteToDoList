@@ -2,7 +2,7 @@
     padding-top: 10px;
 }
 
-.header-input {
+.header--input {
     position: relative;
     width: 315px;
     background-color: transparent;
@@ -15,7 +15,7 @@
     text-align: center;
 }
 
-.header-display {
+.header--display {
     position: relative;
     background-color: transparent;
     font-family: 'Comic Sans MS';

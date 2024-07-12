@@ -26,7 +26,7 @@ const PostItNoteToDoList = ({id, isInDeleteMode, oneSectionIsEntered, isInEditMo
     return ( 
         <div className="to-do-list-container">
             <div className="to-do-list">
-                <div className="tasks-container">
+                <div className="to-do-list__tasks-container">
                     {displayHeader &&
                         <ToDoListHeader 
                             toDoListId={id}

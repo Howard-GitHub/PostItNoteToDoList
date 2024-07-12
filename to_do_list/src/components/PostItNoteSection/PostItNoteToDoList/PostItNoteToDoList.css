@@ -22,7 +22,7 @@
     display: none;
 }
 
-.tasks-container {
+.to-do-list__tasks-container {
     height: 350px;
     width: 320px;
 }

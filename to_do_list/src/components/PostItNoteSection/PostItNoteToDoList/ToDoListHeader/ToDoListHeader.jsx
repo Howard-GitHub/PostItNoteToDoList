@@ -17,14 +17,14 @@ const ToDoListHeader = ({toDoListId, isInEditMode}) => {
         <div className="header-container">
             {isInEditMode ? (
             <textarea 
-                className="header-input"
+                className="header--input"
                 ref={headerInputRef}
                 value={header}
                 onChange={handleChangeKeyboardInput}
             />
             ) : (
             <div 
-                className="header-display"
+                className="header--display"
                 ref={headerDisplayRef}
             >
                 {header}

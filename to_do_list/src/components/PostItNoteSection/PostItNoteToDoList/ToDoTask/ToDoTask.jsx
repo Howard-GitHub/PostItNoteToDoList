@@ -16,7 +16,7 @@ const ToDoTask = ({id, isInEditMode, handleClickDeleteTask}) => {
             <div className="bullet-point"/>
                 {isInEditMode ? (
                     <textarea 
-                        className="task-input"
+                        className="task--input"
                         ref={taskRef}
                         value={task}
                         onKeyDown={(event) => handleKeyDownEnter(event)}
