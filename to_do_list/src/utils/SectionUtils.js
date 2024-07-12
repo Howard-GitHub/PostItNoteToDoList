@@ -26,3 +26,15 @@ export const handleKeyDownEnter = (event) => {
         event.preventDefault();
     }
 }
+
+// Adds a header to the to do list
+export const handleClickAddHeader = (setDisplayHeader) => {
+    setDisplayHeader(true);
+}
+
+// Removes the header from the to do list
+export const handleClickRemoveHeader = (toDoListId, setDisplayHeader) => {
+    const localKey = "text:" + toDoListId;
+    localStorage.removeItem(localKey);
+    setDisplayHeader(false);
+}
