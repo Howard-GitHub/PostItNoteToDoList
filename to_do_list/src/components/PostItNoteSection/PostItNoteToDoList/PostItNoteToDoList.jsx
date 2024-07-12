@@ -1,22 +1,42 @@
 import './PostItNoteToDoList.css';
 import ToDoTask from './ToDoTask/ToDoTask';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import SelectToDelete from '../SelectToDelete/SelectToDelete';
 import AddItemButton from '../../AddItemButton/AddItemButton';
 import useLocalStoredArray from '../../../hooks/useLocalStoredArray';
 import ToDoListHeader from './ToDoListHeader/ToDoListHeader';
+import HeaderButton from './HeaderButton/HeaderButton';
 
 const PostItNoteToDoList = ({id, isInDeleteMode, oneSectionIsEntered, isInEditMode, handleClickDeleteToDoList}) => {
     const [arrayOfTasks, setArrayOfTasks] = useState([]);
     const {handleClickAddItem, handleClickDeleteItem} = useLocalStoredArray(id, arrayOfTasks, setArrayOfTasks);
+    const [displayHeader, setDisplayHeader] = useState(null);
+
+    useEffect(() => {
+        const localKey = "text:" + id;
+        const locallyStoredHeader = localStorage.getItem(localKey);
+        if (locallyStoredHeader != null) {
+            setDisplayHeader(true);
+        }
+        else {
+            setDisplayHeader(false);
+        }
+    }, [])
     
     return ( 
         <div className="to-do-list-container">
             <div className="to-do-list">
                 <div className="tasks-container">
-                    <ToDoListHeader 
+                    {displayHeader &&
+                        <ToDoListHeader 
+                            toDoListId={id}
+                            isInEditMode={isInEditMode}
+                        />
+                    }
+                    <HeaderButton
                         toDoListId={id}
-                        isInEditMode={isInEditMode}
+                        displayHeader={displayHeader}
+                        setDisplayHeader={setDisplayHeader}
                     />
                     {(arrayOfTasks !== null) &&
                         arrayOfTasks.map((task) => (

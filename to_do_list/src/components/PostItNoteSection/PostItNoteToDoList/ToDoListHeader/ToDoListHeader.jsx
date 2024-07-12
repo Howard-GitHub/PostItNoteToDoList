@@ -5,7 +5,7 @@ import useAdjustTextareaHeight from '../../../../hooks/useAdjustTextareaHeight';
 import useAdjustDisplayHeight from '../../../../hooks/useAdjustDisplayHeight';
 
 const ToDoListHeader = ({toDoListId, isInEditMode}) => {
-    const [header, setHeader] = useState(null);
+    const [header, setHeader] = useState("");
     const headerInputRef = useRef(null);
     const headerDisplayRef = useRef(null);
     const {handleChangeKeyboardInput} = useLocalStoredTextarea(toDoListId, header, setHeader, headerInputRef);

@@ -19,11 +19,11 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: background-color ease 0.2s;
 }
 
 .add-item-button--post-it-note {
     background-color: antiquewhite;
-    transition: background-color ease 0.2s;
     border: 1px solid black;
     font-size: 50px;
     border-radius: 100px;
@@ -45,7 +45,6 @@
     border-radius: 20px;
     background-color: mediumaquamarine;
     border: 0.5px solid black;
-    transition: background-color ease 0.2s;
 }
 
 .add-item-button--task:hover {

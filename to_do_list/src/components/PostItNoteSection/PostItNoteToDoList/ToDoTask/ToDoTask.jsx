@@ -6,7 +6,7 @@ import {handleKeyDownEnter} from '../../../../utils/SectionUtils';
 import useAdjustTextareaHeight from '../../../../hooks/useAdjustTextareaHeight';
 
 const ToDoTask = ({id, isInEditMode, handleClickDeleteTask}) => {
-    const [task, setTask] = useState(null);
+    const [task, setTask] = useState("");
     const taskRef = useRef();
     const {handleChangeKeyboardInput} = useLocalStoredTextarea(id, task, setTask, taskRef);
     useAdjustTextareaHeight(taskRef, isInEditMode, 0);
