@@ -1,7 +1,4 @@
 .post-it-note-section-container {
     display: flex;
-}
-
-.to-do-list-array-container {
-    display: flex;
+    flex-wrap: wrap;
 }

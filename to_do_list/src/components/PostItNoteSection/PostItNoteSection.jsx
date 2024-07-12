@@ -1,4 +1,4 @@
-import {useState, useRef, useEffect} from 'react';
+import {useState, useRef} from 'react';
 import './PostItNoteSection.css'
 import PostItNoteToDoList from './PostItNoteToDoList/PostItNoteToDoList';
 import SectionButtons from './SectionButtons/SectionButtons';
@@ -52,8 +52,7 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
         />
 
         {((selectedSection === id) && (arrayOfPostItNoteToDoLists !== null)) &&
-            <div className="to-do-list-array-container">
-                {arrayOfPostItNoteToDoLists.map((singlePostItNote) => (
+                arrayOfPostItNoteToDoLists.map((singlePostItNote) => (
                     <PostItNoteToDoList 
                         key={singlePostItNote.id}
                         id={singlePostItNote.id}
@@ -62,8 +61,7 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
                         isInEditMode={isInEditMode}
                         handleClickDeleteToDoList={handleClickDeleteItem}
                     />
-                ))}
-            </div>
+                ))
         }
     </div> )
     );

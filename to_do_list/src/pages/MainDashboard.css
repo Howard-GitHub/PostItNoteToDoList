@@ -5,6 +5,7 @@ body {
 .main-dashboard-container {
     position: absolute;
     display: flex;
+    flex-wrap: wrap;
     top: 50px;
     left: 20px;
 }
