@@ -10,14 +10,14 @@ export const handleClickToDashboard = (setOneSectionIsEntered, setSelectedSectio
     setSelectedSection(null);
 }
 
-// Allows user to edit post it note section
-export const handleClickEdit = (isInEditMode, setIsInEditMode) => {
-    if (isInEditMode) {
-        setIsInEditMode(false);
-    }
-    else {
-        setIsInEditMode(true);
-    }
+// Sets section in edit mode
+export const handleClickEdit = (setIsInEditMode) => {
+    setIsInEditMode(true);
+}
+
+// Leaves edit mode in section
+export const handleClickDoneEdit = (setIsInEditMode) => {
+    setIsInEditMode(false);
 }
 
 // Prevents the user from creating a new line
