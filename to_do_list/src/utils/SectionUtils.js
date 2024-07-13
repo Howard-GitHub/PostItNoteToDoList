@@ -1,7 +1,14 @@
+// Resets scroll position to prevent the window from showing outside the webpage, which appears as a black screen
+const handleResetWindowView = () => {
+    window.scrollTo({top: 0})
+}
+
 // Enters selected post it note section
-export const handleOnClickToEnterSection = (id, setOneSectionIsEntered, setSelectedSection) => {
+export const handleClickToEnterSection = (id, setOneSectionIsEntered, setSelectedSection) => {
     setOneSectionIsEntered(true);
     setSelectedSection(id);
+
+    handleResetWindowView();
 }
 
 // Returns to dashboard

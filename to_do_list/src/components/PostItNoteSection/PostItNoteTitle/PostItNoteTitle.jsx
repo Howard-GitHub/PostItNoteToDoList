@@ -1,4 +1,4 @@
-import {handleKeyDownEnter, handleOnClickToEnterSection} from '../../../utils/SectionUtils';
+import {handleKeyDownEnter, handleClickToEnterSection} from '../../../utils/SectionUtils';
 import './PostItNoteTitle.css';
 import SelectToDelete from '../SelectToDelete/SelectToDelete';
 import useAdjustTextareaHeight from '../../../hooks/useAdjustTextareaHeight';
@@ -32,7 +32,7 @@ const PostItNoteTitle = ({id, titleRef, isInDeleteMode, oneSectionIsEntered, set
                 {((!oneSectionIsEntered && !isInDeleteMode) && 
                     <div 
                         className="select-to-enter-section"
-                        onClick={() => handleOnClickToEnterSection(id, setOneSectionIsEntered, setSelectedSection)}
+                        onClick={() => handleClickToEnterSection(id, setOneSectionIsEntered, setSelectedSection)}
                     />
                 )}
                 {(isInDeleteMode && !oneSectionIsEntered) &&
