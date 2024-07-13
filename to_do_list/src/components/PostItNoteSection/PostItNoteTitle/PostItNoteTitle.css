@@ -6,6 +6,7 @@
 .post-it-note-container {
     display: flex;
     justify-content: center;
+    align-items: center;
     height: 350px;
     width: 350px;
     background-color: lightpink;
@@ -34,7 +35,7 @@
 
 .text-height-limit {
     position: relative;
-    top: 50px;
+    top: 23px;
     left: -32px;
     height: 290px;
     display: flex;
@@ -60,8 +61,9 @@
 
 .pin-image {
     position: relative;
-    top: -7px;
+    top: -155px;
     left: 137px;
     height: 65px;
     width: 65px;
+    z-index: 1;
 }

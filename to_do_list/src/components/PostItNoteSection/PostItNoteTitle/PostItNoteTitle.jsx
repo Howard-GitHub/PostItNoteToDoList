@@ -16,18 +16,6 @@ const PostItNoteTitle = ({id, titleRef, isInDeleteMode, oneSectionIsEntered, set
                     className="pin-image"
                     src={pinImage}
                 />
-                {((oneSectionIsEntered && (isInDeleteMode || !isInEditMode))) && 
-                    <div className="block-from-selecting"/>
-                }
-                {(isInDeleteMode && !oneSectionIsEntered) &&
-                    <SelectToDelete 
-                        type={"post-it-note"}
-                        id={id}
-                        handleClickDeleteItem={handleClickDeleteSection}
-                        itemToDelete={"section"}
-                        arrayOfPostItNoteToDoLists={arrayOfPostItNoteToDoLists}
-                    />
-                }
                 <div className="text-height-limit">
                     <textarea
                         className="title"
@@ -37,12 +25,24 @@ const PostItNoteTitle = ({id, titleRef, isInDeleteMode, oneSectionIsEntered, set
                         placeholder="Untitled"
                     />
                 </div>
+                {((oneSectionIsEntered && (isInDeleteMode || !isInEditMode))) && 
+                    <div className="block-from-selecting"/>
+                }
                 {((!oneSectionIsEntered && !isInDeleteMode) && 
                     <div 
                         className="select-to-enter-section"
                         onClick={() => handleOnClickToEnterSection(id, setOneSectionIsEntered, setSelectedSection)}
                     />
                 )}
+                {(isInDeleteMode && !oneSectionIsEntered) &&
+                    <SelectToDelete 
+                        type={"post-it-note"}
+                        id={id}
+                        handleClickDeleteItem={handleClickDeleteSection}
+                        itemToDelete={"section"}
+                        arrayOfPostItNoteToDoLists={arrayOfPostItNoteToDoLists}
+                    />
+                }
             </div>
         </div>
 
