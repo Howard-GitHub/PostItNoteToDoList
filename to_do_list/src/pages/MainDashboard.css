@@ -2,12 +2,13 @@ body {
     background-color: rgb(252, 242, 228);
     overflow-x: hidden;
     scrollbar-width: none;
+    display: flex;
+    justify-content: center;
 }
 
 .main-dashboard {
     position: relative;
     top: 50px;
-    left: 20px;
     display: flex;
     flex-wrap: wrap;
 }
