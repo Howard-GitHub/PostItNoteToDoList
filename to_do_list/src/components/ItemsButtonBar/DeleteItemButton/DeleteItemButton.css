@@ -4,16 +4,22 @@
     text-align: center;
     justify-content: center;
     align-items: center;
-    background-color: antiquewhite;
+    background-color: white;
     cursor: pointer;
     transition: background-color ease 0.2s;
     border: 1px solid black;
     font-size: 50px;
-    border-radius: 100px;
-    height: 45px;
-    width: 45px;
+    border-radius: 14px;
+    height: 55px;
+    width: 55px;
     top: 10px;
     left: 20px;
+}
+
+.delete-item-button__trash-can-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 .delete-item-button:hover {

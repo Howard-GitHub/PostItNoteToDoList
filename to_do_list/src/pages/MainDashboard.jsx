@@ -20,12 +20,6 @@ const MainDashboard = () => {
     return ( 
             <div className="main-dashboard-container">
                 <div className="main-dashboard">
-                    {isInDeleteMode && 
-                        <ExitDeleteItemModeButton 
-                            setIsInDeleteMode={setIsInDeleteMode}
-                            handleClickExitDeleteMode={handleClickExitDeleteMode}
-                        />
-                    }
 
                     {arrayOfSections.map((singlePostItNoteSection) => (
                         <PostItNoteSection 
@@ -42,6 +36,13 @@ const MainDashboard = () => {
                             handleClickDeleteSection={handleClickDeleteItem}
                         />
                     ))}
+
+                    {isInDeleteMode && 
+                        <ExitDeleteItemModeButton 
+                            setIsInDeleteMode={setIsInDeleteMode}
+                            handleClickExitDeleteMode={handleClickExitDeleteMode}
+                        />
+                    }
 
                     {(!isInDeleteMode && !oneSectionIsEntered) && 
                         <ItemsButtonBar

@@ -1,12 +1,13 @@
 .button-bar {
     display: flex;
     position: fixed;
-    background-color: rgb(238, 251, 255);
-    border: 1px solid black;
-    width: 122px;
-    height: 67px;
-    border-radius: 20px;
+    background-color: rgb(220, 247, 255);
+    border: 2.5px solid black;
+    width: 140px;
+    height: 76px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
     left: 50%;
-    top: 90%;
+    top: 92%;
     transform: translate(-50%, 0%);
 }

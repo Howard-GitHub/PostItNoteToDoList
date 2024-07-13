@@ -2,10 +2,11 @@ import './ExitDeleteItemModeButton.css'
 
 const ExitDeleteItemModeButton = ({setIsInDeleteMode, handleClickExitDeleteMode}) => {
     return ( 
-        <div className="exit-delete-section-mode-button-container">
+        <div className="exit-delete-mode-button-container">
             <button 
-                className="exit-delete-section-mode-button"
+                className="exit-delete-mode-button"
                 onClick={() => handleClickExitDeleteMode(setIsInDeleteMode)}>
+                    {"< Back"}
             </button>
         </div>
     );

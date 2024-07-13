@@ -1,11 +1,16 @@
 .edit-button {
     position: fixed;
     color: blue;
+    background-color: white;
     cursor: pointer;
-    border: none;
-    background: transparent;
+    border: 0.5px solid black;
+    border-radius: 10px;
     top: 7px;
     right: 10px;
     font-size: 20px;
     cursor: pointer;
+}
+
+.edit-button:hover {
+    background-color: lightgray;
 }

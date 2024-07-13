@@ -3,15 +3,13 @@
     padding: 30px;
 }
 
-.manage-section-container {
+.post-it-note-container {
     display: flex;
     justify-content: center;
-    align-items: center;
     height: 350px;
     width: 350px;
     background-color: lightpink;
     box-shadow: 0px 15px 10px lightgray;
-    box-sizing: border-box;
 }
 
 .title {
@@ -20,6 +18,7 @@
     font-size: 30px;
     max-height: 345px;
     padding-bottom: 5px;
+    border: 3px solid white;
     text-align: center;
     outline: none;
     border: none;
@@ -31,6 +30,16 @@
 
 .title::placeholder {
     color: black;
+}
+
+.text-height-limit {
+    position: relative;
+    top: 50px;
+    left: -32px;
+    height: 290px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
 }
 
 
@@ -47,4 +56,12 @@
     width: 350px;
     background-color: transparent;
     cursor: pointer;
+}
+
+.pin-image {
+    position: relative;
+    top: -7px;
+    left: 137px;
+    height: 65px;
+    width: 65px;
 }

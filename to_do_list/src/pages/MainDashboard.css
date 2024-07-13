@@ -1,5 +1,7 @@
 body {
     background-color: rgb(252, 242, 228);
+    overflow-x: hidden;
+    scrollbar-width: none;
 }
 
 .main-dashboard {
@@ -8,4 +10,8 @@ body {
     left: 20px;
     display: flex;
     flex-wrap: wrap;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }

@@ -4,12 +4,24 @@ const AddItemButton = ({handleClickAddItem, type}) => {
 
     return ( 
         <div className={`add-item-container add-item-container--${type}`}>
-            <button 
-                className={`add-item-button add-item-button--${type}`}
-                onClick={handleClickAddItem}
-            >
-                {type === "post-it-note" ? "+" : "Add Task"}
-            </button>
+            {(type === "post-it-note") ? (
+                <button 
+                    className="add-item-button add-item-button--post-it-note"
+                    onClick={handleClickAddItem}
+                >
+                    <label className="add-item-button--post-it-note__symbol">
+                        +
+                    </label>
+                </button>
+            ) : (
+                <button
+                    className="add-item-button add-item-button--task"
+                    onClick={handleClickAddItem}
+                >
+                    Add Task
+                </button>
+            )}   
+
         </div>
     );
 }

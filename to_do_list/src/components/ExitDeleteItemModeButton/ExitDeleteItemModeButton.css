@@ -1,21 +1,16 @@
-.exit-delete-section-mode-button {
+.exit-delete-mode-button {
     position: fixed;
-    background-color: antiquewhite;
+    color: blue;
+    background-color: white;
     cursor: pointer;
+    border: 0.5px solid black;
+    top: 7px;
+    left: 5px;
+    font-size: 20px;
+    border-radius: 10px;
     transition: background-color ease 0.2s;
-    border: 1px solid black;
-    border-radius: 100px;
-    height: 45px;
-    width: 45px;
-    top: 90%;
-    left: 50%;
-    transform: translate(-50%, 0%);
 }
 
-.exit-delete-section-mode-button.cursor-enter {
-    background-color: antiquewhite;
-}
-
-.exit-delete-section-mode-button.cursor-leavev {
-    background-color: rgb(255, 210, 152);
+.exit-delete-mode-button:hover {
+    background-color: lightgray;
 }
