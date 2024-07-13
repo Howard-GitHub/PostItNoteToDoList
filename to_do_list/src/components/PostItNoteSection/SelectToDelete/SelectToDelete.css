@@ -1,22 +1,8 @@
-.select-to-delete-container {
-
-}
-
 .select-to-delete-container--post-it-note {
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.select-to-delete-container--task {
-
-}
-
-
-
-.select-to-delete {
-
 }
 
 .select-to-delete--post-it-note {

@@ -9,9 +9,9 @@ import {handleClickEnterDeleteMode, handleClickExitDeleteMode} from '../utils/De
 const MainDashboard = () => {
 
     // Contains the post it note section. A post it note section contains multiple post it notes or "a section of post it notes" and is supposed to
-    // contain one or more individual post it notes
-    const mainDashboardRef = useRef();
+    // contain one or more individual post it note to do lists
     const [arrayOfSections, setArrayOfSections] = useState([]);
+    const mainDashboardRef = useRef();
     const [isInDeleteMode, setIsInDeleteMode] = useState(false);
     const [oneSectionIsEntered, setOneSectionIsEntered] = useState(false);
     const [selectedSection, setSelectedSection] = useState(null);
