@@ -7,7 +7,6 @@ const handleResetWindowView = () => {
 export const handleClickToEnterSection = (id, setOneSectionIsEntered, setSelectedSection) => {
     setOneSectionIsEntered(true);
     setSelectedSection(id);
-
     handleResetWindowView();
 }
 

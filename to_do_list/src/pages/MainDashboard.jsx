@@ -27,9 +27,17 @@ const MainDashboard = () => {
                 mainDashboardRef.current.style.width = `${postItNoteTotalWidth * multiplyer}px`;
             }
         }
+
+        // Prevents the screen from highlighting
+        const handleSelectStartHighlight = (event) => {
+            event.preventDefault()
+        }
+
         window.addEventListener("resize", handleResizeFlexContainer);
+        window.addEventListener("selectstart", handleSelectStartHighlight);
         return () => {
             window.removeEventListener("resize", handleResizeFlexContainer);
+            window.removeEventListener("selectstart", handleSelectStartHighlight);
         }
     }, [])
 
