@@ -33,6 +33,8 @@ const MainDashboard = () => {
             event.preventDefault()
         }
 
+        handleResizeFlexContainer();
+
         window.addEventListener("resize", handleResizeFlexContainer);
         window.addEventListener("selectstart", handleSelectStartHighlight);
         return () => {
