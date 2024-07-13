@@ -47,10 +47,16 @@ const useLocalStoredArray = (localKey, arrayOfItems, setArrayOfItems) => {
         }
     }
 
-    // Removes all the content in a to do list form the local storage
+    // Removes all the content in a to do list from the local storage
     const handleRemoveLocalToDoListContent = (toDoListId) => {
         handleRemoveLocalTaskNames(toDoListId);
+        const localKeyHeader = "text:" + toDoListId;
+        const localStoredHeader = localStorage.getItem(localKeyHeader);
         localStorage.removeItem(toDoListId);
+        if (localStoredHeader !== null) {
+            localStorage.removeItem(localKeyHeader);
+        }
+
     }
 
     // Removes all the content in a section from the local storage
@@ -58,9 +64,9 @@ const useLocalStoredArray = (localKey, arrayOfItems, setArrayOfItems) => {
         arrayOfPostItNoteToDoLists.forEach((toDoList) => {
             handleRemoveLocalToDoListContent(toDoList.id);
         })
-        const localSavedTextId = "text:" + sectionId;
+        const localKeySectionTitle = "text:" + sectionId;
         localStorage.removeItem(sectionId);
-        localStorage.removeItem(localSavedTextId);
+        localStorage.removeItem(localKeySectionTitle);
     }
 
     // Deletes the post it note section the user clicks on
@@ -68,10 +74,10 @@ const useLocalStoredArray = (localKey, arrayOfItems, setArrayOfItems) => {
         if (itemToDelete === "section") {
             handleRemoveLocalSectonContent(id, arrayOfPostItNoteToDoLists);
         }
-        else if (itemToDelete == "toDoList") {
+        else if (itemToDelete === "toDoList") {
             handleRemoveLocalToDoListContent(id);
         }
-        else if (itemToDelete == "task") {
+        else if (itemToDelete === "task") {
             handleRemoveLocalTaskName(id);
         }
         const newArray = arrayOfItems.filter((arrayOfItems) => arrayOfItems.id !== id)
