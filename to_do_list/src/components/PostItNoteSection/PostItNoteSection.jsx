@@ -17,54 +17,54 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
     const {handleChangeKeyboardInput} = useLocalStoredTextarea(id, title, setTitle, titleRef);
 
     return (             
-    (!oneSectionIsEntered || (selectedSection === id)) && 
-    (<div className="post-it-note-section-container">
-        <PostItNoteTitle
-            id={id}
-            titleRef={titleRef}
-            isInDeleteMode={isInDeleteMode}
-            oneSectionIsEntered={oneSectionIsEntered}
-            arrayOfSections={arrayOfSections}
-            setArrayOfSections={setArrayOfSections}
-            setOneSectionIsEntered={setOneSectionIsEntered}
-            setSelectedSection={setSelectedSection}
-            title={title}
-            isInEditMode={isInEditMode}
-            handleClickDeleteSection={handleClickDeleteSection}
-            handleChangeKeyboardInput={handleChangeKeyboardInput}
-            arrayOfPostItNoteToDoLists={arrayOfPostItNoteToDoLists}
-        />    
+    (!oneSectionIsEntered || (selectedSection === id)) && (
+        <div className="post-it-note-section-container">
+            <PostItNoteTitle
+                id={id}
+                titleRef={titleRef}
+                isInDeleteMode={isInDeleteMode}
+                oneSectionIsEntered={oneSectionIsEntered}
+                arrayOfSections={arrayOfSections}
+                setArrayOfSections={setArrayOfSections}
+                setOneSectionIsEntered={setOneSectionIsEntered}
+                setSelectedSection={setSelectedSection}
+                title={title}
+                isInEditMode={isInEditMode}
+                handleClickDeleteSection={handleClickDeleteSection}
+                handleChangeKeyboardInput={handleChangeKeyboardInput}
+                arrayOfPostItNoteToDoLists={arrayOfPostItNoteToDoLists}
+            />    
 
-        <SectionButtons 
-            id={id}
-            selectedSection={selectedSection}
-            setSelectedSection={setSelectedSection}
-            isInDeleteMode={isInDeleteMode}
-            setIsInDeleteMode={setIsInDeleteMode}
-            setOneSectionIsEntered={setOneSectionIsEntered}
-            arrayOfPostItNoteToDoLists={arrayOfPostItNoteToDoLists}
-            setArrayOfPostItNoteToDoLists={setArrayOfPostItNoteToDoLists}
-            isInEditMode={isInEditMode}
-            setIsInEditMode={setIsInEditMode}
-            handleClickAddItem={handleClickAddItem}
-            handleClickEnterDeleteMode={handleClickEnterDeleteMode}
-            handleClickExitDeleteMode={handleClickExitDeleteMode}
-        />
+            {((selectedSection === id) && (arrayOfPostItNoteToDoLists !== null)) &&
+                arrayOfPostItNoteToDoLists.map((singlePostItNote) => (
+                    <PostItNoteToDoList 
+                        key={singlePostItNote.id}
+                        id={singlePostItNote.id}
+                        isInDeleteMode={isInDeleteMode}
+                        oneSectionIsEntered={oneSectionIsEntered}
+                        isInEditMode={isInEditMode}
+                        handleClickDeleteToDoList={handleClickDeleteItem}
+                    />
+                ))
+            }
 
-        {((selectedSection === id) && (arrayOfPostItNoteToDoLists !== null)) &&
-            arrayOfPostItNoteToDoLists.map((singlePostItNote) => (
-                <PostItNoteToDoList 
-                    key={singlePostItNote.id}
-                    id={singlePostItNote.id}
-                    isInDeleteMode={isInDeleteMode}
-                    oneSectionIsEntered={oneSectionIsEntered}
-                    isInEditMode={isInEditMode}
-                    handleClickDeleteToDoList={handleClickDeleteItem}
-                />
-            ))
-        }
-    </div> )
-    );
+            <SectionButtons 
+                id={id}
+                selectedSection={selectedSection}
+                setSelectedSection={setSelectedSection}
+                isInDeleteMode={isInDeleteMode}
+                setIsInDeleteMode={setIsInDeleteMode}
+                setOneSectionIsEntered={setOneSectionIsEntered}
+                arrayOfPostItNoteToDoLists={arrayOfPostItNoteToDoLists}
+                setArrayOfPostItNoteToDoLists={setArrayOfPostItNoteToDoLists}
+                isInEditMode={isInEditMode}
+                setIsInEditMode={setIsInEditMode}
+                handleClickAddItem={handleClickAddItem}
+                handleClickEnterDeleteMode={handleClickEnterDeleteMode}
+                handleClickExitDeleteMode={handleClickExitDeleteMode}
+            />
+        </div> 
+    ));
 }
  
 export default PostItNoteSection;
