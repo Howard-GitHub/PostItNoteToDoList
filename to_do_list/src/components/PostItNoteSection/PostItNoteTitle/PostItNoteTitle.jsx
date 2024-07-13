@@ -1,4 +1,4 @@
-import {handleOnClickToEnterSection} from '../../../utils/SectionUtils';
+import {handleKeyDownEnter, handleOnClickToEnterSection} from '../../../utils/SectionUtils';
 import './PostItNoteTitle.css';
 import SelectToDelete from '../SelectToDelete/SelectToDelete';
 import useAdjustTextareaHeight from '../../../hooks/useAdjustTextareaHeight';
@@ -21,6 +21,7 @@ const PostItNoteTitle = ({id, titleRef, isInDeleteMode, oneSectionIsEntered, set
                         className="title"
                         ref={titleRef}
                         value={title}
+                        onKeyDown={(event) => handleKeyDownEnter(event)}
                         onChange={(event) => handleChangeKeyboardInput(event)}
                         placeholder="Untitled"
                     />

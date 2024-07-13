@@ -3,6 +3,7 @@ import useLocalStoredTextarea from '../../../../hooks/useLocalStoredTextarea';
 import './ToDoListHeader.css';
 import useAdjustTextareaHeight from '../../../../hooks/useAdjustTextareaHeight';
 import useAdjustDisplayHeight from '../../../../hooks/useAdjustDisplayHeight';
+import {handleKeyDownEnter} from '../../../../utils/SectionUtils';
 
 const ToDoListHeader = ({toDoListId, isInEditMode}) => {
     const [header, setHeader] = useState("");
@@ -20,6 +21,7 @@ const ToDoListHeader = ({toDoListId, isInEditMode}) => {
                 className="header--input"
                 ref={headerInputRef}
                 value={header}
+                onKeyDown={(event) => handleKeyDownEnter(event)}
                 onChange={handleChangeKeyboardInput}
             />
             ) : (
