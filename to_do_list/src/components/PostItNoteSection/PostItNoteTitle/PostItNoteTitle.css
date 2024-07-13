@@ -25,6 +25,7 @@
     overflow: hidden;
     resize: none;
     font-family: 'Comic Sans MS';
+    padding-top: 7px;
 }
 
 .title::placeholder {
