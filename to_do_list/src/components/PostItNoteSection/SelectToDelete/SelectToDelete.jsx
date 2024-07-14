@@ -10,12 +10,12 @@ const SelectToDelete = ({type, id, handleClickDeleteItem, task, itemToDelete, ar
         <div className={`select-to-delete-container--${type}`}>
             {(type === "post-it-note") ? (
                 <div 
-                    className={`select-to-delete--${type}`}
+                    className="select-to-delete--post-it-note"
                     onClick={() => handleClickDeleteItem(id, itemToDelete, arrayOfPostItNoteToDoLists)}
                 />
             ) : (
                 <div 
-                    className={`select-to-delete--${type}`}
+                    className="select-to-delete--task"
                     ref={taskDisplayRef}
                     onClick={() => handleClickDeleteItem(id, itemToDelete)}
                 >
