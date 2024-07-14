@@ -9,7 +9,7 @@ const ToDoTask = ({id, isInEditMode, handleClickDeleteTask}) => {
     const [task, setTask] = useState("");
     const taskRef = useRef();
     const {handleChangeKeyboardInput} = useLocalStoredTextarea(id, task, setTask, taskRef);
-    useAdjustTextareaHeight(taskRef, isInEditMode, 0);
+    useAdjustTextareaHeight(taskRef, task, isInEditMode, -4);
 
     return ( 
         <div className="task-container">

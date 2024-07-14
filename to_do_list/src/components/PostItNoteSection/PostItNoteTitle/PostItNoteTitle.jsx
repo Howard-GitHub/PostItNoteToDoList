@@ -7,7 +7,7 @@ import pinImage from '../../../assets/pushpin-147918_1280.png';
 const PostItNoteTitle = ({id, titleRef, isInDeleteMode, oneSectionIsEntered, setOneSectionIsEntered, setSelectedSection, 
                         title, isInEditMode, handleClickDeleteSection, handleChangeKeyboardInput, arrayOfPostItNoteToDoLists}) => {
 
-    useAdjustTextareaHeight(titleRef, oneSectionIsEntered, -12);
+    useAdjustTextareaHeight(titleRef, title, oneSectionIsEntered, -12);
 
     return ( 
         <div className="title-container">

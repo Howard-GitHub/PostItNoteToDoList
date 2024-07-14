@@ -10,7 +10,7 @@ const ToDoListHeader = ({toDoListId, isInEditMode}) => {
     const headerInputRef = useRef(null);
     const headerDisplayRef = useRef(null);
     const {handleChangeKeyboardInput} = useLocalStoredTextarea(toDoListId, header, setHeader, headerInputRef);
-    useAdjustTextareaHeight(headerInputRef, isInEditMode, 0);
+    useAdjustTextareaHeight(headerInputRef, header, isInEditMode, -4);
     useAdjustDisplayHeight(headerDisplayRef, header, isInEditMode, "41px", 0);
     
 

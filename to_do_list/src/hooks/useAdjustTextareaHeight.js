@@ -1,11 +1,17 @@
 import {useEffect} from 'react';
 
-const useAdjustTextareaHeight = (textareaRef, dependency, offSet) => {
+const useAdjustTextareaHeight = (textareaRef, text, dependency, offset) => {
 
     // Sets the textarea height whenever the textarea appears on screen
     useEffect(() => {
         if (textareaRef.current) {
-            textareaRef.current.style.height =`${textareaRef.current.scrollHeight + offSet}px`;
+            if (text === "") {
+                textareaRef.current.style.height = `${textareaRef.current.scrollHeight + offset}px`;
+            }
+            else {
+                textareaRef.current.style.height = "0px";
+                textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
+            }
         }
     }, [dependency])
 
