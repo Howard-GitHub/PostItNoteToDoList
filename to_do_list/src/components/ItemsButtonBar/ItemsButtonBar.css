@@ -8,6 +8,6 @@
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     left: 50%;
-    top: 92%;
+    bottom: 0%;
     transform: translate(-50%, 0%);
 }

@@ -13,7 +13,7 @@ const ToDoListHeader = ({toDoListId, isInEditMode}) => {
     useAdjustTextareaHeight(headerInputRef, header, isInEditMode, -3);
     useAdjustDisplayHeight(headerDisplayRef, header, isInEditMode, "41px", 0);
     
-    return (  
+    return (
         <div className="header-container">
             {isInEditMode ? (
             <textarea 
