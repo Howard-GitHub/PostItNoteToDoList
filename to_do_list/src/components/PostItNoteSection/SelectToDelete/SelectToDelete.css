@@ -23,6 +23,7 @@
 .select-to-delete--task {
     padding-bottom: 8px;
     position: relative;
+    top: 5px;
     left: 7px;
     width: 300px;
     background-color: transparent;
