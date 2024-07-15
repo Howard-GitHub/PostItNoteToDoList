@@ -1,4 +1,5 @@
 import './AddItemButton.css';
+import plusImage from '../../assets/signe-1923369_1280.png';
 
 const AddItemButton = ({handleClickAddItem, type}) => {
 
@@ -9,9 +10,10 @@ const AddItemButton = ({handleClickAddItem, type}) => {
                     className="add-item-button add-item-button--post-it-note"
                     onClick={handleClickAddItem}
                 >
-                    <label className="add-item-button--post-it-note__symbol">
-                        +
-                    </label>
+                    <img 
+                        className="add-item-button--post-it-note__plus"
+                        src={plusImage}
+                    />
                 </button>
             ) : (
                 <button

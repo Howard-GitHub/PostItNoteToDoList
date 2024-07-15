@@ -29,11 +29,11 @@
     left: 9px;
 }
 
-.add-item-button--post-it-note__symbol {
+.add-item-button--post-it-note__plus {
     position: relative;
     cursor: pointer;
-    top: -3px;
-    left: 0.5px;
+    width: 80%;
+    height: 70%;
 }
 
 .add-item-button--post-it-note:hover {
