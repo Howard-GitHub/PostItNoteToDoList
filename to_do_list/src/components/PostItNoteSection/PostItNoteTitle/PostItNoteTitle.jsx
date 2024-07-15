@@ -7,7 +7,7 @@ import pinImage from '../../../assets/pushpin-147918_1280.png';
 const PostItNoteTitle = ({id, titleRef, isInDeleteMode, oneSectionIsEntered, setOneSectionIsEntered, setSelectedSection, 
                         title, isInEditMode, handleClickDeleteSection, handleChangeKeyboardInput, arrayOfPostItNoteToDoLists}) => {
 
-    useAdjustTextareaHeight(titleRef, title, oneSectionIsEntered, -12);
+    useAdjustTextareaHeight(titleRef, title, isInEditMode, 0);
 
     return ( 
         <div className="title-container">
@@ -17,8 +17,9 @@ const PostItNoteTitle = ({id, titleRef, isInDeleteMode, oneSectionIsEntered, set
                     src={pinImage}
                 />
                 <div className="text-height-limit">
+                    {isInEditMode ? ( 
                     <textarea
-                        className="title"
+                        className="title--input"
                         ref={titleRef}
                         value={title}
                         onKeyDown={(event) => handleKeyDownEnter(event)}
@@ -28,10 +29,12 @@ const PostItNoteTitle = ({id, titleRef, isInDeleteMode, oneSectionIsEntered, set
                             border: isInEditMode ? "2px solid black" : "none"
                         }}
                     />
+                    ) : (
+                        <div className="title--display">
+                            {title}
+                        </div>
+                    )}
                 </div>
-                {((oneSectionIsEntered && (isInDeleteMode || !isInEditMode))) && 
-                    <div className="block-from-selecting"/>
-                }
                 {((!oneSectionIsEntered && !isInDeleteMode) && 
                     <div 
                         className="select-to-enter-section"
