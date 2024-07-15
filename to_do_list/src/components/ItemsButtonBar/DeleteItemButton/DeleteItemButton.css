@@ -9,11 +9,11 @@
     transition: background-color ease 0.2s;
     border: 1px solid black;
     font-size: 50px;
-    border-radius: 14px;
-    height: 55px;
-    width: 55px;
+    border-radius: 12px;
+    height: 47px;
+    width: 47px;
     top: 10px;
-    left: 20px;
+    left: 17px;
 }
 
 .delete-item-button__trash-can-image {
