@@ -6,13 +6,13 @@ const EditButton = ({isInEditMode, setIsInEditMode}) => {
         <div className="edit-button-container">
             {isInEditMode ? (
                 <button className="edit-button edit-button--done"
-                onClick={() => handleClickDoneEdit(setIsInEditMode)}>
-                    Done
+                    onClick={() => handleClickDoneEdit(setIsInEditMode)}>
+                        Done
                 </button>
             ):(
                 <button className="edit-button edit-button--edit"
-                onClick={() => handleClickEdit(setIsInEditMode)}>
-                    Edit
+                    onClick={() => handleClickEdit(setIsInEditMode)}>
+                        Edit
                 </button>
             )}
         </div>

@@ -5,7 +5,7 @@ const useAdjustDisplayHeight = (displayRef, text, isInEditMode, defaultHeight, o
     // Sets the height of the display height whenever the display appears on screen
     useEffect(() => {
         if (displayRef.current) {
-            if (!text) {
+            if (text === "") {
                 displayRef.current.style.height = defaultHeight;
             }
             else {

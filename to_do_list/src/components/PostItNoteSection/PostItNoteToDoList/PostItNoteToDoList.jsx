@@ -12,6 +12,7 @@ const PostItNoteToDoList = ({id, isInDeleteMode, oneSectionIsEntered, isInEditMo
     const {handleClickAddItem, handleClickDeleteItem} = useLocalStoredArray(id, arrayOfTasks, setArrayOfTasks);
     const [displayHeader, setDisplayHeader] = useState(null);
 
+    // Determines if the to do list header appears based on the local storage
     useEffect(() => {
         const localKey = "text:" + id;
         const locallyStoredHeader = localStorage.getItem(localKey);

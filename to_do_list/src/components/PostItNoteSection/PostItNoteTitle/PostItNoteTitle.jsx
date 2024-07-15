@@ -5,7 +5,7 @@ import useAdjustTextareaHeight from '../../../hooks/useAdjustTextareaHeight';
 import pinImage from '../../../assets/pushpin-147918_1280.png';
 
 const PostItNoteTitle = ({id, titleRef, isInDeleteMode, oneSectionIsEntered, setOneSectionIsEntered, setSelectedSection, 
-                        title, isInEditMode, handleClickDeleteSection, handleChangeKeyboardInput, arrayOfPostItNoteToDoLists}) => {
+                        title, isInEditMode, handleClickDeleteSection, handleChangeKeyboardInput, arrayOfToDoLists}) => {
 
     useAdjustTextareaHeight(titleRef, title, isInEditMode, 0);
 
@@ -47,7 +47,7 @@ const PostItNoteTitle = ({id, titleRef, isInDeleteMode, oneSectionIsEntered, set
                         id={id}
                         handleClickDeleteItem={handleClickDeleteSection}
                         itemToDelete={"section"}
-                        arrayOfPostItNoteToDoLists={arrayOfPostItNoteToDoLists}
+                        arrayOfToDoLists={arrayOfToDoLists}
                     />
                 }
             </div>

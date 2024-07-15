@@ -53,14 +53,6 @@
     overflow: hidden;
 }
 
-
-.block-from-selecting {
-    position: absolute;
-    height: 350px;
-    width: 350px;
-    background-color: transparent;
-}
-
 .select-to-enter-section {
     position: absolute;
     height: 350px;

@@ -12,8 +12,8 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
     const [title, setTitle] = useState("");
     const [isInEditMode, setIsInEditMode] = useState(false);
     const titleRef = useRef();
-    const [arrayOfPostItNoteToDoLists, setArrayOfPostItNoteToDoLists] = useState([]);
-    const {handleClickAddItem, handleClickDeleteItem} = useLocalStoredArray(id, arrayOfPostItNoteToDoLists, setArrayOfPostItNoteToDoLists);
+    const [arrayOfToDoLists, setArrayOfToDoLists] = useState([]);
+    const {handleClickAddItem, handleClickDeleteItem} = useLocalStoredArray(id, arrayOfToDoLists, setArrayOfToDoLists);
     const {handleChangeKeyboardInput} = useLocalStoredTextarea(id, title, setTitle, titleRef);
 
     return (             
@@ -32,11 +32,11 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
                 isInEditMode={isInEditMode}
                 handleClickDeleteSection={handleClickDeleteSection}
                 handleChangeKeyboardInput={handleChangeKeyboardInput}
-                arrayOfPostItNoteToDoLists={arrayOfPostItNoteToDoLists}
+                arrayOfToDoLists={arrayOfToDoLists}
             />    
 
-            {((selectedSection === id) && (arrayOfPostItNoteToDoLists !== null)) &&
-                arrayOfPostItNoteToDoLists.map((singlePostItNote) => (
+            {((selectedSection === id) && (arrayOfToDoLists !== null)) &&
+                arrayOfToDoLists.map((singlePostItNote) => (
                     <PostItNoteToDoList 
                         key={singlePostItNote.id}
                         id={singlePostItNote.id}
@@ -55,8 +55,8 @@ const PostItNoteSection = ({id, isInDeleteMode, setIsInDeleteMode, arrayOfSectio
                 isInDeleteMode={isInDeleteMode}
                 setIsInDeleteMode={setIsInDeleteMode}
                 setOneSectionIsEntered={setOneSectionIsEntered}
-                arrayOfPostItNoteToDoLists={arrayOfPostItNoteToDoLists}
-                setArrayOfPostItNoteToDoLists={setArrayOfPostItNoteToDoLists}
+                arrayOfToDoLists={arrayOfToDoLists}
+                setArrayOfToDoLists={setArrayOfToDoLists}
                 isInEditMode={isInEditMode}
                 setIsInEditMode={setIsInEditMode}
                 handleClickAddItem={handleClickAddItem}

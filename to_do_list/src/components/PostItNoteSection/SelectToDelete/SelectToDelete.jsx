@@ -2,7 +2,7 @@ import {useRef} from 'react';
 import './SelectToDelete.css';
 import useAdjustDisplayHeight from '../../../hooks/useAdjustDisplayHeight';
 
-const SelectToDelete = ({type, id, handleClickDeleteItem, task, itemToDelete, arrayOfPostItNoteToDoLists, isInEditMode}) => {
+const SelectToDelete = ({type, id, handleClickDeleteItem, task, itemToDelete, arrayOfToDoLists, isInEditMode}) => {
     const taskDisplayRef = useRef(null);
     useAdjustDisplayHeight(taskDisplayRef, task, isInEditMode, "27px", 9);
 
@@ -11,7 +11,7 @@ const SelectToDelete = ({type, id, handleClickDeleteItem, task, itemToDelete, ar
             {(type === "post-it-note") ? (
                 <div 
                     className="select-to-delete--post-it-note"
-                    onClick={() => handleClickDeleteItem(id, itemToDelete, arrayOfPostItNoteToDoLists)}
+                    onClick={() => handleClickDeleteItem(id, itemToDelete, arrayOfToDoLists)}
                 />
             ) : (
                 <div 

@@ -7,9 +7,6 @@ import useLocalStoredArray from '../hooks/useLocalStoredArray';
 import {handleClickEnterDeleteMode, handleClickExitDeleteMode} from '../utils/DeleteModeUtils';
 
 const MainDashboard = () => {
-
-    // Contains the post it note section. A post it note section contains multiple post it notes or "a section of post it notes" and is supposed to
-    // contain one or more individual post it note to do lists
     const [arrayOfSections, setArrayOfSections] = useState([]);
     const mainDashboardRef = useRef();
     const [isInDeleteMode, setIsInDeleteMode] = useState(false);
@@ -28,7 +25,7 @@ const MainDashboard = () => {
             }
         }
 
-        // Prevents the screen from highlighting
+        // Prevents the screen from unnecessarily highlighting
         const handleSelectStartHighlight = (event) => {
             event.preventDefault()
         }
@@ -80,7 +77,7 @@ const MainDashboard = () => {
                             handleClickEnterDeleteMode={handleClickEnterDeleteMode}
                         />
                     }
-            </div>
+                </div>
             </div>
     );
 }

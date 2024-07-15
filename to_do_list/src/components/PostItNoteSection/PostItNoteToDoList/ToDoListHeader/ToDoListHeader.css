@@ -5,11 +5,11 @@
 .header--input {
     position: relative;
     width: 315px;
+    height: 41px;
     background-color: transparent;
     resize: none;
     font-family: 'Comic Sans MS';
     font-size: 30px;
-    height: 41px;
     outline: none;
     border: 1px solid black;
     text-align: center;

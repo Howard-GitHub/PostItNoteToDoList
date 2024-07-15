@@ -20,7 +20,7 @@ const useLocalStoredArray = (localKey, arrayOfItems, setArrayOfItems) => {
         if (initialArrayIsUpdated) {
             localStorage.setItem(localKey, JSON.stringify(arrayOfItems));
         }
-    }, [arrayOfItems])
+    }, [arrayOfItems, initialArrayIsUpdated])
     
     // Adds a new item to the array
     const handleClickAddItem = () => {
@@ -32,8 +32,8 @@ const useLocalStoredArray = (localKey, arrayOfItems, setArrayOfItems) => {
 
     // Removes a task name from the local storage
     const handleRemoveLocalTaskName = (taskId) => {
-        const taskTextLocalKey = "text:" + taskId;
-        localStorage.removeItem(taskTextLocalKey);
+        const localKeyTaskText = "text:" + taskId;
+        localStorage.removeItem(localKeyTaskText);
     }
 
     // Removes all the tasks in a particular to do list from the local storage
@@ -53,6 +53,7 @@ const useLocalStoredArray = (localKey, arrayOfItems, setArrayOfItems) => {
         const localKeyHeader = "text:" + toDoListId;
         const localStoredHeader = localStorage.getItem(localKeyHeader);
         localStorage.removeItem(toDoListId);
+
         if (localStoredHeader !== null) {
             localStorage.removeItem(localKeyHeader);
         }
@@ -60,8 +61,8 @@ const useLocalStoredArray = (localKey, arrayOfItems, setArrayOfItems) => {
     }
 
     // Removes all the content in a section from the local storage
-    const handleRemoveLocalSectonContent = (sectionId, arrayOfPostItNoteToDoLists) => {
-        arrayOfPostItNoteToDoLists.forEach((toDoList) => {
+    const handleRemoveLocalSectonContent = (sectionId, arrayOfToDoLists) => {
+        arrayOfToDoLists.forEach((toDoList) => {
             handleRemoveLocalToDoListContent(toDoList.id);
         })
         const localKeySectionTitle = "text:" + sectionId;
@@ -69,10 +70,10 @@ const useLocalStoredArray = (localKey, arrayOfItems, setArrayOfItems) => {
         localStorage.removeItem(localKeySectionTitle);
     }
 
-    // Deletes the post it note section the user clicks on
-    const handleClickDeleteItem = (id, itemToDelete, arrayOfPostItNoteToDoLists) => {
+    // Deletes the item the user clicks on
+    const handleClickDeleteItem = (id, itemToDelete, arrayOfToDoLists) => {
         if (itemToDelete === "section") {
-            handleRemoveLocalSectonContent(id, arrayOfPostItNoteToDoLists);
+            handleRemoveLocalSectonContent(id, arrayOfToDoLists);
         }
         else if (itemToDelete === "toDoList") {
             handleRemoveLocalToDoListContent(id);

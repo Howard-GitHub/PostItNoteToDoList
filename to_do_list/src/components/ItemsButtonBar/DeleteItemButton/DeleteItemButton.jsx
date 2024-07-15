@@ -1,7 +1,6 @@
 import './DeleteItemButton.css';
 import trashCanImage from '../../../assets/trashcan-293989_1280.png';
 
-
 const DeleteItemButton = ({handleClickEnterDeleteMode, setIsInDeleteMode}) => {
     return ( 
         <div className="delete-item-button-container">
