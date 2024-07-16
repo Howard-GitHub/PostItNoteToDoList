@@ -19,27 +19,27 @@ This to-do-list program allows the user to create post it note sections at the s
 
 ### Run project with "npm start"
 
-  - For the starting dashboard:
-    - Click on the plus button to create a section
-    - Click on the trash button for the sections to become deletable
-      - Once the sections become deletable, click on the section you want to delete
-      - Click on the "Back" button on the top left for the sections to not be deletable
+####For the starting dashboard:
+- Click on the plus button to create a section
+- Click on the trash button for the sections to become deletable
+  - Once the sections become deletable, click on the section you want to delete
+    - Click on the "Back" button on the top left for the sections to not be deletable
        
-- For inside a section:
-  - Click on the "Edit" button on the top right
-      - Click on the section title textarea to edit the title of the entire section
-      - Click on the plus button to create a to-do-list
-        - Click on the "Add Header" button to create a header
-          - Click on the textarea to start editing the header
-          - Click on the "Remove Header" button to remove the header
-        - Click on the "Add Task" button to create a task
-          - Click on the textarea to start editing the task name
-        - Click on the trash button for the to-do-lists to become deletable
-          - Once the to-do-lists become deletable, click on the to-do-list you want to delete
-          - Click on the "Back" button on the top left for the to-do-lists to net be deletable
-      - Click on the "Done" button on the top right to exit the edit mode
-      - Click on a task to remove a task (This is doable only in when the user is not in edit mode)
-      - Click on the "Dashboard" button on the top left to exit the section
+####For inside a section:
+- Click on the "Edit" button on the top right
+   - Click on the section title textarea to edit the title of the entire section
+   - Click on the plus button to create a to-do-list
+     - Click on the "Add Header" button to create a header
+      - Click on the textarea to start editing the header
+      - Click on the "Remove Header" button to remove the header
+     - Click on the "Add Task" button to create a task
+      - Click on the textarea to start editing the task name
+     - Click on the trash button for the to-do-lists to become deletable
+       - Once the to-do-lists become deletable, click on the to-do-list you want to delete
+       - Click on the "Back" button on the top left for the to-do-lists to net be deletable
+   - Click on the "Done" button on the top right to exit the edit mode
+   - Click on a task to remove a task (This is doable only in when the user is not in edit mode)
+   - Click on the "Dashboard" button on the top left to exit the section
    
 ## Technologices Used
 - React
