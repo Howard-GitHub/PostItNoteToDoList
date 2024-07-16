@@ -63,9 +63,8 @@
 
 .pin-image {
     position: relative;
-    top: -155px;
+    top: -145px;
     left: 137px;
     height: 65px;
     width: 65px;
-    z-index: 1;
 }

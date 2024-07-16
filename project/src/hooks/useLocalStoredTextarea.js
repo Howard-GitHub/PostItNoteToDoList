@@ -8,7 +8,6 @@ const useLocalStoredTextarea = (id, text, setText, textareaRef) => {
         if (locallyStoredText) {
             setText(locallyStoredText);
         }
-        console.log("run");
     }, [])
 
     // Saves changes to textarea in the local storage every time the text is modified and updates the size of the textarea to reflect the content it contains
