@@ -38,7 +38,7 @@ This to-do-list program allows the user to create post it note sections at the s
        - Once the to-do-lists become deletable, click on the to-do-list you want to delete
        - Click on the "Back" button on the top left for the to-do-lists to net be deletable
    - Click on the "Done" button on the top right to exit the edit mode
-   - Click on a task to remove a task (This is doable only in when the user is not in edit mode)
+   - Click on a task to remove a task (This is doable only when the user is not in edit mode)
    - Click on the "Dashboard" button on the top left to exit the section
    
 ## Technologices Used
