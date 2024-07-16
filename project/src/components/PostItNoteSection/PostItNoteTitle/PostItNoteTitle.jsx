@@ -2,7 +2,9 @@ import {handleKeyDownEnter, handleClickToEnterSection} from '../../../utils/Sect
 import './PostItNoteTitle.css';
 import SelectToDelete from '../SelectToDelete/SelectToDelete';
 import useAdjustTextareaHeight from '../../../hooks/useAdjustTextareaHeight';
-import pinImage from '../../../assets/pushpin-147918_1280.png';
+
+// Image by OpenClipart-Vectors - link: https://pixabay.com/vectors/pushpin-push-pin-office-pin-red-147918/ - from Pixabay
+import pinImage from '../../../assets/pin.png';
 
 const PostItNoteTitle = ({id, titleRef, isInDeleteMode, oneSectionIsEntered, setOneSectionIsEntered, setSelectedSection, 
                         title, isInEditMode, handleClickDeleteSection, handleChangeKeyboardInput, arrayOfToDoLists}) => {

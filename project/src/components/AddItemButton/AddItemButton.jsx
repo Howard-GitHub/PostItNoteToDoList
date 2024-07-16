@@ -1,5 +1,7 @@
 import './AddItemButton.css';
-import plusImage from '../../assets/signe-1923369_1280.png';
+
+// Image by michael-kouassi - link: https://pixabay.com/illustrations/signe-plus-black-1923369/ - from Pixabay
+import plusImage from '../../assets/plus.png';
 
 const AddItemButton = ({handleClickAddItem, type}) => {
 

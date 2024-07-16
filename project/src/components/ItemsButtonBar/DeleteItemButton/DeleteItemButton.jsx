@@ -1,5 +1,5 @@
 import './DeleteItemButton.css';
-import trashCanImage from '../../../assets/trashcan-293989_1280.png';
+import trashCanImage from '../../../assets/trashCan.png';
 
 const DeleteItemButton = ({handleClickEnterDeleteMode, setIsInDeleteMode}) => {
     return ( 
