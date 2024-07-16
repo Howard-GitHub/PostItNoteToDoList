@@ -1,4 +1,6 @@
 import './DeleteItemButton.css';
+
+// Image by Clker-Free-Vector-Images - link: https://pixabay.com/vectors/trashcan-trash-bin-garbage-293989/ - from Pixabay
 import trashCanImage from '../../../assets/trashCan.png';
 
 const DeleteItemButton = ({handleClickEnterDeleteMode, setIsInDeleteMode}) => {
