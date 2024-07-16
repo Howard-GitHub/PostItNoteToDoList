@@ -23,7 +23,7 @@ This to-do-list program allows the user to create post it note sections at the s
 - Click on the plus button to create a section
 - Click on the trash button for the sections to become deletable
   - Once the sections become deletable, click on the section you want to delete
-    - Click on the "Back" button on the top left for the sections to not be deletable
+  - Click on the "Back" button on the top left for the sections to not be deletable
        
 #### For inside a section:
 - Click on the "Edit" button on the top right
