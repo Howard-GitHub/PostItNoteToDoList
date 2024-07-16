@@ -12,8 +12,6 @@ This to-do-list program allows the user to create post it note sections at the s
 3. Go to the project directory
 4. Install dependencies:
    - Command: npm install
-5. Start server:
-   - Command: npm start
   
 ## Usage
 
@@ -45,6 +43,6 @@ This to-do-list program allows the user to create post it note sections at the s
 - React
 
 ## Credits
-- Pin.png: image by OpenClipart-Vectors - link: https://pixabay.com/vectors/pushpin-push-pin-office-pin-red-147918/ - from Pixabay
-- Plus.png: image by michael-kouassi - link: https://pixabay.com/illustrations/signe-plus-black-1923369/ - from Pixabay
-- trashCan.png: image by Clker-Free-Vector-Images - link: https://pixabay.com/vectors/trashcan-trash-bin-garbage-293989/ - from Pixabay
+- pin.png: Image by OpenClipart-Vectors - link: https://pixabay.com/vectors/pushpin-push-pin-office-pin-red-147918/ - from Pixabay
+- plus.png: Image by michael-kouassi - link: https://pixabay.com/illustrations/signe-plus-black-1923369/ - from Pixabay
+- trashCan.png: Image by Clker-Free-Vector-Images - link: https://pixabay.com/vectors/trashcan-trash-bin-garbage-293989/ - from Pixabay
