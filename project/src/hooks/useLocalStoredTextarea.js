@@ -5,18 +5,16 @@ const useLocalStoredTextarea = (id, text, setText, textareaRef) => {
     // Retrieves data from the local storage when the program first runs
     useEffect(() => {
         const locallyStoredText = localStorage.getItem("text:" + id);
-        if (locallyStoredText !== null) {
+        if (locallyStoredText) {
             setText(locallyStoredText);
         }
     }, [])
 
     // Saves changes to textarea in the local storage every time the text is modified and updates the size of the textarea to reflect the content it contains
     useEffect(() => {
-        if (text !== null) { 
-            const localKey = "text:" + id
-            localStorage.setItem(localKey, text);
-            handleChangeTextareaHeight(textareaRef);
-        }
+        const localKey = "text:" + id
+        localStorage.setItem(localKey, text);
+        handleChangeTextareaHeight(textareaRef);
     }, [text])
 
     // Changes the height of the textarea everytime a new line is added
