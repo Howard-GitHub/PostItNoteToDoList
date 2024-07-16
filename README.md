@@ -8,7 +8,7 @@ This to-do-list program allows the user to create post it note sections at the s
 
 ## Installation
 1. Install Node.js
-2. Clone this project: git clone **EDIT**
+2. Clone this project
 3. Go to the project directory
 4. Install dependencies:
    - Command: npm install
