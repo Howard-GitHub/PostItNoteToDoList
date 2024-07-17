@@ -2,7 +2,7 @@
 
 ## A to-do-list web application that utilizes post-it-notes and gives flexibility to divide tasks into separate sections.
 
-This to-do-list application allows the user to create post it note sections at the starting dashboard, and multiple post-it-note to-do-lists can be created in each section. Each section can be given a title to categorize. The post-it-note to-do-lists contain the tasks and can contain a header to futher categorize tasks. Sections, to-do-lists, tasks, and the to-dio-list headers are also removable. This application gives control over the division of tasks, providing for flexibility in organization. All changes made on the application are saved, meaning when the application is ran again or when the application is refreshed, the changes made on the application stay.
+This to-do-list application allows the user to create post-it-note sections at the starting dashboard, and multiple post-it-note to-do-lists can be created in each section. Each section can be given a title for labeling categories. The post-it-note to-do-lists contain the tasks and can contain a header to futher categorize tasks. Sections, to-do-lists, tasks, and the to-do-list headers are also removable. This application gives control over the division of tasks, providing for flexibility in organization. All changes made on the application are saved, meaning when running the application again or when refreshing the application, the changes made on the application stay.
 
 ## Installation
 1. Install Node.js
