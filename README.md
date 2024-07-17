@@ -1,8 +1,8 @@
 # Post-It-Note To-do-list
 
-## A to-do-list program that utilizes post-it-notes and gives flexibility to divide tasks into separate sections.
+## A to-do-list web application that utilizes post-it-notes and gives flexibility to divide tasks into separate sections.
 
-This to-do-list program allows the user to create post it note sections at the starting dashboard, and multiple post-it-note to-do-lists can be created in each section. Each section can be given a title to categorize. The post-it-note to-do-lists contain the tasks and can contain a header to futher categorize tasks. Sections, to-do-lists, tasks, and the to-dio-list headers are also removable. This program gives control over the division of tasks, providing for flexibility in organization.
+This to-do-list application allows the user to create post it note sections at the starting dashboard, and multiple post-it-note to-do-lists can be created in each section. Each section can be given a title to categorize. The post-it-note to-do-lists contain the tasks and can contain a header to futher categorize tasks. Sections, to-do-lists, tasks, and the to-dio-list headers are also removable. This application gives control over the division of tasks, providing for flexibility in organization. All changes made on the application are saved, meaning when the application is ran again, or if the application is refreshed, 
 
 ## Installation
 1. Install Node.js
@@ -28,7 +28,7 @@ This to-do-list program allows the user to create post it note sections at the s
 - In the edit mode, all textareas, such as for the section title, the to-list-header, and the tasks, become editable
 - The buttons to modify a section will also appear in edit mode
 - Post-it-note to-do-lists are also deletable after clicking on the trash button in edit mode and you can exit the delete mode by clicking on "Back"
-- Tasks are deletable when clicked on when the program is not in edit mode
+- Tasks are deletable when clicked on when the application is not in edit mode
 - Click on the "Dashboard" button on the top left to exit the section
    
 ## DEMO
