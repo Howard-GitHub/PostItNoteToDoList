@@ -34,8 +34,10 @@ This to-do-list program allows the user to create post it note sections at the s
 ## DEMO
 
 ### Demo of main dashboard
+![main dashboard demo gif](https://github.com/Howard-GitHub/PostItNoteToDoList/blob/main/project/src/assets/initialDashboardDemo.gif)
 
-![Dashboard demo gif](https://github.com/Howard-GitHub/PostItNoteToDoList/blob/main/project/src/assets/initialDashboard.gif)
+### Demo of section
+![section demo gif](https://github.com/Howard-GitHub/PostItNoteToDoList/blob/main/project/src/assets/sectionDemo.gif)
 
 
 ## Technologices Used
