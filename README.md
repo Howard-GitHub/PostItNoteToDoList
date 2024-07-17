@@ -4,8 +4,6 @@
 
 This to-do-list program allows the user to create post it note sections at the starting dashboard, and multiple post-it-note to-do-lists can be created in each section. Each section can be given a title to categorize. The post-it-note to-do-lists contain the tasks and can contain a header to futher categorize tasks. Sections, to-do-lists, tasks, and the to-dio-list headers are also removable. This program gives control over the division of tasks, providing for flexibility in organization.
 
-## DEMO
-
 ## Installation
 1. Install Node.js
 2. Clone this project
@@ -23,6 +21,7 @@ This to-do-list program allows the user to create post it note sections at the s
 - Click on the plus button to create a section
 - Click on the trash button for the sections to become deletable when you click on a section
 - Click on the "Back" button on the top left to exit the delete mode
+- Click on a section to enter that section
        
 #### For inside a section:
 - Click on the "Edit" button on the top right to edit a section
@@ -32,6 +31,13 @@ This to-do-list program allows the user to create post it note sections at the s
 - Tasks are deletable when clicked on when the program is not in edit mode
 - Click on the "Dashboard" button on the top left to exit the section
    
+## DEMO
+
+### Demo of main dashboard
+
+(https://github.com/Howard-GitHub/PostItNoteToDoList/blob/main/project/src/assets/initialDashboard.gif)
+
+
 ## Technologices Used
 - React
 
